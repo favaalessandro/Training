@@ -1,6 +1,6 @@
 import {
   getExerciseDB, saveExerciseDB, getAvailableWeeks, getWeekData,
-  getSettings, saveSettings, getLogs, getLogByDate,
+  getSettings, saveSettings, getLogs, getLogByDate, deleteLog,
   exportAllData, importAllData, resetAllData, getPRs
 } from './store.js';
 import exerciseDB from './exercises.js';
@@ -125,11 +125,11 @@ function renderHome() {
   const latestPR = prs.length > 0 ? prs[0] : null;
 
   let nextWorkoutHTML = '';
+  const completedToday = getLogs().filter(l => {
+    const today = new Date().toISOString().split('T')[0];
+    return l.date && l.date.startsWith(today);
+  });
   if (weekData && weekData.days) {
-    const completedToday = getLogs().filter(l => {
-      const today = new Date().toISOString().split('T')[0];
-      return l.date && l.date.startsWith(today);
-    });
 
     nextWorkoutHTML = weekData.days.map((day, idx) => {
       const done = completedToday.some(l => l.dayLabel === day.dayLabel);
@@ -182,20 +182,32 @@ function renderHome() {
 
     <div class="section-header">
       <h3>Prossimo Allenamento</h3>
+      ${completedToday.length > 0 ? `<button class="btn btn-sm btn-secondary" id="btn-reset-today">
+        <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset
+      </button>` : ''}
     </div>
     <div class="day-cards">
       ${nextWorkoutHTML || '<div class="empty-state"><p>Nessun esercizio caricato. Vai nelle impostazioni per verificare.</p></div>'}
     </div>
   `;
 
-  // Bind day cards
-  view.querySelectorAll('.day-card:not(.completed)').forEach(card => {
+  // Bind day cards — all clickable, including completed
+  view.querySelectorAll('.day-card').forEach(card => {
     card.addEventListener('click', () => {
       const week = parseInt(card.dataset.week);
       const day = parseInt(card.dataset.day);
       navigate('/workout');
       setTimeout(() => startWorkoutSession(week, day), 50);
     });
+  });
+
+  // Reset today's sessions
+  document.getElementById('btn-reset-today')?.addEventListener('click', () => {
+    const today = new Date().toISOString().split('T')[0];
+    const logs = getLogs().filter(l => l.date && l.date.startsWith(today));
+    logs.forEach(l => deleteLog(l.id));
+    showToast('Sessioni di oggi resettate');
+    renderHome();
   });
 
   if (window.lucide) lucide.createIcons();
