@@ -485,7 +485,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "Presa larga con pausa",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3165-3863-4066-b038-343039623736/video.gif"
           },
           {
             id: "hw3-parallel-grip-pullups",
@@ -495,7 +495,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "Presa parallela",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3037-6630-4531-a565-306638376635/video1.gif"
           },
           {
             id: "hw3-low-bar-pullups",
@@ -505,7 +505,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 90,
             notes: "Sbarra bassa",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3237-6437-4234-b764-373331346133/video2.gif"
           },
           {
             id: "hw3-low-bar-parallel-grip-pullups",
@@ -515,7 +515,7 @@ const homeExerciseDB = {
             defaultReps: "8",
             defaultRest: 90,
             notes: "Sbarra bassa, presa parallela",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3834-3030-4333-a239-306434373765/video3.gif"
           },
           {
             id: "hw3-bent-over-rows",
@@ -525,7 +525,7 @@ const homeExerciseDB = {
             defaultReps: "15",
             defaultRest: 90,
             notes: "Rematore con bilanciere/peso",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3336-3831-4238-a363-656666353066/video4.gif"
           }
         ]
       },
