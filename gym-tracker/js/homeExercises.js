@@ -213,7 +213,220 @@ const homeExerciseDB = {
       }
     ]
   },
-  2: { days: [] },
+  2: {
+    days: [
+      {
+        dayLabel: "Monday — Legs",
+        exercises: [
+          {
+            id: "hw2-weighted-squats-jump",
+            name: "Weighted Squats with Jump",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "15",
+            defaultRest: 90,
+            notes: "Squat con peso e salto",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-pistol-squats",
+            name: "Pistol Squats",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-weighted-lunges",
+            name: "Weighted Lunges (each leg)",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "15",
+            defaultRest: 90,
+            notes: "Per ogni gamba",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-chair-pose-weight",
+            name: "Chair Pose with Weight",
+            muscleGroup: "legs",
+            defaultSets: 1,
+            defaultReps: "max",
+            defaultRest: 0,
+            notes: "Tenere la posizione il più a lungo possibile con peso",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-single-leg-calf-raises-weight",
+            name: "Single-leg Calf Raises with Weight",
+            muscleGroup: "legs",
+            defaultSets: 4,
+            defaultReps: "25",
+            defaultRest: 60,
+            notes: "Per ogni gamba, con peso",
+            gifUrl: ""
+          }
+        ]
+      },
+      {
+        dayLabel: "Wednesday — Back + Biceps",
+        exercises: [
+          {
+            id: "hw2-reverse-grip-pullups",
+            name: "Reverse-grip Pull-ups",
+            muscleGroup: "back",
+            defaultSets: 4,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "Presa inversa (supina)",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-wide-grip-alternating-pullups",
+            name: "Wide-grip Alternating Pull-ups",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "8",
+            defaultRest: 90,
+            notes: "Presa larga, alternando",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-close-grip-low-bar-pullups",
+            name: "Close-grip Low Bar Pull-ups",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "Presa stretta, sbarra bassa",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-pullups-behind-neck",
+            name: "Pull-ups Behind the Neck",
+            muscleGroup: "back",
+            defaultSets: 5,
+            defaultReps: "6",
+            defaultRest: 90,
+            notes: "Trazioni dietro il collo",
+            gifUrl: ""
+          }
+        ]
+      },
+      {
+        dayLabel: "Friday — Chest + Triceps",
+        exercises: [
+          {
+            id: "hw2-dips",
+            name: "Dips",
+            muscleGroup: "chest",
+            defaultSets: 4,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-one-leg-elevated-feet-pushups",
+            name: "One-leg Elevated Feet Push-ups",
+            muscleGroup: "chest",
+            defaultSets: 4,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "Push-up con piedi rialzati su una gamba",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-triceps-pushups",
+            name: "Triceps Push-ups",
+            muscleGroup: "arms",
+            defaultSets: 4,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-french-press",
+            name: "French Press",
+            muscleGroup: "arms",
+            defaultSets: 4,
+            defaultReps: "8",
+            defaultRest: 90,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-pushups-max",
+            name: "Push-ups",
+            muscleGroup: "chest",
+            defaultSets: 1,
+            defaultReps: "max",
+            defaultRest: 0,
+            notes: "Massimo numero di ripetizioni",
+            gifUrl: ""
+          }
+        ]
+      },
+      {
+        dayLabel: "Saturday — Abs + Static",
+        exercises: [
+          {
+            id: "hw2-hanging-leg-raises",
+            name: "Hanging Leg Raises",
+            muscleGroup: "core",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 60,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-crunches",
+            name: "Crunches",
+            muscleGroup: "core",
+            defaultSets: 3,
+            defaultReps: "20",
+            defaultRest: 60,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-alternating-heel-touches",
+            name: "Alternating Heel Touches",
+            muscleGroup: "core",
+            defaultSets: 3,
+            defaultReps: "15",
+            defaultRest: 60,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-lying-leg-raises",
+            name: "Lying Leg Raises",
+            muscleGroup: "core",
+            defaultSets: 3,
+            defaultReps: "20",
+            defaultRest: 60,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw2-plank",
+            name: "Plank",
+            muscleGroup: "core",
+            defaultSets: 2,
+            defaultReps: "max",
+            defaultRest: 60,
+            notes: "Tenere la posizione il più a lungo possibile",
+            gifUrl: ""
+          }
+        ]
+      }
+    ]
+  },
   3: { days: [] },
   4: { days: [] },
   5: { days: [] },
