@@ -229,11 +229,11 @@ const exerciseDB = {
       {
         dayLabel: "Monday - Legs",
         exercises: [
-          { id: "week5-squats", name: "Squats", muscleGroup: "legs", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "" },
-          { id: "week5-front-squats", name: "Front Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
-          { id: "week5-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week5-high-jumps", name: "High Jumps", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" },
-          { id: "week5-single-leg-squats", name: "Single-Leg Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "10", defaultRest: 90, notes: "Si possono fare con supporto" }
+          { id: "week5-squats", name: "Squats", muscleGroup: "legs", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3133-6264-4030-a539-353964656462/video0.gif" },
+          { id: "week5-front-squats", name: "Front Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3034-3935-4565-a431-313465623132/video_2.gif" },
+          { id: "week5-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3639-3561-4838-b934-616163363962/video_3.gif" },
+          { id: "week5-high-jumps", name: "High Jumps", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3039-3865-4765-a464-653639346330/video_4.gif" },
+          { id: "week5-single-leg-squats", name: "Single-Leg Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "10", defaultRest: 90, notes: "Si possono fare con supporto", gifUrl: "https://static.tildacdn.net/tild3764-6637-4163-b035-663833643465/video_5.gif" }
         ]
       },
       {
