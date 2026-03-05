@@ -296,32 +296,32 @@ const exerciseDB = {
       {
         dayLabel: "Monday - Legs and Shoulders",
         exercises: [
-          { id: "week7-squats", name: "Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "2", defaultRest: 180, notes: "" },
-          { id: "week7-front-squats", name: "Front Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "" },
-          { id: "week7-sumo-leg-press", name: "Sumo Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week7-standing-barbell-press", name: "Standing Barbell Press", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "6", defaultRest: 120, notes: "" },
-          { id: "week7-seated-db-press", name: "Seated Dumbbell Press", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" }
+          { id: "week7-squats", name: "Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "2", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3066-3966-4938-b937-343136363535/video.gif" },
+          { id: "week7-front-squats", name: "Front Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild6331-3430-4033-a638-343865653564/video_2.gif" },
+          { id: "week7-sumo-leg-press", name: "Sumo Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3234-6266-4061-b635-316531373439/video_3.gif" },
+          { id: "week7-standing-barbell-press", name: "Standing Barbell Press", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "6", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3365-6331-4738-a630-643833323164/video_4.gif" },
+          { id: "week7-seated-db-press", name: "Seated Dumbbell Press", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6564-3939-4639-b833-303462663763/video_5.gif" }
         ]
       },
       {
         dayLabel: "Wednesday - Chest and Triceps",
         exercises: [
-          { id: "week7-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 2, defaultReps: "2", defaultRest: 180, notes: "" },
-          { id: "week7-incline-db-press-30", name: "Incline Dumbbell Press (30°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week7-dips", name: "Dips", muscleGroup: "chest", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "" },
-          { id: "week7-db-french-press-incline", name: "Dumbbell French Press on Incline Bench (30°)", muscleGroup: "triceps", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
-          { id: "week7-cable-triceps-ext", name: "Cable Triceps Extensions", muscleGroup: "triceps", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "" }
+          { id: "week7-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 2, defaultReps: "2", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3732-3231-4964-b964-376335633461/video.gif" },
+          { id: "week7-incline-db-press-30", name: "Incline Dumbbell Press (30°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3631-3662-4631-b436-643465393965/video_2.gif" },
+          { id: "week7-dips", name: "Dips", muscleGroup: "chest", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6531-3436-4134-b736-623939663866/video_3.gif" },
+          { id: "week7-db-french-press-incline", name: "Dumbbell French Press on Incline Bench (30°)", muscleGroup: "triceps", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3933-3831-4232-b731-313762663933/video_4.gif" },
+          { id: "week7-cable-triceps-ext", name: "Cable Triceps Extensions", muscleGroup: "triceps", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3735-6539-4137-b763-643965656131/video_5.gif" }
         ]
       },
       {
         dayLabel: "Friday - Back and Biceps",
         exercises: [
-          { id: "week7-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 2, defaultReps: "2", defaultRest: 180, notes: "" },
-          { id: "week7-good-morning", name: "Good Morning", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
-          { id: "week7-bent-over-rows-db", name: "Bent-Over Rows with Dumbbells", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week7-pull-ups", name: "Pull-Ups", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week7-reverse-grip-curls", name: "Reverse-Grip Barbell Curls", muscleGroup: "biceps", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week7-bicep-curls-cable", name: "Bicep Curls on Cable Machine", muscleGroup: "biceps", defaultSets: 3, defaultReps: "20", defaultRest: 60, notes: "" }
+          { id: "week7-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 2, defaultReps: "2", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild6162-3861-4862-b037-393365313136/video.gif" },
+          { id: "week7-good-morning", name: "Good Morning", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3561-6461-4462-b339-313563636561/video_2.gif" },
+          { id: "week7-bent-over-rows-db", name: "Bent-Over Rows with Dumbbells", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6233-3963-4631-a661-396566326663/video_3.gif" },
+          { id: "week7-pull-ups", name: "Pull-Ups", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3031-3133-4738-b439-653036636463/video_4.gif" },
+          { id: "week7-reverse-grip-curls", name: "Reverse-Grip Barbell Curls", muscleGroup: "biceps", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6265-6136-4535-b066-326537366163/video_5.gif" },
+          { id: "week7-bicep-curls-cable", name: "Bicep Curls on Cable Machine", muscleGroup: "biceps", defaultSets: 3, defaultReps: "20", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6435-3335-4735-b132-323033303738/video_6.gif" }
         ]
       },
       absAndCoreDay(7)
