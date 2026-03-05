@@ -118,15 +118,20 @@ function showToast(message, type = 'default', duration = 3000) {
    HOME VIEW
    ═══════════════════════════════════════ */
 
+let homeActiveProgram = 'gym'; // 'gym' or 'home'
+
 function renderHome() {
   const view = document.getElementById('view-home');
   view.classList.add('active');
 
   const settings = getSettings();
   const stats = getStats();
-  const weeks = getAvailableWeeks();
-  const currentWeek = settings.currentWeek || (weeks.length > 0 ? weeks[0] : 1);
-  const weekData = getWeekData(currentWeek);
+
+  const isHome = homeActiveProgram === 'home';
+  const weeks = isHome ? getAvailableHomeWeeks() : getAvailableWeeks();
+  const weekSettingKey = isHome ? 'currentHomeWeek' : 'currentWeek';
+  const currentWeek = settings[weekSettingKey] || (weeks.length > 0 ? weeks[0] : 1);
+  const weekData = isHome ? getHomeWeekData(currentWeek) : getWeekData(currentWeek);
 
   const hour = new Date().getHours();
   let greeting = 'Buongiorno';
@@ -142,12 +147,11 @@ function renderHome() {
     const today = new Date().toISOString().split('T')[0];
     return l.date && l.date.startsWith(today);
   });
-  if (weekData && weekData.days) {
-
+  if (weekData && weekData.days && weekData.days.length > 0) {
     nextWorkoutHTML = weekData.days.map((day, idx) => {
       const done = completedToday.some(l => l.dayLabel === day.dayLabel);
       return `
-        <div class="day-card ${done ? 'completed' : ''}" data-week="${currentWeek}" data-day="${idx}">
+        <div class="day-card ${done ? 'completed' : ''}" data-week="${currentWeek}" data-day="${idx}" data-source="${isHome ? 'home' : 'gym'}">
           <div class="day-card-info">
             <h4>${day.dayLabel}</h4>
             <p>${day.exercises.length} esercizi</p>
@@ -159,6 +163,8 @@ function renderHome() {
       `;
     }).join('');
   }
+
+  const programLabel = isHome ? 'Home Workout' : 'Workout';
 
   view.innerHTML = `
     <div style="margin-bottom: var(--space-lg)">
@@ -203,12 +209,12 @@ function renderHome() {
       <h3>Scegli il Programma</h3>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-bottom:var(--space-lg)">
-      <div class="card" id="goto-workout" style="cursor:pointer;text-align:center;border-color:var(--gold-primary);padding:var(--space-lg) var(--space-md)">
+      <div class="card" id="goto-workout" style="cursor:pointer;text-align:center;border-color:${!isHome ? 'var(--gold-primary)' : 'var(--gold-dim)'};padding:var(--space-lg) var(--space-md);opacity:${!isHome ? '1' : '0.5'};transition:all 0.2s ease">
         <i data-lucide="dumbbell" style="width:32px;height:32px;color:var(--gold-primary);margin-bottom:var(--space-sm)"></i>
         <div style="font-weight:600;font-size:0.9375rem;margin-bottom:var(--space-xs)">Workout</div>
         <div style="font-size:0.75rem;color:var(--text-secondary)">Palestra — 8 settimane</div>
       </div>
-      <div class="card" id="goto-home-workout" style="cursor:pointer;text-align:center;border-color:var(--gold-dim);padding:var(--space-lg) var(--space-md)">
+      <div class="card" id="goto-home-workout" style="cursor:pointer;text-align:center;border-color:${isHome ? 'var(--gold-primary)' : 'var(--gold-dim)'};padding:var(--space-lg) var(--space-md);opacity:${isHome ? '1' : '0.5'};transition:all 0.2s ease">
         <i data-lucide="house" style="width:32px;height:32px;color:var(--gold-primary);margin-bottom:var(--space-sm)"></i>
         <div style="font-weight:600;font-size:0.9375rem;margin-bottom:var(--space-xs)">Home Workout</div>
         <div style="font-size:0.75rem;color:var(--text-secondary)">Casa — 7 settimane</div>
@@ -216,13 +222,13 @@ function renderHome() {
     </div>
 
     <div class="section-header">
-      <h3>Prossimo Allenamento</h3>
+      <h3>Prossimo Allenamento — ${programLabel}</h3>
       ${completedToday.length > 0 ? `<button class="btn btn-sm btn-secondary" id="btn-reset-today">
         <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset
       </button>` : ''}
     </div>
-    <div class="day-cards">
-      ${nextWorkoutHTML || '<div class="empty-state"><p>Nessun esercizio caricato. Vai nelle impostazioni per verificare.</p></div>'}
+    <div class="day-cards" id="home-day-cards">
+      ${nextWorkoutHTML || '<div class="empty-state"><p>Nessun esercizio disponibile per questa settimana.</p></div>'}
     </div>
 
     <div class="section-header" style="margin-top:var(--space-lg)">
@@ -235,26 +241,40 @@ function renderHome() {
     </div>
   `;
 
-  // Program selector cards
-  document.getElementById('goto-workout')?.addEventListener('click', () => navigate('/workout'));
-  document.getElementById('goto-home-workout')?.addEventListener('click', () => navigate('/home-workout'));
+  // Program selector cards — switch program and re-render
+  document.getElementById('goto-workout')?.addEventListener('click', () => {
+    if (homeActiveProgram === 'gym') return;
+    homeActiveProgram = 'gym';
+    renderHome();
+  });
+  document.getElementById('goto-home-workout')?.addEventListener('click', () => {
+    if (homeActiveProgram === 'home') return;
+    homeActiveProgram = 'home';
+    renderHome();
+  });
 
   // Week selector — switch week and save setting
   view.querySelectorAll('#home-week-selector .week-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const selectedWeek = parseInt(btn.dataset.week);
-      saveSettings({ currentWeek: selectedWeek });
+      saveSettings({ [weekSettingKey]: selectedWeek });
       renderHome();
     });
   });
 
-  // Bind day cards — all clickable, including completed
+  // Bind day cards — navigate to correct workout tab
   view.querySelectorAll('.day-card').forEach(card => {
     card.addEventListener('click', () => {
       const week = parseInt(card.dataset.week);
       const day = parseInt(card.dataset.day);
-      navigate('/workout');
-      setTimeout(() => startWorkoutSession(week, day), 50);
+      const source = card.dataset.source;
+      if (source === 'home') {
+        navigate('/home-workout');
+        setTimeout(() => startHomeWorkoutSession(week, day), 50);
+      } else {
+        navigate('/workout');
+        setTimeout(() => startWorkoutSession(week, day), 50);
+      }
     });
   });
 
@@ -409,6 +429,13 @@ function renderHomeWorkout() {
   const view = document.getElementById('view-home-workout');
   view.classList.add('active');
 
+  // Check for active/recovered workout
+  const active = getActiveWorkout() || recoverWorkout();
+  if (active) {
+    renderActiveWorkout(view);
+    return;
+  }
+
   const weeks = getAvailableHomeWeeks();
   const settings = getSettings();
   const currentHomeWeek = settings.currentHomeWeek || (weeks.length > 0 ? weeks[0] : 1);
@@ -478,19 +505,12 @@ function renderHomeWeekDays(weekNum) {
 }
 
 function startHomeWorkoutSession(weekNum, dayIdx) {
-  const weekData = getHomeWeekData(weekNum);
-  if (!weekData || !weekData.days[dayIdx]) {
-    showToast('Impossibile avviare il workout', 'error');
-    return;
-  }
-  // Use the same workout tracker but navigate to the workout view
   const workout = startWorkout(weekNum, dayIdx, 'home');
   if (!workout) {
     showToast('Impossibile avviare il workout', 'error');
     return;
   }
-  navigate('/workout');
-  setTimeout(() => renderActiveWorkout(document.getElementById('view-workout')), 50);
+  renderActiveWorkout(document.getElementById('view-home-workout'));
 }
 
 function renderActiveWorkout(view) {
