@@ -26,10 +26,10 @@ function absAndCoreDay(weekNum) {
         id: `week${weekNum}-russian-twist`,
         name: "Russian Twist with Extra Weight",
         muscleGroup: "core",
-        defaultSets: 3,
-        defaultReps: "20",
+        defaultSets: 2,
+        defaultReps: "15",
         defaultRest: 60,
-        notes: "Con peso aggiuntivo, 20 reps totali (10 per lato)",
+        notes: "Con peso aggiuntivo, 15 reps per lato",
         gifUrl: "https://static.tildacdn.net/tild3730-3363-4866-b465-303265373139/video_2_1.gif"
       },
       {
