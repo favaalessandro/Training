@@ -1,9 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-  <meta http-equiv="refresh" content="0; url=gym-tracker/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Gym Tracking Dashboard — Programma 8 settimane">
+  <title>Gym Tracker</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <a href="gym-tracker/">Vai al Gym Tracker</a>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <div id="timer-overlay" class="timer-overlay hidden"></div>
+
+  <div id="app">
+    <div id="view-home" class="view"></div>
+    <div id="view-workout" class="view"></div>
+    <div id="view-progress" class="view"></div>
+    <div id="view-calendar" class="view"></div>
+    <div id="view-records" class="view"></div>
+    <div id="view-home-workout" class="view"></div>
+    <div id="view-settings" class="view"></div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="#/" class="nav-item active">
+      <i data-lucide="home"></i>
+      <span>Home</span>
+    </a>
+    <a href="#/workout" class="nav-item">
+      <i data-lucide="dumbbell"></i>
+      <span>Workout</span>
+    </a>
+    <a href="#/home-workout" class="nav-item">
+      <i data-lucide="house"></i>
+      <span>Home WO</span>
+    </a>
+    <a href="#/progress" class="nav-item">
+      <i data-lucide="trending-up"></i>
+      <span>Progressi</span>
+    </a>
+    <a href="#/calendar" class="nav-item">
+      <i data-lucide="calendar"></i>
+      <span>Calendario</span>
+    </a>
+    <a href="#/records" class="nav-item">
+      <i data-lucide="trophy"></i>
+      <span>PR</span>
+    </a>
+  </nav>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script>
+    (function() {
+      var SW_VER = 'v3';
+      if (!('serviceWorker' in navigator)) return;
+      var last = localStorage.getItem('gym-sw-ver');
+      if (last !== SW_VER) {
+        // Old SW detected — nuke caches, unregister, reload with fresh files
+        Promise.all([
+          caches.keys().then(function(keys) {
+            return Promise.all(keys.map(function(k) { return caches.delete(k); }));
+          }),
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            return Promise.all(regs.map(function(r) { return r.unregister(); }));
+          })
+        ]).then(function() {
+          localStorage.setItem('gym-sw-ver', SW_VER);
+          window.location.reload();
+        });
+      } else {
+        navigator.serviceWorker.register('sw.js').catch(function() {});
+      }
+    })();
+  </script>
 </body>
 </html>
