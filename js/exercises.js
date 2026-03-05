@@ -258,7 +258,39 @@ const exerciseDB = {
       absAndCoreDay(5)
     ]
   },
-  6: { days: [absAndCoreDay(6)] },
+  6: {
+    days: [
+      {
+        dayLabel: "Monday - Legs",
+        exercises: [
+          { id: "week6-squats", name: "Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "" },
+          { id: "week6-trap-bar-squats", name: "Trap Bar Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
+          { id: "week6-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week6-sumo-squats-db", name: "Sumo Squats with Dumbbells on Chest", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday - Chest",
+        exercises: [
+          { id: "week6-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "" },
+          { id: "week6-incline-bench-45", name: "Incline Bench Press (45°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
+          { id: "week6-standing-barbell-press", name: "Standing Barbell Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "6", defaultRest: 120, notes: "" },
+          { id: "week6-incline-db-press-40", name: "Incline Dumbbell Press (40°)", muscleGroup: "chest", defaultSets: 4, defaultReps: "15", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Friday - Back",
+        exercises: [
+          { id: "week6-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "" },
+          { id: "week6-reverse-grip-rows", name: "Reverse-Grip Bent-Over Rows", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
+          { id: "week6-lat-pulldowns", name: "Lat Pulldowns", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week6-tbar-rows", name: "T-Bar Rows", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week6-shrugs-barbell", name: "Shrugs with Barbell", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "" }
+        ]
+      },
+      absAndCoreDay(6)
+    ]
+  },
   7: { days: [absAndCoreDay(7)] },
   8: { days: [absAndCoreDay(8)] }
 };
