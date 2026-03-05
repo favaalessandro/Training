@@ -412,6 +412,22 @@ function renderActiveWorkout(view) {
       </div>
     </div>
 
+    <div class="card" style="background:#FFD200;border:none;cursor:pointer" id="weight-tip-toggle">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:var(--space-sm)">
+          <i data-lucide="lightbulb" style="width:16px;height:16px;color:#000"></i>
+          <span style="font-size:0.8125rem;font-weight:700;color:#000">Come scegliere il peso giusto per i tuoi allenamenti</span>
+        </div>
+        <i data-lucide="chevron-down" style="width:16px;height:16px;color:#000" id="weight-tip-chevron"></i>
+      </div>
+      <div id="weight-tip-content" style="display:none;margin-top:var(--space-md);font-size:0.8125rem;color:#000;line-height:1.5">
+        <p style="margin:0 0 var(--space-sm) 0">Scegliere il peso appropriato per i tuoi allenamenti è molto soggettivo. Non posso dirti quale peso usare per ogni esercizio perché il livello di forza di ognuno è diverso.</p>
+        <p style="margin:0 0 var(--space-sm) 0">In tutte le serie di lavoro, dovresti scegliere un peso che sia impegnativo per te, ad esempio riesci a fare solo 3 serie da 10 ripetizioni (come indicato nel programma), lasciando una ripetizione di riserva per ogni serie. Tuttavia, nell'ultima serie di ogni esercizio, dovresti dare il massimo e completare le 10 ripetizioni con il massimo sforzo.</p>
+        <p style="margin:0 0 var(--space-sm) 0">Se non scegli il peso giusto, non preoccuparti! Anche se nell'ultima serie fai 8 ripetizioni, dando tutto te stesso, o 12 ripetizioni spendendo tutta la tua energia <strong>SENZA</strong> compromettere la tecnica, andrà comunque benissimo. Le 3 serie da 10 ripetizioni sono solo un esempio o una linea guida che seguiamo, e piccole variazioni non faranno differenza se ti alleni al 150% dello sforzo.</p>
+        <p style="margin:0"><strong>Ricorda, LA TECNICA È FONDAMENTALE.</strong> Non appena non la rispetti, diventa pericoloso! Controlla sempre la tua tecnica.</p>
+      </div>
+    </div>
+
     <div id="exercise-list"></div>
 
     <div class="card" style="margin-top:var(--space-md)">
@@ -433,6 +449,16 @@ function renderActiveWorkout(view) {
     const chevron = document.getElementById('rpe-chevron');
     const open = table.style.display === 'none';
     table.style.display = open ? 'block' : 'none';
+    chevron.setAttribute('data-lucide', open ? 'chevron-up' : 'chevron-down');
+    if (window.lucide) lucide.createIcons();
+  });
+
+  // Weight tip toggle
+  document.getElementById('weight-tip-toggle')?.addEventListener('click', () => {
+    const content = document.getElementById('weight-tip-content');
+    const chevron = document.getElementById('weight-tip-chevron');
+    const open = content.style.display === 'none';
+    content.style.display = open ? 'block' : 'none';
     chevron.setAttribute('data-lucide', open ? 'chevron-up' : 'chevron-down');
     if (window.lucide) lucide.createIcons();
   });
