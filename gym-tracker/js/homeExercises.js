@@ -766,7 +766,48 @@ const homeExerciseDB = {
       }
     ]
   },
-  7: { days: [] }
+  7: {
+    days: [
+      {
+        dayLabel: "Monday — Legs",
+        exercises: [
+          { id: "hw7-reverse-lunges", name: "Reverse Lunges", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "On each leg" },
+          { id: "hw7-squat-jumps", name: "Squat Jumps with Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "hw7-front-squats", name: "Front Squats with Weight in Front", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 120, notes: "Emphasis on negative repetitions" },
+          { id: "hw7-lunges-shoulders", name: "Lunges with Weight on Shoulders", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday — Back + Biceps",
+        exercises: [
+          { id: "hw7-wide-grip-pullups-neck", name: "Wide Grip Pull-ups Behind the Neck", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
+          { id: "hw7-scapular-retraction", name: "Scapular Retraction in Hang", muscleGroup: "back", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "" },
+          { id: "hw7-pullups-behind-neck", name: "Pull-ups Behind the Neck", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
+          { id: "hw7-close-grip-pullups-reverse", name: "Close Grip Pull-ups on Low Bar with Reverse Grip", muscleGroup: "back", defaultSets: 3, defaultReps: "18", defaultRest: 90, notes: "" },
+          { id: "hw7-bicep-curls-supination", name: "Bicep Curls with Barbell with Supination", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Friday — Chest + Triceps",
+        exercises: [
+          { id: "hw7-dips", name: "Dips", muscleGroup: "chest", defaultSets: 4, defaultReps: "12", defaultRest: 120, notes: "" },
+          { id: "hw7-pushups-superset", name: "Push-ups (Superset)", muscleGroup: "chest", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "hw7-shoulder-pushups", name: "Shoulder Push-ups", muscleGroup: "chest", defaultSets: 4, defaultReps: "15", defaultRest: 90, notes: "Legs on elevation, pelvis bent" },
+          { id: "hw7-triceps-pushup-bar", name: "Triceps Push-up from a Bar with Extra Weight", muscleGroup: "arms", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" },
+          { id: "hw7-close-grip-dips", name: "Close Grip Dips", muscleGroup: "arms", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "hw7-french-press-dumbbell", name: "French Press with Dumbbell", muscleGroup: "arms", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "One arm at a time" },
+          { id: "hw7-pushups-elevated", name: "Push-ups with Legs on Elevation", muscleGroup: "chest", defaultSets: 1, defaultReps: "Max", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Saturday — Sprints + Static Holds",
+        exercises: [
+          { id: "hw7-sprints", name: "Sprints (60 meters)", muscleGroup: "legs", defaultSets: 4, defaultReps: "Max", defaultRest: 120, notes: "" },
+          { id: "hw7-plank", name: "Plank", muscleGroup: "abs", defaultSets: 2, defaultReps: "Max", defaultRest: 90, notes: "" }
+        ]
+      }
+    ]
+  }
 };
 
 export default homeExerciseDB;
