@@ -195,6 +195,15 @@ function renderHome() {
     <div class="day-cards">
       ${nextWorkoutHTML || '<div class="empty-state"><p>Nessun esercizio caricato. Vai nelle impostazioni per verificare.</p></div>'}
     </div>
+
+    <div class="section-header" style="margin-top:var(--space-lg)">
+      <h3>Powerbuilding Gold</h3>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <div style="position:relative;padding-bottom:56.25%;height:0">
+        <iframe src="https://www.youtube.com/embed/HRSnHNpvlNU" title="Powerbuilding Gold" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:var(--radius-md)"></iframe>
+      </div>
+    </div>
   `;
 
   // Week selector — switch week and save setting
