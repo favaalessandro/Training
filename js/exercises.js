@@ -281,11 +281,11 @@ const exerciseDB = {
       {
         dayLabel: "Friday - Back",
         exercises: [
-          { id: "week6-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "" },
-          { id: "week6-reverse-grip-rows", name: "Reverse-Grip Bent-Over Rows", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
-          { id: "week6-lat-pulldowns", name: "Lat Pulldowns", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week6-tbar-rows", name: "T-Bar Rows", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week6-shrugs-barbell", name: "Shrugs with Barbell", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "" }
+          { id: "week6-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3734-3638-4262-b561-343830326534/video.gif" },
+          { id: "week6-reverse-grip-rows", name: "Reverse-Grip Bent-Over Rows", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3935-3565-4534-a336-373436356435/video_2.gif" },
+          { id: "week6-lat-pulldowns", name: "Lat Pulldowns", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6237-6634-4036-b030-613833376237/video_3.gif" },
+          { id: "week6-tbar-rows", name: "T-Bar Rows", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3437-3236-4464-b731-353134663930/video_4.gif" },
+          { id: "week6-shrugs-barbell", name: "Shrugs with Barbell", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3837-3731-4431-b763-346332396330/video_5.gif" }
         ]
       },
       absAndCoreDay(6)
