@@ -249,10 +249,10 @@ const exerciseDB = {
       {
         dayLabel: "Friday - Back and Legs",
         exercises: [
-          { id: "week5-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "" },
-          { id: "week5-leg-press-fri", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week5-cable-rows-pause", name: "Cable Rows (2s pause at top)", muscleGroup: "back", defaultSets: 5, defaultReps: "8", defaultRest: 90, notes: "2 secondi di pausa in alto" },
-          { id: "week5-vertical-jumps", name: "Vertical Jumps", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" }
+          { id: "week5-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild6166-6433-4163-a462-306464333236/video.gif" },
+          { id: "week5-leg-press-fri", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6264-3366-4039-b539-626530333935/video_2.gif" },
+          { id: "week5-cable-rows-pause", name: "Cable Rows (2s pause at top)", muscleGroup: "back", defaultSets: 5, defaultReps: "8", defaultRest: 90, notes: "2 secondi di pausa in alto", gifUrl: "https://static.tildacdn.net/tild3533-3262-4262-a335-393763396365/video_3.gif" },
+          { id: "week5-vertical-jumps", name: "Vertical Jumps", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3661-6438-4638-b264-343633663566/video_4.gif" }
         ]
       },
       absAndCoreDay(5)
