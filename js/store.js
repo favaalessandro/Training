@@ -124,12 +124,15 @@ export function updatePR(exerciseId, record) {
 
 export function getSavedWeights(exerciseId) {
   const all = read(KEYS.savedWeights) || {};
-  return all[exerciseId] || null;
+  const data = all[exerciseId] || null;
+  // Backward compat: if stored as plain array of numbers, convert
+  if (Array.isArray(data)) return { weights: data, rpes: [] };
+  return data;
 }
 
-export function saveExerciseWeights(exerciseId, weights) {
+export function saveExerciseWeights(exerciseId, weights, rpes) {
   const all = read(KEYS.savedWeights) || {};
-  all[exerciseId] = weights;
+  all[exerciseId] = { weights, rpes: rpes || [] };
   write(KEYS.savedWeights, all);
 }
 

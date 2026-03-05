@@ -56,11 +56,13 @@ function prefillFromHistory(workout, weekNumber, dayLabel) {
     .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
   for (const ex of workout.exercises) {
-    // First: try saved weights (permanent)
+    // First: try saved weights & RPE (permanent)
     const saved = getSavedWeights(ex.exerciseId);
     if (saved) {
-      for (let i = 0; i < ex.sets.length && i < saved.length; i++) {
-        if (saved[i] > 0) ex.sets[i].weight = saved[i];
+      const { weights, rpes } = saved;
+      for (let i = 0; i < ex.sets.length; i++) {
+        if (weights && i < weights.length && weights[i] > 0) ex.sets[i].weight = weights[i];
+        if (rpes && i < rpes.length && rpes[i] > 0) ex.sets[i].rpe = rpes[i];
       }
     }
 
@@ -72,6 +74,7 @@ function prefillFromHistory(workout, weekNumber, dayLabel) {
           const prev = prevEx.sets[i];
           if (prev.weight > 0) ex.sets[i].weight = prev.weight;
           if (prev.reps > 0) ex.sets[i].reps = prev.reps;
+          if (prev.rpe > 0) ex.sets[i].rpe = prev.rpe;
         }
       }
     }
@@ -154,12 +157,13 @@ export function finishWorkout() {
   if (!activeWorkout) return null;
   activeWorkout.duration = Math.round((Date.now() - activeWorkout.startTime) / 60000);
 
-  // Auto-save weights for completed exercises
+  // Auto-save weights and RPE for completed exercises
   for (const ex of activeWorkout.exercises) {
-    const weights = ex.sets.filter(s => s.completed).length > 0
-      ? ex.sets.map(s => s.weight || 0)
-      : null;
-    if (weights) saveExerciseWeights(ex.exerciseId, weights);
+    if (ex.sets.filter(s => s.completed).length > 0) {
+      const weights = ex.sets.map(s => s.weight || 0);
+      const rpes = ex.sets.map(s => s.rpe || 0);
+      saveExerciseWeights(ex.exerciseId, weights, rpes);
+    }
   }
 
   const saved = saveLog(activeWorkout);
@@ -173,7 +177,8 @@ export function saveCurrentExerciseWeights(exerciseIndex) {
   const ex = activeWorkout.exercises[exerciseIndex];
   if (!ex) return false;
   const weights = ex.sets.map(s => s.weight || 0);
-  saveExerciseWeights(ex.exerciseId, weights);
+  const rpes = ex.sets.map(s => s.rpe || 0);
+  saveExerciseWeights(ex.exerciseId, weights, rpes);
   return true;
 }
 

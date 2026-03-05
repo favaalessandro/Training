@@ -374,6 +374,44 @@ function renderActiveWorkout(view) {
       <button class="btn btn-sm btn-danger" id="btn-finish">Termina</button>
     </div>
 
+    <div class="card" style="border-color:var(--gold-dim);cursor:pointer" id="rpe-info-toggle">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:var(--space-sm)">
+          <i data-lucide="info" style="width:16px;height:16px;color:var(--gold-primary)"></i>
+          <span style="font-size:0.8125rem;font-weight:600;color:var(--gold-primary)">Scala RPE (Rate of Perceived Exertion)</span>
+        </div>
+        <i data-lucide="chevron-down" style="width:16px;height:16px;color:var(--gold-dim)" id="rpe-chevron"></i>
+      </div>
+      <div id="rpe-table" style="display:none;margin-top:var(--space-md)">
+        <table style="width:100%;font-size:0.8125rem;border-collapse:collapse">
+          <tr style="color:var(--gold-primary);border-bottom:1px solid var(--gold-dim)">
+            <th style="text-align:left;padding:var(--space-xs) var(--space-sm)">RPE</th>
+            <th style="text-align:left;padding:var(--space-xs) var(--space-sm)">Significato</th>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+            <td style="padding:var(--space-xs) var(--space-sm)" class="mono">10</td>
+            <td style="padding:var(--space-xs) var(--space-sm);color:var(--text-secondary)">Sforzo massimo, 0 rep in riserva</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+            <td style="padding:var(--space-xs) var(--space-sm)" class="mono">9</td>
+            <td style="padding:var(--space-xs) var(--space-sm);color:var(--text-secondary)">Forse 1 rep in più</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+            <td style="padding:var(--space-xs) var(--space-sm)" class="mono">8</td>
+            <td style="padding:var(--space-xs) var(--space-sm);color:var(--text-secondary)">2 rep in riserva</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+            <td style="padding:var(--space-xs) var(--space-sm)" class="mono">7</td>
+            <td style="padding:var(--space-xs) var(--space-sm);color:var(--text-secondary)">3 rep in riserva, peso gestibile</td>
+          </tr>
+          <tr>
+            <td style="padding:var(--space-xs) var(--space-sm)" class="mono">5-6</td>
+            <td style="padding:var(--space-xs) var(--space-sm);color:var(--text-secondary)">Riscaldamento / peso leggero</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
     <div id="exercise-list"></div>
 
     <div class="card" style="margin-top:var(--space-md)">
@@ -388,6 +426,16 @@ function renderActiveWorkout(view) {
         style="width:100%;margin-top:var(--space-md);min-height:60px;resize:vertical">${workout.generalNotes || ''}</textarea>
     </div>
   `;
+
+  // RPE info toggle
+  document.getElementById('rpe-info-toggle')?.addEventListener('click', () => {
+    const table = document.getElementById('rpe-table');
+    const chevron = document.getElementById('rpe-chevron');
+    const open = table.style.display === 'none';
+    table.style.display = open ? 'block' : 'none';
+    chevron.setAttribute('data-lucide', open ? 'chevron-up' : 'chevron-down');
+    if (window.lucide) lucide.createIcons();
+  });
 
   // Render exercises
   const list = document.getElementById('exercise-list');
@@ -486,7 +534,7 @@ function createExerciseCard(ex, exIdx, unit) {
         <i data-lucide="plus" style="width:14px;height:14px"></i> Serie
       </button>
       <button class="btn btn-sm btn-secondary save-weights-btn" data-ex="${exIdx}">
-        <i data-lucide="save" style="width:14px;height:14px"></i> Salva carichi
+        <i data-lucide="save" style="width:14px;height:14px"></i> Salva carichi e RPE
       </button>
     </div>
   `;
@@ -557,7 +605,7 @@ function createExerciseCard(ex, exIdx, unit) {
   card.querySelector('.save-weights-btn')?.addEventListener('click', (e) => {
     const ok = saveCurrentExerciseWeights(exIdx);
     if (ok) {
-      showToast(`Carichi salvati per ${ex.exerciseName}`);
+      showToast(`Carichi e RPE salvati per ${ex.exerciseName}`);
       const btn = e.currentTarget;
       btn.style.borderColor = 'var(--success)';
       btn.style.color = 'var(--success)';
