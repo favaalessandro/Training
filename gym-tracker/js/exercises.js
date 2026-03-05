@@ -272,10 +272,10 @@ const exerciseDB = {
       {
         dayLabel: "Wednesday - Chest",
         exercises: [
-          { id: "week6-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "" },
-          { id: "week6-incline-bench-45", name: "Incline Bench Press (45°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
-          { id: "week6-standing-barbell-press", name: "Standing Barbell Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "6", defaultRest: 120, notes: "" },
-          { id: "week6-incline-db-press-40", name: "Incline Dumbbell Press (40°)", muscleGroup: "chest", defaultSets: 4, defaultReps: "15", defaultRest: 90, notes: "" }
+          { id: "week6-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3738-6637-4663-b831-383733386266/video.gif" },
+          { id: "week6-incline-bench-45", name: "Incline Bench Press (45°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild6436-3835-4135-a664-323764646565/video_2.gif" },
+          { id: "week6-standing-barbell-press", name: "Standing Barbell Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "6", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3330-3439-4534-a266-306261356166/video_3.gif" },
+          { id: "week6-incline-db-press-40", name: "Incline Dumbbell Press (40°)", muscleGroup: "chest", defaultSets: 4, defaultReps: "15", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6365-3034-4932-a261-616532303239/video_4.gif" }
         ]
       },
       {
