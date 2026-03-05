@@ -383,6 +383,17 @@ function renderActiveWorkout(view) {
       <button class="btn btn-sm btn-danger" id="btn-finish">Termina</button>
     </div>
 
+    <div class="card" style="background:#ffffff;border:none;padding:var(--space-md)">
+      <div style="display:flex;align-items:flex-start;gap:var(--space-sm)">
+        <i data-lucide="info" style="width:18px;height:18px;color:#FFD200;flex-shrink:0;margin-top:1px"></i>
+        <div style="font-size:0.8125rem;color:#000;line-height:1.6">
+          <div>Riposo tra le serie negli esercizi base (squat/panca piana/stacco) <strong>4 min</strong></div>
+          <div>Tra le altre serie <strong>2 min</strong></div>
+          <div>Tra gli esercizi <strong>3 min</strong></div>
+        </div>
+      </div>
+    </div>
+
     <div class="card" style="border-color:var(--gold-dim);cursor:pointer" id="rpe-info-toggle">
       <div style="display:flex;align-items:center;justify-content:space-between">
         <div style="display:flex;align-items:center;gap:var(--space-sm)">
