@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const EXERCISE_DB_VERSION = 27; // Bump this when exercises.js changes
-const HOME_EXERCISE_DB_VERSION = 3; // Bump this when homeExercises.js changes
+const HOME_EXERCISE_DB_VERSION = 4; // Bump this when homeExercises.js changes
 
 function initExerciseDB() {
   const savedVersion = parseInt(localStorage.getItem('gym-tracker-db-version') || '0');
@@ -118,7 +118,7 @@ function showToast(message, type = 'default', duration = 3000) {
    HOME VIEW
    ═══════════════════════════════════════ */
 
-let homeActiveProgram = 'gym'; // 'gym' or 'home'
+let homeActiveProgram = getSettings().activeProgram || 'gym'; // 'gym' or 'home'
 
 function renderHome() {
   const view = document.getElementById('view-home');
@@ -245,11 +245,13 @@ function renderHome() {
   document.getElementById('goto-workout')?.addEventListener('click', () => {
     if (homeActiveProgram === 'gym') return;
     homeActiveProgram = 'gym';
+    saveSettings({ activeProgram: 'gym' });
     renderHome();
   });
   document.getElementById('goto-home-workout')?.addEventListener('click', () => {
     if (homeActiveProgram === 'home') return;
     homeActiveProgram = 'home';
+    saveSettings({ activeProgram: 'home' });
     renderHome();
   });
 
