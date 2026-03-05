@@ -153,6 +153,12 @@ function renderHome() {
       <h1 class="page-title">Settimana ${currentWeek}</h1>
     </div>
 
+    <div class="week-selector" id="home-week-selector">
+      ${weeks.map(w => `
+        <button class="week-btn ${w === currentWeek ? 'active' : ''}" data-week="${w}">W${w}</button>
+      `).join('')}
+    </div>
+
     <div class="stats-row">
       <div class="stat-box">
         <div class="stat-value">${stats.totalWorkouts}</div>
@@ -190,6 +196,15 @@ function renderHome() {
       ${nextWorkoutHTML || '<div class="empty-state"><p>Nessun esercizio caricato. Vai nelle impostazioni per verificare.</p></div>'}
     </div>
   `;
+
+  // Week selector — switch week and save setting
+  view.querySelectorAll('#home-week-selector .week-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedWeek = parseInt(btn.dataset.week);
+      saveSettings({ currentWeek: selectedWeek });
+      renderHome();
+    });
+  });
 
   // Bind day cards — all clickable, including completed
   view.querySelectorAll('.day-card').forEach(card => {
