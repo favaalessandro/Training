@@ -646,10 +646,10 @@ const homeExerciseDB = {
       {
         dayLabel: "Monday — Legs",
         exercises: [
-          { id: "hw4-plie-squats", name: "Plie Squats with Added Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "Wide stance, weight between legs" },
-          { id: "hw4-pistol-squats", name: "Pistol Squats with Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "" },
-          { id: "hw4-bulgarian-split-squats", name: "Bulgarian Split Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "" },
-          { id: "hw4-deadlift", name: "Deadlift with Added Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "" }
+          { id: "hw4-plie-squats", name: "Plie Squats with Added Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "Wide stance, weight between legs", gifUrl: "https://static.tildacdn.net/tild3939-6261-4666-b538-643838333263/video.gif" },
+          { id: "hw4-pistol-squats", name: "Pistol Squats with Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild6433-3130-4463-b231-373566666231/video1.gif" },
+          { id: "hw4-bulgarian-split-squats", name: "Bulgarian Split Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3937-3566-4739-b435-313464316664/video2.gif" },
+          { id: "hw4-deadlift", name: "Deadlift with Added Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3064-3265-4361-a363-383665656237/video3.gif" }
         ]
       },
       {
