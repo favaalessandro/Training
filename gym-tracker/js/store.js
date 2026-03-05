@@ -1,5 +1,6 @@
 const KEYS = {
   exercises: 'gym-tracker-exercises',
+  homeExercises: 'gym-tracker-home-exercises',
   logs: 'gym-tracker-logs',
   prs: 'gym-tracker-prs',
   settings: 'gym-tracker-settings',
@@ -63,6 +64,26 @@ export function getAvailableWeeks() {
 
 export function getWeekData(weekNum) {
   const db = getExerciseDB();
+  return db[weekNum] || null;
+}
+
+/* ── Home Exercise DB ── */
+
+export function getHomeExerciseDB() {
+  return read(KEYS.homeExercises) || {};
+}
+
+export function saveHomeExerciseDB(db) {
+  write(KEYS.homeExercises, db);
+}
+
+export function getAvailableHomeWeeks() {
+  const db = getHomeExerciseDB();
+  return Object.keys(db).map(Number).sort((a, b) => a - b);
+}
+
+export function getHomeWeekData(weekNum) {
+  const db = getHomeExerciseDB();
   return db[weekNum] || null;
 }
 
@@ -147,6 +168,7 @@ export function exportAllData() {
     version: 1,
     exportDate: new Date().toISOString(),
     exercises: getExerciseDB(),
+    homeExercises: getHomeExerciseDB(),
     logs: getLogs(),
     prs: getPRs(),
     settings: getSettings(),
@@ -159,6 +181,7 @@ export function importAllData(data) {
     throw new Error('Formato dati non valido');
   }
   if (data.exercises) write(KEYS.exercises, data.exercises);
+  if (data.homeExercises) write(KEYS.homeExercises, data.homeExercises);
   if (data.logs) write(KEYS.logs, data.logs);
   if (data.prs) write(KEYS.prs, data.prs);
   if (data.settings) write(KEYS.settings, data.settings);

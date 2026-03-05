@@ -1,9 +1,11 @@
 import {
   getExerciseDB, saveExerciseDB, getAvailableWeeks, getWeekData,
+  getHomeExerciseDB, saveHomeExerciseDB, getAvailableHomeWeeks, getHomeWeekData,
   getSettings, saveSettings, getLogs, getLogByDate, deleteLog,
   exportAllData, importAllData, resetAllData, getPRs
 } from './store.js';
 import exerciseDB from './exercises.js';
+import homeExerciseDB from './homeExercises.js';
 import {
   startWorkout, getActiveWorkout, updateSet, toggleSetComplete,
   addSet, removeSet, updateExerciseNotes, updateWorkoutMood,
@@ -24,18 +26,28 @@ import {
 
 document.addEventListener('DOMContentLoaded', () => {
   initExerciseDB();
+  initHomeExerciseDB();
   initRouter();
   initNavigation();
   if (window.lucide) lucide.createIcons();
 });
 
 const EXERCISE_DB_VERSION = 27; // Bump this when exercises.js changes
+const HOME_EXERCISE_DB_VERSION = 1; // Bump this when homeExercises.js changes
 
 function initExerciseDB() {
   const savedVersion = parseInt(localStorage.getItem('gym-tracker-db-version') || '0');
   if (savedVersion < EXERCISE_DB_VERSION) {
     saveExerciseDB(exerciseDB);
     localStorage.setItem('gym-tracker-db-version', String(EXERCISE_DB_VERSION));
+  }
+}
+
+function initHomeExerciseDB() {
+  const savedVersion = parseInt(localStorage.getItem('gym-tracker-home-db-version') || '0');
+  if (savedVersion < HOME_EXERCISE_DB_VERSION) {
+    saveHomeExerciseDB(homeExerciseDB);
+    localStorage.setItem('gym-tracker-home-db-version', String(HOME_EXERCISE_DB_VERSION));
   }
 }
 
@@ -46,6 +58,7 @@ function initExerciseDB() {
 const routes = {
   '/': renderHome,
   '/workout': renderWorkout,
+  '/home-workout': renderHomeWorkout,
   '/progress': renderProgress,
   '/calendar': renderCalendarView,
   '/records': renderRecords,
@@ -187,6 +200,22 @@ function renderHome() {
     ` : ''}
 
     <div class="section-header">
+      <h3>Scegli il Programma</h3>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-bottom:var(--space-lg)">
+      <div class="card" id="goto-workout" style="cursor:pointer;text-align:center;border-color:var(--gold-primary);padding:var(--space-lg) var(--space-md)">
+        <i data-lucide="dumbbell" style="width:32px;height:32px;color:var(--gold-primary);margin-bottom:var(--space-sm)"></i>
+        <div style="font-weight:600;font-size:0.9375rem;margin-bottom:var(--space-xs)">Workout</div>
+        <div style="font-size:0.75rem;color:var(--text-secondary)">Palestra — 8 settimane</div>
+      </div>
+      <div class="card" id="goto-home-workout" style="cursor:pointer;text-align:center;border-color:var(--gold-dim);padding:var(--space-lg) var(--space-md)">
+        <i data-lucide="house" style="width:32px;height:32px;color:var(--gold-primary);margin-bottom:var(--space-sm)"></i>
+        <div style="font-weight:600;font-size:0.9375rem;margin-bottom:var(--space-xs)">Home Workout</div>
+        <div style="font-size:0.75rem;color:var(--text-secondary)">Casa — 7 settimane</div>
+      </div>
+    </div>
+
+    <div class="section-header">
       <h3>Prossimo Allenamento</h3>
       ${completedToday.length > 0 ? `<button class="btn btn-sm btn-secondary" id="btn-reset-today">
         <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset
@@ -205,6 +234,10 @@ function renderHome() {
       </div>
     </div>
   `;
+
+  // Program selector cards
+  document.getElementById('goto-workout')?.addEventListener('click', () => navigate('/workout'));
+  document.getElementById('goto-home-workout')?.addEventListener('click', () => navigate('/home-workout'));
 
   // Week selector — switch week and save setting
   view.querySelectorAll('#home-week-selector .week-btn').forEach(btn => {
@@ -366,6 +399,98 @@ function startWorkoutSession(weekNum, dayIdx) {
     return;
   }
   renderActiveWorkout(document.getElementById('view-workout'));
+}
+
+/* ═══════════════════════════════════════
+   HOME WORKOUT VIEW
+   ═══════════════════════════════════════ */
+
+function renderHomeWorkout() {
+  const view = document.getElementById('view-home-workout');
+  view.classList.add('active');
+
+  const weeks = getAvailableHomeWeeks();
+  const settings = getSettings();
+  const currentHomeWeek = settings.currentHomeWeek || (weeks.length > 0 ? weeks[0] : 1);
+
+  view.innerHTML = `
+    <div class="section-header">
+      <h2 class="page-title">Home Workout</h2>
+    </div>
+
+    <h4 style="color:var(--text-secondary);margin-bottom:var(--space-sm)">Seleziona Settimana</h4>
+    <div class="week-selector" id="home-wo-week-selector">
+      ${weeks.map(w => `
+        <button class="week-btn ${w === currentHomeWeek ? 'active' : ''}" data-week="${w}">W${w}</button>
+      `).join('')}
+      ${weeks.length === 0 ? '<p style="color:var(--text-secondary);font-size:0.875rem">Nessuna settimana disponibile</p>' : ''}
+    </div>
+
+    <div id="home-wo-day-list" style="margin-top:var(--space-md)"></div>
+  `;
+
+  if (weeks.length > 0) {
+    renderHomeWeekDays(currentHomeWeek);
+  }
+
+  view.querySelectorAll('#home-wo-week-selector .week-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      view.querySelectorAll('#home-wo-week-selector .week-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      saveSettings({ currentHomeWeek: parseInt(btn.dataset.week) });
+      renderHomeWeekDays(parseInt(btn.dataset.week));
+    });
+  });
+
+  if (window.lucide) lucide.createIcons();
+}
+
+function renderHomeWeekDays(weekNum) {
+  const container = document.getElementById('home-wo-day-list');
+  const weekData = getHomeWeekData(weekNum);
+
+  if (!weekData || !weekData.days || weekData.days.length === 0) {
+    container.innerHTML = '<div class="empty-state"><p>Nessun giorno disponibile per questa settimana. Le schede verranno aggiunte a breve.</p></div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="day-cards">
+      ${weekData.days.map((day, idx) => `
+        <div class="day-card" data-week="${weekNum}" data-day="${idx}">
+          <div class="day-card-info">
+            <h4>${day.dayLabel}</h4>
+            <p>${day.exercises.length} esercizi — ${day.exercises.map(e => e.muscleGroup).filter((v, i, a) => a.indexOf(v) === i).join(', ')}</p>
+          </div>
+          <i data-lucide="play-circle" style="width:24px;height:24px;color:var(--gold-primary)"></i>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+  container.querySelectorAll('.day-card').forEach(card => {
+    card.addEventListener('click', () => {
+      startHomeWorkoutSession(parseInt(card.dataset.week), parseInt(card.dataset.day));
+    });
+  });
+
+  if (window.lucide) lucide.createIcons();
+}
+
+function startHomeWorkoutSession(weekNum, dayIdx) {
+  const weekData = getHomeWeekData(weekNum);
+  if (!weekData || !weekData.days[dayIdx]) {
+    showToast('Impossibile avviare il workout', 'error');
+    return;
+  }
+  // Use the same workout tracker but navigate to the workout view
+  const workout = startWorkout(weekNum, dayIdx, 'home');
+  if (!workout) {
+    showToast('Impossibile avviare il workout', 'error');
+    return;
+  }
+  navigate('/workout');
+  setTimeout(() => renderActiveWorkout(document.getElementById('view-workout')), 50);
 }
 
 function renderActiveWorkout(view) {

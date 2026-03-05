@@ -1,4 +1,4 @@
-import { getExerciseDB, getWeekData, saveLog, getLogs, getSettings, generateId, getSavedWeights, saveExerciseWeights } from './store.js';
+import { getExerciseDB, getWeekData, getHomeWeekData, saveLog, getLogs, getSettings, generateId, getSavedWeights, saveExerciseWeights } from './store.js';
 import { checkAndUpdatePRs } from './pr.js';
 
 let activeWorkout = null;
@@ -11,8 +11,8 @@ let timerCallback = null;
    WORKOUT SESSION
    ═══════════════════════════════════════ */
 
-export function startWorkout(weekNumber, dayIndex) {
-  const weekData = getWeekData(weekNumber);
+export function startWorkout(weekNumber, dayIndex, source = 'gym') {
+  const weekData = source === 'home' ? getHomeWeekData(weekNumber) : getWeekData(weekNumber);
   if (!weekData || !weekData.days[dayIndex]) return null;
 
   const day = weekData.days[dayIndex];
