@@ -33,6 +33,16 @@ function initExerciseDB() {
   const existing = getExerciseDB();
   if (!existing || Object.keys(existing).length === 0) {
     saveExerciseDB(exerciseDB);
+  } else {
+    // Merge new weeks from code into existing localStorage data
+    let updated = false;
+    for (const week of Object.keys(exerciseDB)) {
+      if (!existing[week]) {
+        existing[week] = exerciseDB[week];
+        updated = true;
+      }
+    }
+    if (updated) saveExerciseDB(existing);
   }
 }
 
