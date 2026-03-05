@@ -683,7 +683,47 @@ const homeExerciseDB = {
       }
     ]
   },
-  5: { days: [] },
+  5: {
+    days: [
+      {
+        dayLabel: "Monday — Legs",
+        exercises: [
+          { id: "hw5-lateral-lunges", name: "Lateral Lunges", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "hw5-one-legged-squats", name: "One-legged Squats with Support", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Wall or any other vertical support" },
+          { id: "hw5-standing-calf-raises", name: "Standing Calf Raises with Added Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "25", defaultRest: 60, notes: "" },
+          { id: "hw5-chair-pose", name: "Chair Pose", muscleGroup: "legs", defaultSets: 1, defaultReps: "Max", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday — Back + Biceps",
+        exercises: [
+          { id: "hw5-back-biceps", name: "Back + Biceps", muscleGroup: "back", defaultSets: 3, defaultReps: "6", defaultRest: 120, notes: "" },
+          { id: "hw5-dumbbell-rows", name: "Dumbbell Rows Alternating Sides while Bent Over", muscleGroup: "back", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "Weights, or water bottles - anything that adds resistance" },
+          { id: "hw5-low-bar-rows", name: "Low Bar Rows", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" },
+          { id: "hw5-shrugs", name: "Shrugs with Added Weight", muscleGroup: "back", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "Shoulder blades pinched together, without circular movements" }
+        ]
+      },
+      {
+        dayLabel: "Friday — Chest + Triceps",
+        exercises: [
+          { id: "hw5-flyes-lying-down", name: "Flyes Lying Down", muscleGroup: "chest", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "Dumbbells, weights, or water bottles - anything that adds resistance" },
+          { id: "hw5-pushups-feet-elevated", name: "Push-ups with Feet Elevated", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" },
+          { id: "hw5-close-grip-pushups", name: "Close Grip Push-ups with Feet Elevated", muscleGroup: "chest", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "" },
+          { id: "hw5-archer-pushups", name: "Archer Push-ups", muscleGroup: "chest", defaultSets: 3, defaultReps: "7", defaultRest: 120, notes: "" },
+          { id: "hw5-triceps-extensions", name: "Alternating Dumbbell Triceps Extensions", muscleGroup: "arms", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Saturday — Abs + Static",
+        exercises: [
+          { id: "hw5-hanging-knee-raises", name: "Hanging Knee Raises with Bent Knees", muscleGroup: "abs", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "Do not lower below parallel" },
+          { id: "hw5-hanging-leg-raises", name: "Hanging Leg Raises with Added Weight", muscleGroup: "abs", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
+          { id: "hw5-weighted-crunches", name: "Weighted Crunches", muscleGroup: "abs", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "" },
+          { id: "hw5-l-sit", name: "L-sit", muscleGroup: "abs", defaultSets: 2, defaultReps: "Max", defaultRest: 90, notes: "" }
+        ]
+      }
+    ]
+  },
   6: { days: [] },
   7: { days: [] }
 };
