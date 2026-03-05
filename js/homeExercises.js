@@ -595,7 +595,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 60,
             notes: "Alla sbarra",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3563-3564-4931-b663-396337643735/video.gif"
           },
           {
             id: "hw3-leg-raises-parallel-bars",
@@ -605,7 +605,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 60,
             notes: "Alle parallele",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3034-3461-4262-a339-326134313562/video1.gif"
           },
           {
             id: "hw3-crunches-elevated",
@@ -615,7 +615,7 @@ const homeExerciseDB = {
             defaultReps: "20",
             defaultRest: 60,
             notes: "Con ginocchia piegate su superficie rialzata",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3262-6236-4363-b830-323561656136/video2.gif"
           },
           {
             id: "hw3-chair-pose",
@@ -625,7 +625,7 @@ const homeExerciseDB = {
             defaultReps: "max",
             defaultRest: 60,
             notes: "Tenere la posizione il più a lungo possibile",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3064-3039-4130-a233-396137623661/video3.gif"
           },
           {
             id: "hw3-plank",
@@ -635,7 +635,7 @@ const homeExerciseDB = {
             defaultReps: "max",
             defaultRest: 0,
             notes: "Tenere la posizione il più a lungo possibile",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6132-3635-4266-b863-316161343434/video4.gif"
           }
         ]
       }
