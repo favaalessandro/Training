@@ -33,6 +33,33 @@ function initExerciseDB() {
   const existing = getExerciseDB();
   if (!existing || Object.keys(existing).length === 0) {
     saveExerciseDB(exerciseDB);
+  } else {
+    // Merge new weeks/exercises from code into localStorage
+    let updated = false;
+    for (const [weekNum, weekData] of Object.entries(exerciseDB)) {
+      if (!existing[weekNum]) {
+        existing[weekNum] = weekData;
+        updated = true;
+      } else {
+        // Update existing week days with new gifUrl/notes fields
+        for (const day of weekData.days) {
+          const existingDay = existing[weekNum].days.find(d => d.dayLabel === day.dayLabel);
+          if (!existingDay) {
+            existing[weekNum].days.push(day);
+            updated = true;
+          } else {
+            for (const ex of day.exercises) {
+              const existingEx = existingDay.exercises.find(e => e.id === ex.id);
+              if (existingEx) {
+                if (ex.gifUrl && !existingEx.gifUrl) { existingEx.gifUrl = ex.gifUrl; updated = true; }
+                if (ex.notes && !existingEx.notes) { existingEx.notes = ex.notes; updated = true; }
+              }
+            }
+          }
+        }
+      }
+    }
+    if (updated) saveExerciseDB(existing);
   }
 }
 
