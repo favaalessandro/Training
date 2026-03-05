@@ -105,7 +105,45 @@ const exerciseDB = {
       absAndCoreDay(1)
     ]
   },
-  2: { days: [absAndCoreDay(2)] },
+  2: {
+    days: [
+      {
+        dayLabel: "Monday - Legs, Shoulders",
+        exercises: [
+          { id: "week2-barbell-squats", name: "Barbell Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "8", defaultRest: 120, notes: "" },
+          { id: "week2-barbell-squats-pause", name: "Barbell Squats with Pause at the Bottom", muscleGroup: "legs", defaultSets: 2, defaultReps: "7", defaultRest: 120, notes: "Pausa in basso prima di risalire" },
+          { id: "week2-leg-press-wide", name: "Leg Press with Wide and High Stance", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "Stance largo e alto" },
+          { id: "week2-walking-lunges", name: "Walking Lunges with Dumbbells", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "10 reps per gamba" },
+          { id: "week2-seated-lateral-raises", name: "Seated Dumbbell Lateral Raises", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "" },
+          { id: "week2-standing-shoulder-press", name: "Standing Barbell Shoulder Press", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday - Chest, Triceps",
+        exercises: [
+          { id: "week2-incline-bench-press", name: "Incline Bench Press (30°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "Inclinazione 30°" },
+          { id: "week2-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week2-cable-crossovers", name: "Cable Crossovers", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "" },
+          { id: "week2-close-grip-bench", name: "Close-Grip Bench Press", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" },
+          { id: "week2-seated-db-triceps", name: "Seated Dumbbell Raises for Triceps", muscleGroup: "arms", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" },
+          { id: "week2-max-pushups", name: "Max Push-Ups", muscleGroup: "chest", defaultSets: 1, defaultReps: "max", defaultRest: 0, notes: "1 set al cedimento" }
+        ]
+      },
+      {
+        dayLabel: "Friday - Back, Biceps",
+        exercises: [
+          { id: "week2-box-deadlift", name: "Box Deadlift (3-5 cm height)", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Rialzo 3-5 cm" },
+          { id: "week2-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 2, defaultReps: "3", defaultRest: 150, notes: "" },
+          { id: "week2-pullups", name: "Pull-Ups (or Lat Pulldown)", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "Oppure lat pulldown" },
+          { id: "week2-db-rows-bent", name: "Dumbbell Rows in Bent-Over Position", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week2-seated-db-shrugs", name: "Seated Dumbbell Shrugs", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" },
+          { id: "week2-barbell-curls", name: "Straight Barbell Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "" },
+          { id: "week2-reverse-grip-curls", name: "Reverse Grip Barbell Curls", muscleGroup: "arms", defaultSets: 2, defaultReps: "15", defaultRest: 60, notes: "" }
+        ]
+      },
+      absAndCoreDay(2)
+    ]
+  },
   3: { days: [absAndCoreDay(3)] },
   4: { days: [absAndCoreDay(4)] },
   5: { days: [absAndCoreDay(5)] },
