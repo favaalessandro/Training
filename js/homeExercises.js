@@ -540,7 +540,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 90,
             notes: "Presa larga con leggera inclinazione avanti",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3137-3831-4464-b536-646236333038/video.gif"
           },
           {
             id: "hw3-elevated-pushups",
@@ -550,7 +550,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 90,
             notes: "Push-up con piedi rialzati",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3365-6337-4438-a132-666232653437/video1.gif"
           },
           {
             id: "hw3-close-grip-pushups",
@@ -560,7 +560,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 90,
             notes: "Presa stretta",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6566-6332-4364-b666-646332306165/video2.gif"
           },
           {
             id: "hw3-weighted-back-extensions",
@@ -570,7 +570,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "Con manubri, pesi o bottiglie d'acqua, posizione piegata",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6533-3931-4964-b263-366338373963/video3.gif"
           },
           {
             id: "hw3-french-press",
@@ -580,7 +580,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3363-3464-4737-b634-623164366266/video4.gif"
           }
         ]
       },
