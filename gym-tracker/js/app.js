@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const EXERCISE_DB_VERSION = 27; // Bump this when exercises.js changes
-const HOME_EXERCISE_DB_VERSION = 6; // Bump this when homeExercises.js changes
+const HOME_EXERCISE_DB_VERSION = 14; // Bump this when homeExercises.js changes
 
 function initExerciseDB() {
   const savedVersion = parseInt(localStorage.getItem('gym-tracker-db-version') || '0');
