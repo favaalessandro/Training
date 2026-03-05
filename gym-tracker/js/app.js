@@ -382,16 +382,19 @@ function createExerciseCard(ex, exIdx, unit) {
     `;
   });
 
+  const gifToggleBtn = ex.gifUrl ? `
+      <button class="btn-icon gif-toggle-btn" title="Mostra demo">
+        <i data-lucide="video" style="width:20px;height:20px;color:var(--gold-dim)"></i>
+      </button>` : '';
+
   const gifHTML = ex.gifUrl ? `
-    <div class="exercise-gif" style="margin-bottom:var(--space-sm)">
-      <img src="${ex.gifUrl}" alt="${ex.exerciseName}" loading="lazy"
-        style="width:100%;border-radius:8px;max-height:200px;object-fit:cover;cursor:pointer"
-        onclick="this.style.maxHeight=this.style.maxHeight==='200px'?'none':'200px'">
+    <div class="exercise-gif">
+      <img src="${ex.gifUrl}" alt="${ex.exerciseName}" loading="lazy">
     </div>
   ` : '';
 
   const defaultNotesHTML = ex.defaultNotes ? `
-    <div style="font-size:0.75rem;color:var(--gold-dim);margin-bottom:var(--space-sm);font-style:italic">${ex.defaultNotes}</div>
+    <div style="font-size:0.75rem;color:var(--gold-dim);margin-bottom:var(--space-sm);font-style:italic;padding:0 var(--space-md)">${ex.defaultNotes}</div>
   ` : '';
 
   card.innerHTML = `
@@ -400,9 +403,12 @@ function createExerciseCard(ex, exIdx, unit) {
         <div class="exercise-name">${ex.exerciseName}</div>
         <span class="muscle-tag">${ex.muscleGroup}</span>
       </div>
-      <button class="btn-icon timer-btn" data-ex="${exIdx}" title="Timer riposo">
-        <i data-lucide="timer" style="width:20px;height:20px;color:var(--gold-dim)"></i>
-      </button>
+      <div style="display:flex;gap:var(--space-sm);align-items:center">
+        ${gifToggleBtn}
+        <button class="btn-icon timer-btn" data-ex="${exIdx}" title="Timer riposo">
+          <i data-lucide="timer" style="width:20px;height:20px;color:var(--gold-dim)"></i>
+        </button>
+      </div>
     </div>
     ${gifHTML}
     ${defaultNotesHTML}
@@ -456,6 +462,12 @@ function createExerciseCard(ex, exIdx, unit) {
         showRestTimer(defaultRest);
       }
     });
+  });
+
+  // GIF toggle button
+  card.querySelector('.gif-toggle-btn')?.addEventListener('click', () => {
+    const gifDiv = card.querySelector('.exercise-gif');
+    if (gifDiv) gifDiv.classList.toggle('open');
   });
 
   // Timer button
