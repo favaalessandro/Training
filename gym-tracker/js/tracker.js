@@ -19,6 +19,7 @@ export function startWorkout(weekNumber, dayIndex, source = 'gym') {
 
   activeWorkout = {
     id: generateId(),
+    source,
     date: new Date().toISOString(),
     weekNumber,
     dayLabel: day.dayLabel,

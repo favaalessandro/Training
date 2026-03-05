@@ -343,9 +343,9 @@ function renderWorkout() {
   const view = document.getElementById('view-workout');
   view.classList.add('active');
 
-  // Check for active/recovered workout
+  // Check for active/recovered workout (only show gym workouts here)
   const active = getActiveWorkout() || recoverWorkout();
-  if (active) {
+  if (active && active.source !== 'home') {
     renderActiveWorkout(view);
     return;
   }
@@ -433,9 +433,9 @@ function renderHomeWorkout() {
   const view = document.getElementById('view-home-workout');
   view.classList.add('active');
 
-  // Check for active/recovered workout
+  // Check for active/recovered workout (only show home workouts here)
   const active = getActiveWorkout() || recoverWorkout();
-  if (active) {
+  if (active && active.source === 'home') {
     renderActiveWorkout(view);
     return;
   }
@@ -823,7 +823,9 @@ function createExerciseCard(ex, exIdx, unit) {
   // Add set button
   card.querySelector('.add-set-btn')?.addEventListener('click', () => {
     addSet(exIdx);
-    renderActiveWorkout(document.getElementById('view-workout'));
+    const workout = getActiveWorkout();
+    const viewId = workout && workout.source === 'home' ? 'view-home-workout' : 'view-workout';
+    renderActiveWorkout(document.getElementById(viewId));
   });
 
   // Save weights button
