@@ -729,39 +729,39 @@ const homeExerciseDB = {
       {
         dayLabel: "Monday — Legs",
         exercises: [
-          { id: "hw6-front-squats", name: "Front Squats with Weight in Front", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Emphasis on negative repetitions" },
-          { id: "hw6-pistol-squats", name: "Pistol Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
-          { id: "hw6-reverse-lunges", name: "Reverse Lunges", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "On each leg" },
-          { id: "hw6-burpees", name: "Burpees", muscleGroup: "legs", defaultSets: 1, defaultReps: "Max", defaultRest: 90, notes: "" }
+          { id: "hw6-front-squats", name: "Front Squats with Weight in Front", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Emphasis on negative repetitions", gifUrl: "https://static.tildacdn.net/tild3930-3833-4339-b263-666565623062/video.gif" },
+          { id: "hw6-pistol-squats", name: "Pistol Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3462-6465-4165-b364-626336396334/video1.gif" },
+          { id: "hw6-reverse-lunges", name: "Reverse Lunges", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "On each leg", gifUrl: "https://static.tildacdn.net/tild3861-6236-4132-a430-613466363233/video2.gif" },
+          { id: "hw6-burpees", name: "Burpees", muscleGroup: "legs", defaultSets: 1, defaultReps: "Max", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3636-6161-4264-b738-393163316536/video3.gif" }
         ]
       },
       {
         dayLabel: "Wednesday — Back + Biceps",
         exercises: [
-          { id: "hw6-scapular-retraction", name: "Scapular Retraction in Hang", muscleGroup: "back", defaultSets: 2, defaultReps: "15", defaultRest: 60, notes: "" },
-          { id: "hw6-wide-grip-pullups", name: "Wide Grip Pull-ups, Alternating Each", muscleGroup: "back", defaultSets: 3, defaultReps: "7", defaultRest: 120, notes: "" },
-          { id: "hw6-close-grip-pullups-low-bar", name: "Close Grip Pull-ups on Low Bar", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" },
-          { id: "hw6-bicep-curls", name: "Bicep Curls with Supination", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "Dumbbell, weight, or water bottle" }
+          { id: "hw6-scapular-retraction", name: "Scapular Retraction in Hang", muscleGroup: "back", defaultSets: 2, defaultReps: "15", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3930-3833-4339-b263-666565623062/video.gif" },
+          { id: "hw6-wide-grip-pullups", name: "Wide Grip Pull-ups, Alternating Each", muscleGroup: "back", defaultSets: 3, defaultReps: "7", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3164-3564-4239-a338-336535346536/video1.gif" },
+          { id: "hw6-close-grip-pullups-low-bar", name: "Close Grip Pull-ups on Low Bar", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3336-6262-4331-b761-386465643736/video2.gif" },
+          { id: "hw6-bicep-curls", name: "Bicep Curls with Supination", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "Dumbbell, weight, or water bottle", gifUrl: "https://static.tildacdn.net/tild3732-6638-4639-a337-663639346461/video3.gif" }
         ]
       },
       {
         dayLabel: "Friday — Chest + Triceps",
         exercises: [
-          { id: "hw6-dips", name: "Dips", muscleGroup: "chest", defaultSets: 4, defaultReps: "7", defaultRest: 120, notes: "" },
-          { id: "hw6-floor-press", name: "Press Lying on the Floor", muscleGroup: "chest", defaultSets: 4, defaultReps: "Max", defaultRest: 90, notes: "Dumbbell, weight, or water bottle" },
-          { id: "hw6-floor-press-pause", name: "Press Lying on the Floor with Pause", muscleGroup: "chest", defaultSets: 4, defaultReps: "7", defaultRest: 90, notes: "Pause at the top for 2 seconds" },
-          { id: "hw6-triceps-pushdown", name: "Triceps Pushdown with Extra Weight", muscleGroup: "arms", defaultSets: 4, defaultReps: "8", defaultRest: 60, notes: "" },
-          { id: "hw6-french-press", name: "French Press with Weight", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "Dumbbell, water bottle" },
-          { id: "hw6-pushups", name: "Push-ups", muscleGroup: "chest", defaultSets: 1, defaultReps: "Max", defaultRest: 90, notes: "" }
+          { id: "hw6-dips", name: "Dips", muscleGroup: "chest", defaultSets: 4, defaultReps: "7", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3731-3866-4236-a439-316539333135/video.gif" },
+          { id: "hw6-floor-press", name: "Press Lying on the Floor", muscleGroup: "chest", defaultSets: 4, defaultReps: "Max", defaultRest: 90, notes: "Dumbbell, weight, or water bottle", gifUrl: "https://static.tildacdn.net/tild3365-6263-4362-b262-643462656461/video1.gif" },
+          { id: "hw6-floor-press-pause", name: "Press Lying on the Floor with Pause", muscleGroup: "chest", defaultSets: 4, defaultReps: "7", defaultRest: 90, notes: "Pause at the top for 2 seconds", gifUrl: "https://static.tildacdn.net/tild3262-3830-4132-b661-656165313533/video2.gif" },
+          { id: "hw6-triceps-pushdown", name: "Triceps Pushdown with Extra Weight", muscleGroup: "arms", defaultSets: 4, defaultReps: "8", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6335-3136-4862-a137-363038343466/video3.gif" },
+          { id: "hw6-french-press", name: "French Press with Weight", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "Dumbbell, water bottle", gifUrl: "https://static.tildacdn.net/tild3139-6332-4139-a539-373263313433/video4.gif" },
+          { id: "hw6-pushups", name: "Push-ups", muscleGroup: "chest", defaultSets: 1, defaultReps: "Max", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3963-3466-4364-b061-646661633231/video5.gif" }
         ]
       },
       {
         dayLabel: "Saturday — Abs + Static Holds",
         exercises: [
-          { id: "hw6-leg-raises-bar", name: "Leg Raises on a Bar", muscleGroup: "abs", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
-          { id: "hw6-leg-raises-parallel-bars", name: "Leg Raises on Parallel Bars", muscleGroup: "abs", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
-          { id: "hw6-crunches", name: "Crunches", muscleGroup: "abs", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "" },
-          { id: "hw6-plank", name: "Plank", muscleGroup: "abs", defaultSets: 2, defaultReps: "Max", defaultRest: 90, notes: "" }
+          { id: "hw6-leg-raises-bar", name: "Leg Raises on a Bar", muscleGroup: "abs", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3333-3637-4032-b735-666361333639/video.gif" },
+          { id: "hw6-leg-raises-parallel-bars", name: "Leg Raises on Parallel Bars", muscleGroup: "abs", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6239-6262-4336-b761-653331313639/video1.gif" },
+          { id: "hw6-crunches", name: "Crunches", muscleGroup: "abs", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3061-3363-4363-b939-366561343637/video2.gif" },
+          { id: "hw6-plank", name: "Plank", muscleGroup: "abs", defaultSets: 2, defaultReps: "Max", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3636-3933-4435-b037-623830666332/video3.gif" }
         ]
       }
     ]
