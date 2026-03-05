@@ -263,10 +263,10 @@ const exerciseDB = {
       {
         dayLabel: "Monday - Legs",
         exercises: [
-          { id: "week6-squats", name: "Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "" },
-          { id: "week6-trap-bar-squats", name: "Trap Bar Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
-          { id: "week6-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week6-sumo-squats-db", name: "Sumo Squats with Dumbbells on Chest", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" }
+          { id: "week6-squats", name: "Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3932-3532-4732-a538-643938373735/video.gif" },
+          { id: "week6-trap-bar-squats", name: "Trap Bar Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3062-3335-4432-a534-316163356137/video_2.gif" },
+          { id: "week6-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3734-6631-4631-a161-343631613730/video_3.gif" },
+          { id: "week6-sumo-squats-db", name: "Sumo Squats with Dumbbells on Chest", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3665-6634-4664-a634-393236663364/video_4.gif" }
         ]
       },
       {
