@@ -427,7 +427,220 @@ const homeExerciseDB = {
       }
     ]
   },
-  3: { days: [] },
+  3: {
+    days: [
+      {
+        dayLabel: "Monday — Legs",
+        exercises: [
+          {
+            id: "hw3-squats-jump",
+            name: "Squats with Jump",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "18",
+            defaultRest: 90,
+            notes: "Squat con salto",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-step-up-jumps",
+            name: "Step-up Jumps",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-each-leg-step-ups",
+            name: "Each Leg Step-ups (combined approach)",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "Per ogni gamba, approccio combinato",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-chair-pose-weight-front",
+            name: "Chair Pose with Weight in Front",
+            muscleGroup: "legs",
+            defaultSets: 2,
+            defaultReps: "25",
+            defaultRest: 60,
+            notes: "Con peso davanti",
+            gifUrl: ""
+          }
+        ]
+      },
+      {
+        dayLabel: "Wednesday — Back + Biceps",
+        exercises: [
+          {
+            id: "hw3-wide-grip-pullups-pause",
+            name: "Wide-grip Pull-ups with Pause",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "Presa larga con pausa",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-parallel-grip-pullups",
+            name: "Parallel Grip Pull-ups",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "Presa parallela",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-low-bar-pullups",
+            name: "Low Bar Pull-ups",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "Sbarra bassa",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-low-bar-parallel-grip-pullups",
+            name: "Low Bar Parallel Grip Pull-ups",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "8",
+            defaultRest: 90,
+            notes: "Sbarra bassa, presa parallela",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-bent-over-rows",
+            name: "Bent-over Barbell Rows (with weight)",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "15",
+            defaultRest: 90,
+            notes: "Rematore con bilanciere/peso",
+            gifUrl: ""
+          }
+        ]
+      },
+      {
+        dayLabel: "Friday — Chest + Triceps",
+        exercises: [
+          {
+            id: "hw3-wide-dips-forward-lean",
+            name: "Wide-grip Dips with Slight Forward Lean",
+            muscleGroup: "chest",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "Presa larga con leggera inclinazione avanti",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-elevated-pushups",
+            name: "Elevated Push-ups",
+            muscleGroup: "chest",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "Push-up con piedi rialzati",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-close-grip-pushups",
+            name: "Close-grip Push-ups",
+            muscleGroup: "chest",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "Presa stretta",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-weighted-back-extensions",
+            name: "Weighted Back Extensions (bent-over position)",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "Con manubri, pesi o bottiglie d'acqua, posizione piegata",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-french-press",
+            name: "French Press",
+            muscleGroup: "arms",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: "",
+            gifUrl: ""
+          }
+        ]
+      },
+      {
+        dayLabel: "Saturday — Abs + Static",
+        exercises: [
+          {
+            id: "hw3-leg-raises-bar",
+            name: "Leg Raises on a Bar",
+            muscleGroup: "core",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 60,
+            notes: "Alla sbarra",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-leg-raises-parallel-bars",
+            name: "Leg Raises on Parallel Bars",
+            muscleGroup: "core",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 60,
+            notes: "Alle parallele",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-crunches-elevated",
+            name: "Crunches (knees bent on elevated surface)",
+            muscleGroup: "core",
+            defaultSets: 3,
+            defaultReps: "20",
+            defaultRest: 60,
+            notes: "Con ginocchia piegate su superficie rialzata",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-chair-pose",
+            name: "Chair Pose",
+            muscleGroup: "core",
+            defaultSets: 2,
+            defaultReps: "max",
+            defaultRest: 60,
+            notes: "Tenere la posizione il più a lungo possibile",
+            gifUrl: ""
+          },
+          {
+            id: "hw3-plank",
+            name: "Plank",
+            muscleGroup: "core",
+            defaultSets: 1,
+            defaultReps: "max",
+            defaultRest: 0,
+            notes: "Tenere la posizione il più a lungo possibile",
+            gifUrl: ""
+          }
+        ]
+      }
+    ]
+  },
   4: { days: [] },
   5: { days: [] },
   6: { days: [] },
