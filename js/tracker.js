@@ -29,8 +29,9 @@ export function startWorkout(weekNumber, dayIndex) {
       exerciseName: ex.name,
       muscleGroup: ex.muscleGroup,
       gifUrl: ex.gifUrl || null,
+      defaultReps: ex.defaultReps || '',
       sets: Array.from({ length: ex.defaultSets }, () => ({
-        reps: 0,
+        reps: parseInt(ex.defaultReps) || 0,
         weight: 0,
         rpe: null,
         restTime: null,
