@@ -48,6 +48,8 @@ function initHomeExerciseDB() {
   if (savedVersion < HOME_EXERCISE_DB_VERSION) {
     saveHomeExerciseDB(homeExerciseDB);
     localStorage.setItem('gym-tracker-home-db-version', String(HOME_EXERCISE_DB_VERSION));
+    // Clear stale recovered workout so it gets fresh exercise data with GIFs
+    localStorage.removeItem('gym-tracker-active-workout');
   }
 }
 
