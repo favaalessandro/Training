@@ -189,7 +189,41 @@ const exerciseDB = {
       absAndCoreDay(3)
     ]
   },
-  4: { days: [absAndCoreDay(4)] },
+  4: {
+    days: [
+      {
+        dayLabel: "Monday - Legs",
+        exercises: [
+          { id: "week4-squats", name: "Squats", muscleGroup: "legs", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "" },
+          { id: "week4-leg-press-pause", name: "Leg Press (pause for 3 seconds at the bottom)", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Pausa di 3 secondi in basso" },
+          { id: "week4-front-squats-db", name: "Front Squats with Dumbbell", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "week4-long-jumps", name: "Long Jumps", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" },
+          { id: "week4-weighted-hyperext", name: "Weighted Hyperextensions", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday - Chest",
+        exercises: [
+          { id: "week4-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "" },
+          { id: "week4-narrow-db-press", name: "Narrow Dumbbell Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week4-incline-flyes", name: "Incline Flyes (30°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "Panca inclinata a 30 gradi" },
+          { id: "week4-cable-crossovers", name: "Cable Crossovers", muscleGroup: "chest", defaultSets: 4, defaultReps: "15", defaultRest: 60, notes: "" },
+          { id: "week4-triceps-pushdowns", name: "Triceps Pushdowns", muscleGroup: "arms", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "" },
+          { id: "week4-close-grip-bench-tempo", name: "Close Grip Bench Press (3s down, 1s up)", muscleGroup: "chest", defaultSets: 3, defaultReps: "5", defaultRest: 120, notes: "3 secondi in discesa, 1 secondo in salita. Importante farlo con uno spotter" }
+        ]
+      },
+      {
+        dayLabel: "Friday - Back",
+        exercises: [
+          { id: "week4-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "" },
+          { id: "week4-pullups", name: "Pull-ups (or Cable Pulldowns)", muscleGroup: "back", defaultSets: 4, defaultReps: "8", defaultRest: 90, notes: "O lat pulldown ai cavi" },
+          { id: "week4-horizontal-cable-rows", name: "Horizontal Cable Rows", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week4-good-morning", name: "Good Morning", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "Non usare troppo peso, concentrati sul sentire il movimento" }
+        ]
+      },
+      absAndCoreDay(4)
+    ]
+  },
   5: { days: [absAndCoreDay(5)] },
   6: { days: [absAndCoreDay(6)] },
   7: { days: [absAndCoreDay(7)] },
