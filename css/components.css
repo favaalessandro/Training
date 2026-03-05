@@ -237,6 +237,24 @@
   cursor: pointer;
 }
 
+.exercise-gif {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow) ease;
+}
+
+.exercise-gif.open {
+  max-height: 400px;
+}
+
+.exercise-gif img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top: 1px solid rgba(139, 118, 53, 0.2);
+  border-bottom: 1px solid rgba(139, 118, 53, 0.2);
+}
+
 .exercise-name {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;

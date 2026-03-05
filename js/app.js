@@ -384,16 +384,28 @@ function createExerciseCard(ex, exIdx, unit) {
     `;
   });
 
+  const gifHTML = ex.gifUrl ? `
+    <div class="exercise-gif">
+      <img src="${ex.gifUrl}" alt="${ex.exerciseName}" loading="lazy">
+    </div>
+  ` : '';
+
   card.innerHTML = `
-    <div class="exercise-header">
+    <div class="exercise-header" data-has-gif="${ex.gifUrl ? 'true' : 'false'}">
       <div>
         <div class="exercise-name">${ex.exerciseName}</div>
         <span class="muscle-tag">${ex.muscleGroup}</span>
       </div>
-      <button class="btn-icon timer-btn" data-ex="${exIdx}" title="Timer riposo">
-        <i data-lucide="timer" style="width:20px;height:20px;color:var(--gold-dim)"></i>
-      </button>
+      <div style="display:flex;gap:var(--space-xs);align-items:center">
+        ${ex.gifUrl ? `<button class="btn-icon gif-toggle-btn" data-ex="${exIdx}" title="Mostra esercizio">
+          <i data-lucide="video" style="width:20px;height:20px;color:var(--gold-primary)"></i>
+        </button>` : ''}
+        <button class="btn-icon timer-btn" data-ex="${exIdx}" title="Timer riposo">
+          <i data-lucide="timer" style="width:20px;height:20px;color:var(--gold-dim)"></i>
+        </button>
+      </div>
     </div>
+    ${gifHTML}
     ${setsHTML}
     <div class="exercise-actions">
       <button class="btn btn-sm btn-secondary add-set-btn" data-ex="${exIdx}">
@@ -401,6 +413,12 @@ function createExerciseCard(ex, exIdx, unit) {
       </button>
     </div>
   `;
+
+  // GIF toggle
+  card.querySelector('.gif-toggle-btn')?.addEventListener('click', () => {
+    const gif = card.querySelector('.exercise-gif');
+    if (gif) gif.classList.toggle('open');
+  });
 
   // Bind inputs
   card.querySelectorAll('.set-input').forEach(input => {

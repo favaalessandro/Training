@@ -28,6 +28,7 @@ export function startWorkout(weekNumber, dayIndex) {
       exerciseId: ex.id,
       exerciseName: ex.name,
       muscleGroup: ex.muscleGroup,
+      gifUrl: ex.gifUrl || null,
       sets: Array.from({ length: ex.defaultSets }, () => ({
         reps: 0,
         weight: 0,

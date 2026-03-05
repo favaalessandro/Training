@@ -19,7 +19,8 @@ function absAndCoreDay(weekNum) {
         defaultSets: 3,
         defaultReps: "20",
         defaultRest: 60,
-        notes: "Alle parallele, movimento controllato senza slancio"
+        notes: "Alle parallele, movimento controllato senza slancio",
+        gifUrl: "https://static.tildacdn.net/tild3165-3663-4363-a361-376366343030/video_1.gif"
       },
       {
         id: `week${weekNum}-russian-twist`,
@@ -28,7 +29,8 @@ function absAndCoreDay(weekNum) {
         defaultSets: 3,
         defaultReps: "20",
         defaultRest: 60,
-        notes: "Con peso aggiuntivo, 20 reps totali (10 per lato)"
+        notes: "Con peso aggiuntivo, 20 reps totali (10 per lato)",
+        gifUrl: "https://static.tildacdn.net/tild3730-3363-4866-b465-303265373139/video_2_1.gif"
       },
       {
         id: `week${weekNum}-hyperextension`,
@@ -37,7 +39,8 @@ function absAndCoreDay(weekNum) {
         defaultSets: 3,
         defaultReps: "10",
         defaultRest: 90,
-        notes: "Con peso aggiuntivo, contrazione controllata in alto"
+        notes: "Con peso aggiuntivo, contrazione controllata in alto",
+        gifUrl: "https://static.tildacdn.net/tild6466-3964-4865-a630-373563373563/video_3.gif"
       },
       {
         id: `week${weekNum}-scissors`,
@@ -46,7 +49,8 @@ function absAndCoreDay(weekNum) {
         defaultSets: 3,
         defaultReps: "40 sec",
         defaultRest: 60,
-        notes: "3×40 secondi, gambe tese e basse"
+        notes: "3×40 secondi, gambe tese e basse",
+        gifUrl: "https://static.tildacdn.net/tild6562-6563-4163-a666-386562343732/video_4.gif"
       },
       {
         id: `week${weekNum}-plank`,
@@ -55,7 +59,8 @@ function absAndCoreDay(weekNum) {
         defaultSets: 1,
         defaultReps: "max",
         defaultRest: 0,
-        notes: "Massimo tempo possibile, mantieni la posizione corretta"
+        notes: "Massimo tempo possibile, mantieni la posizione corretta",
+        gifUrl: "https://static.tildacdn.net/tild6237-6662-4563-a663-376535636439/video_5.gif"
       }
     ]
   };
