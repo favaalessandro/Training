@@ -327,7 +327,42 @@ const exerciseDB = {
       absAndCoreDay(7)
     ]
   },
-  8: { days: [absAndCoreDay(8)] }
+  8: {
+    days: [
+      {
+        dayLabel: "Monday - Legs and Shoulders",
+        exercises: [
+          { id: "week8-squats-record", name: "Squats (Record)", muscleGroup: "legs", defaultSets: 1, defaultReps: "1", defaultRest: 180, notes: "" },
+          { id: "week8-squats", name: "Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "" },
+          { id: "week8-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "15", defaultRest: 90, notes: "" },
+          { id: "week8-lateral-raises-db", name: "Lateral Raises with Dumbbells", muscleGroup: "shoulders", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "week8-standing-db-press", name: "Standing Dumbbell Press", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday - Chest and Biceps",
+        exercises: [
+          { id: "week8-bench-press-record", name: "Bench Press (Record)", muscleGroup: "chest", defaultSets: 1, defaultReps: "1", defaultRest: 180, notes: "" },
+          { id: "week8-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
+          { id: "week8-incline-db-press", name: "Incline Dumbbell Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week8-hammer-curls", name: "Hammer Curls", muscleGroup: "biceps", defaultSets: 5, defaultReps: "5", defaultRest: 90, notes: "" },
+          { id: "week8-single-arm-cable-curls", name: "Single-Arm Cable Curls", muscleGroup: "biceps", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Saturday - Deadlift",
+        exercises: [
+          { id: "week8-deadlift-max", name: "Deadlift", muscleGroup: "back", defaultSets: 1, defaultReps: "max", defaultRest: 180, notes: "" },
+          { id: "week8-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
+          { id: "week8-lat-pulldowns", name: "Lat Pulldowns", muscleGroup: "back", defaultSets: 5, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week8-tricep-ext-cable", name: "Tricep Extensions on Cable Machine", muscleGroup: "triceps", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "week8-db-french-press-flat", name: "Dumbbell French Press on Flat Bench", muscleGroup: "triceps", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week8-diamond-pushups", name: "Diamond Push-Ups", muscleGroup: "chest", defaultSets: 2, defaultReps: "max", defaultRest: 90, notes: "" }
+        ]
+      },
+      absAndCoreDay(8)
+    ]
+  }
 };
 
 export default exerciseDB;
