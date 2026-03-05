@@ -162,6 +162,65 @@ const exerciseDB = {
         ]
       }
     ]
+  },
+  3: {
+    days: [
+      {
+        dayLabel: "Day 1 - Legs (Monday)",
+        exercises: [
+          {
+            id: "week3-barbell-squats",
+            name: "Barbell Squats",
+            muscleGroup: "legs",
+            defaultSets: 4,
+            defaultReps: "6",
+            defaultRest: 180,
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild3339-3433-4134-a565-393135373832/video.gif"
+          },
+          {
+            id: "week3-front-squats",
+            name: "Front Squats",
+            muscleGroup: "legs",
+            defaultSets: 2,
+            defaultReps: "10",
+            defaultRest: 120,
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild6638-3430-4663-a634-326163666530/video_2.gif"
+          },
+          {
+            id: "week3-deadlifts",
+            name: "Deadlifts",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 150,
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild3939-6334-4831-b230-663137353634/video_3.gif"
+          },
+          {
+            id: "week3-leg-press",
+            name: "Leg Press",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 120,
+            notes: "Pause at the bottom for 3 sec",
+            gifUrl: "https://static.tildacdn.net/tild6464-6135-4432-a530-346530383764/video_4.gif"
+          },
+          {
+            id: "week3-jumping-jacks",
+            name: "Jumping Jacks to Maximum Height",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "8",
+            defaultRest: 90,
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild6130-3335-4365-b563-616437613833/video_5.gif"
+          }
+        ]
+      }
+    ]
   }
 };
 

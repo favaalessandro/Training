@@ -384,6 +384,18 @@ function createExerciseCard(ex, exIdx, unit) {
     `;
   });
 
+  const gifHTML = ex.gifUrl ? `
+    <div class="exercise-gif" style="margin-bottom:var(--space-sm)">
+      <img src="${ex.gifUrl}" alt="${ex.exerciseName}" loading="lazy"
+        style="width:100%;border-radius:8px;max-height:200px;object-fit:cover;cursor:pointer"
+        onclick="this.style.maxHeight=this.style.maxHeight==='200px'?'none':'200px'">
+    </div>
+  ` : '';
+
+  const defaultNotesHTML = ex.defaultNotes ? `
+    <div style="font-size:0.75rem;color:var(--gold-dim);margin-bottom:var(--space-sm);font-style:italic">${ex.defaultNotes}</div>
+  ` : '';
+
   card.innerHTML = `
     <div class="exercise-header">
       <div>
@@ -394,6 +406,8 @@ function createExerciseCard(ex, exIdx, unit) {
         <i data-lucide="timer" style="width:20px;height:20px;color:var(--gold-dim)"></i>
       </button>
     </div>
+    ${gifHTML}
+    ${defaultNotesHTML}
     ${setsHTML}
     <div class="exercise-actions">
       <button class="btn btn-sm btn-secondary add-set-btn" data-ex="${exIdx}">
