@@ -201,13 +201,48 @@ function renderHome() {
     });
   });
 
-  // Reset today's sessions
+  // Reset — open selection modal
   document.getElementById('btn-reset-today')?.addEventListener('click', () => {
-    const today = new Date().toISOString().split('T')[0];
-    const logs = getLogs().filter(l => l.date && l.date.startsWith(today));
-    logs.forEach(l => deleteLog(l.id));
-    showToast('Sessioni di oggi resettate');
-    renderHome();
+    const overlay = document.getElementById('reset-session-modal');
+    if (overlay) { overlay.remove(); }
+
+    const modal = document.createElement('div');
+    modal.id = 'reset-session-modal';
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+      <div class="modal">
+        <h3 style="margin-bottom:var(--space-md);color:var(--gold-primary)">Reset Sessione</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:var(--space-md)">Seleziona le sessioni da resettare:</p>
+        <div style="display:flex;flex-direction:column;gap:var(--space-sm)" id="reset-list">
+          ${completedToday.map(l => `
+            <label style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-md);background:var(--bg-elevated);border-radius:var(--radius-sm);cursor:pointer;min-height:44px">
+              <input type="checkbox" value="${l.id}" style="width:20px;height:20px;accent-color:var(--gold-primary)">
+              <span style="font-size:0.875rem">${l.dayLabel}</span>
+            </label>
+          `).join('')}
+        </div>
+        <div style="display:flex;gap:var(--space-sm);margin-top:var(--space-lg)">
+          <button class="btn btn-secondary" id="reset-modal-cancel" style="flex:1">Annulla</button>
+          <button class="btn btn-danger" id="reset-modal-confirm" style="flex:1">Elimina</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('reset-modal-cancel').addEventListener('click', () => modal.remove());
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+
+    document.getElementById('reset-modal-confirm').addEventListener('click', () => {
+      const checked = modal.querySelectorAll('#reset-list input:checked');
+      if (checked.length === 0) {
+        showToast('Seleziona almeno una sessione', 'error');
+        return;
+      }
+      checked.forEach(cb => deleteLog(cb.value));
+      modal.remove();
+      showToast(`${checked.length} session${checked.length > 1 ? 'i resettate' : 'e resettata'}`);
+      renderHome();
+    });
   });
 
   if (window.lucide) lucide.createIcons();
