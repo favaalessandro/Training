@@ -780,11 +780,11 @@ const homeExerciseDB = {
       {
         dayLabel: "Wednesday — Back + Biceps",
         exercises: [
-          { id: "hw7-wide-grip-pullups-neck", name: "Wide Grip Pull-ups Behind the Neck", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
-          { id: "hw7-scapular-retraction", name: "Scapular Retraction in Hang", muscleGroup: "back", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "" },
-          { id: "hw7-pullups-behind-neck", name: "Pull-ups Behind the Neck", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
-          { id: "hw7-close-grip-pullups-reverse", name: "Close Grip Pull-ups on Low Bar with Reverse Grip", muscleGroup: "back", defaultSets: 3, defaultReps: "18", defaultRest: 90, notes: "" },
-          { id: "hw7-bicep-curls-supination", name: "Bicep Curls with Barbell with Supination", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "" }
+          { id: "hw7-wide-grip-pullups-neck", name: "Wide Grip Pull-ups Behind the Neck", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3339-3163-4835-b230-336130363839/video.gif" },
+          { id: "hw7-scapular-retraction", name: "Scapular Retraction in Hang", muscleGroup: "back", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6662-3563-4837-a631-643262623865/video1_1.gif" },
+          { id: "hw7-pullups-behind-neck", name: "Pull-ups Behind the Neck", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3634-6163-4937-a236-383633663433/video2.gif" },
+          { id: "hw7-close-grip-pullups-reverse", name: "Close Grip Pull-ups on Low Bar with Reverse Grip", muscleGroup: "back", defaultSets: 3, defaultReps: "18", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6535-3730-4139-b536-613264356464/video3.gif" },
+          { id: "hw7-bicep-curls-supination", name: "Bicep Curls with Barbell with Supination", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6535-3731-4536-b266-663632326137/video4.gif" }
         ]
       },
       {
