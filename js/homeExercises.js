@@ -281,7 +281,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 90,
             notes: "Presa inversa (supina)",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6462-3931-4462-a362-393635623334/video.gif"
           },
           {
             id: "hw2-wide-grip-alternating-pullups",
@@ -291,7 +291,7 @@ const homeExerciseDB = {
             defaultReps: "8",
             defaultRest: 90,
             notes: "Presa larga, alternando",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3338-3962-4639-b535-303666316637/video2.gif"
           },
           {
             id: "hw2-close-grip-low-bar-pullups",
@@ -301,7 +301,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "Presa stretta, sbarra bassa",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3366-3663-4065-a563-343966346263/video3.gif"
           },
           {
             id: "hw2-pullups-behind-neck",
@@ -311,7 +311,7 @@ const homeExerciseDB = {
             defaultReps: "6",
             defaultRest: 90,
             notes: "Trazioni dietro il collo",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6139-3132-4834-b032-383832316437/video4.gif"
           }
         ]
       },
