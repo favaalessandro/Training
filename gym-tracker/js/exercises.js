@@ -179,11 +179,11 @@ const exerciseDB = {
       {
         dayLabel: "Saturday - Arms and Shoulders",
         exercises: [
-          { id: "week3-hammer-curls", name: "Hammer Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
-          { id: "week3-wide-grip-curls", name: "Wide-Grip Barbell Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
-          { id: "week3-skull-crushers", name: "Skull Crushers", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
-          { id: "week3-incline-triceps-ext", name: "Incline Dumbbell Triceps Extensions", muscleGroup: "arms", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" },
-          { id: "week3-seated-lateral-raises", name: "Seated Dumbbell Lateral Raises", muscleGroup: "shoulders", defaultSets: 4, defaultReps: "15", defaultRest: 60, notes: "" }
+          { id: "week3-hammer-curls", name: "Hammer Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3139-3939-4463-b831-353836656564/video.gif" },
+          { id: "week3-wide-grip-curls", name: "Wide-Grip Barbell Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6639-3162-4434-b134-343733373435/video_2.gif" },
+          { id: "week3-skull-crushers", name: "Skull Crushers", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6166-6235-4530-a363-636534373338/video_3.gif" },
+          { id: "week3-incline-triceps-ext", name: "Incline Dumbbell Triceps Extensions", muscleGroup: "arms", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6634-3731-4138-a637-333036306334/video_4.gif" },
+          { id: "week3-seated-lateral-raises", name: "Seated Dumbbell Lateral Raises", muscleGroup: "shoulders", defaultSets: 4, defaultReps: "15", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3133-6464-4338-a139-616333646235/video_5.gif" }
         ]
       },
       absAndCoreDay(3)
