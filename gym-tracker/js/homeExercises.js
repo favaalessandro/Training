@@ -381,7 +381,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 60,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6336-3938-4830-b966-383930613863/video_1_1_1.gif"
           },
           {
             id: "hw2-crunches",
@@ -391,7 +391,7 @@ const homeExerciseDB = {
             defaultReps: "20",
             defaultRest: 60,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3665-6663-4533-b635-303037393964/video2.gif"
           },
           {
             id: "hw2-alternating-heel-touches",
@@ -401,7 +401,7 @@ const homeExerciseDB = {
             defaultReps: "15",
             defaultRest: 60,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6330-3031-4835-b334-666464616164/video3.gif"
           },
           {
             id: "hw2-lying-leg-raises",
@@ -411,7 +411,7 @@ const homeExerciseDB = {
             defaultReps: "20",
             defaultRest: 60,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6366-3236-4132-a139-616533323339/video4.gif"
           },
           {
             id: "hw2-plank",
@@ -421,7 +421,7 @@ const homeExerciseDB = {
             defaultReps: "max",
             defaultRest: 60,
             notes: "Tenere la posizione il più a lungo possibile",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3030-6363-4364-b336-313463656436/video5.gif"
           }
         ]
       }
