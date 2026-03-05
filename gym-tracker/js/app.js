@@ -44,13 +44,10 @@ function initExerciseDB() {
 }
 
 function initHomeExerciseDB() {
-  const savedVersion = parseInt(localStorage.getItem('gym-tracker-home-db-version') || '0');
-  if (savedVersion < HOME_EXERCISE_DB_VERSION) {
-    saveHomeExerciseDB(homeExerciseDB);
-    localStorage.setItem('gym-tracker-home-db-version', String(HOME_EXERCISE_DB_VERSION));
-    // Clear stale recovered workout so it gets fresh exercise data with GIFs
-    localStorage.removeItem('gym-tracker-active-workout');
-  }
+  // Always write fresh data to ensure GIFs and updates are applied
+  saveHomeExerciseDB(homeExerciseDB);
+  localStorage.setItem('gym-tracker-home-db-version', String(HOME_EXERCISE_DB_VERSION));
+  localStorage.removeItem('gym-tracker-active-workout');
 }
 
 /* ═══════════════════════════════════════

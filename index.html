@@ -64,18 +64,27 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script type="module" src="js/app.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js').then(reg => {
-        reg.addEventListener('updatefound', () => {
-          const newSW = reg.installing;
-          newSW.addEventListener('statechange', () => {
-            if (newSW.state === 'activated' && navigator.serviceWorker.controller) {
-              window.location.reload();
-            }
-          });
+    (function() {
+      var SW_VER = 'v3';
+      if (!('serviceWorker' in navigator)) return;
+      var last = localStorage.getItem('gym-sw-ver');
+      if (last !== SW_VER) {
+        // Old SW detected — nuke caches, unregister, reload with fresh files
+        Promise.all([
+          caches.keys().then(function(keys) {
+            return Promise.all(keys.map(function(k) { return caches.delete(k); }));
+          }),
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            return Promise.all(regs.map(function(r) { return r.unregister(); }));
+          })
+        ]).then(function() {
+          localStorage.setItem('gym-sw-ver', SW_VER);
+          window.location.reload();
         });
-      }).catch(() => {});
-    }
+      } else {
+        navigator.serviceWorker.register('sw.js').catch(function() {});
+      }
+    })();
   </script>
 </body>
 </html>
