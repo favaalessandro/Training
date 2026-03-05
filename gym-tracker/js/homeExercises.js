@@ -724,7 +724,48 @@ const homeExerciseDB = {
       }
     ]
   },
-  6: { days: [] },
+  6: {
+    days: [
+      {
+        dayLabel: "Monday — Legs",
+        exercises: [
+          { id: "hw6-front-squats", name: "Front Squats with Weight in Front", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Emphasis on negative repetitions" },
+          { id: "hw6-pistol-squats", name: "Pistol Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
+          { id: "hw6-reverse-lunges", name: "Reverse Lunges", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "On each leg" },
+          { id: "hw6-burpees", name: "Burpees", muscleGroup: "legs", defaultSets: 1, defaultReps: "Max", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday — Back + Biceps",
+        exercises: [
+          { id: "hw6-scapular-retraction", name: "Scapular Retraction in Hang", muscleGroup: "back", defaultSets: 2, defaultReps: "15", defaultRest: 60, notes: "" },
+          { id: "hw6-wide-grip-pullups", name: "Wide Grip Pull-ups, Alternating Each", muscleGroup: "back", defaultSets: 3, defaultReps: "7", defaultRest: 120, notes: "" },
+          { id: "hw6-close-grip-pullups-low-bar", name: "Close Grip Pull-ups on Low Bar", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" },
+          { id: "hw6-bicep-curls", name: "Bicep Curls with Supination", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "Dumbbell, weight, or water bottle" }
+        ]
+      },
+      {
+        dayLabel: "Friday — Chest + Triceps",
+        exercises: [
+          { id: "hw6-dips", name: "Dips", muscleGroup: "chest", defaultSets: 4, defaultReps: "7", defaultRest: 120, notes: "" },
+          { id: "hw6-floor-press", name: "Press Lying on the Floor", muscleGroup: "chest", defaultSets: 4, defaultReps: "Max", defaultRest: 90, notes: "Dumbbell, weight, or water bottle" },
+          { id: "hw6-floor-press-pause", name: "Press Lying on the Floor with Pause", muscleGroup: "chest", defaultSets: 4, defaultReps: "7", defaultRest: 90, notes: "Pause at the top for 2 seconds" },
+          { id: "hw6-triceps-pushdown", name: "Triceps Pushdown with Extra Weight", muscleGroup: "arms", defaultSets: 4, defaultReps: "8", defaultRest: 60, notes: "" },
+          { id: "hw6-french-press", name: "French Press with Weight", muscleGroup: "arms", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "Dumbbell, water bottle" },
+          { id: "hw6-pushups", name: "Push-ups", muscleGroup: "chest", defaultSets: 1, defaultReps: "Max", defaultRest: 90, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Saturday — Abs + Static Holds",
+        exercises: [
+          { id: "hw6-leg-raises-bar", name: "Leg Raises on a Bar", muscleGroup: "abs", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
+          { id: "hw6-leg-raises-parallel-bars", name: "Leg Raises on Parallel Bars", muscleGroup: "abs", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
+          { id: "hw6-crunches", name: "Crunches", muscleGroup: "abs", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "" },
+          { id: "hw6-plank", name: "Plank", muscleGroup: "abs", defaultSets: 2, defaultReps: "Max", defaultRest: 90, notes: "" }
+        ]
+      }
+    ]
+  },
   7: { days: [] }
 };
 
