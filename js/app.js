@@ -29,10 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) lucide.createIcons();
 });
 
+const EXERCISE_DB_VERSION = 2; // Bump this when exercises.js changes
+
 function initExerciseDB() {
-  const existing = getExerciseDB();
-  if (!existing || Object.keys(existing).length === 0) {
+  const savedVersion = parseInt(localStorage.getItem('gym-tracker-db-version') || '0');
+  if (savedVersion < EXERCISE_DB_VERSION) {
     saveExerciseDB(exerciseDB);
+    localStorage.setItem('gym-tracker-db-version', String(EXERCISE_DB_VERSION));
   }
 }
 
