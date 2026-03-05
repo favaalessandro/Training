@@ -428,6 +428,21 @@ function renderActiveWorkout(view) {
       </div>
     </div>
 
+    <div class="card" style="background:#FFD200;border:none;cursor:pointer" id="increase-weight-tip-toggle">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:var(--space-sm)">
+          <i data-lucide="trending-up" style="width:16px;height:16px;color:#000"></i>
+          <span style="font-size:0.8125rem;font-weight:700;color:#000">Quando aumentare il peso</span>
+        </div>
+        <i data-lucide="chevron-down" style="width:16px;height:16px;color:#000" id="increase-weight-tip-chevron"></i>
+      </div>
+      <div id="increase-weight-tip-content" style="display:none;margin-top:var(--space-md);font-size:0.8125rem;color:#000;line-height:1.5">
+        <p style="margin:0 0 var(--space-sm) 0">Per fare progressi, devi <strong>"sorprendere"</strong> i tuoi muscoli cambiando periodicamente gli esercizi e aumentando il peso. Mentre variare gli esercizi è semplice, puoi basare la scelta del peso su quanto facilmente completi il numero di ripetizioni previsto. Se fai già fatica a completare l'ultima ripetizione, è troppo presto per aggiungere peso. Al contrario, se riesci ancora a fare qualche ripetizione in più con il carico abituale, è il momento di aggiungere un po' di peso.</p>
+        <p style="margin:0 0 var(--space-sm) 0">Potrebbe volerci del tempo per trovare il peso giusto per ogni esercizio, ma alla fine saprai esattamente quale peso è più adatto a te. Dovrebbe essere abbastanza pesante da sentire un carico significativo nelle ultime 2-3 ripetizioni di ogni serie. Tuttavia, dovresti eseguire quelle ultime 2-3 ripetizioni senza compromettere la tecnica. Ad esempio, se prevedi di completare 12 ripetizioni, dovresti sentire di voler terminare la serie dopo l'ottava ripetizione.</p>
+        <p style="margin:0">Ricorda, ciò che conta di più non è il peso che usa il tuo amico o quello che uso io. Se sei un principiante, non avere fretta di aumentare il peso, o rischierai di infortunarti. Se ti alleni da un po' ma non riesci a ottenere i risultati desiderati, vai avanti e aggiungi più peso. Puoi determinare il peso corretto per ogni esercizio solo attraverso tentativi ed errori. Preparati: potrebbe non succedere subito. Ma alla fine, progredirai e otterrai i risultati desiderati.</p>
+      </div>
+    </div>
+
     <div id="exercise-list"></div>
 
     <div class="card" style="margin-top:var(--space-md)">
@@ -457,6 +472,16 @@ function renderActiveWorkout(view) {
   document.getElementById('weight-tip-toggle')?.addEventListener('click', () => {
     const content = document.getElementById('weight-tip-content');
     const chevron = document.getElementById('weight-tip-chevron');
+    const open = content.style.display === 'none';
+    content.style.display = open ? 'block' : 'none';
+    chevron.setAttribute('data-lucide', open ? 'chevron-up' : 'chevron-down');
+    if (window.lucide) lucide.createIcons();
+  });
+
+  // Increase weight tip toggle
+  document.getElementById('increase-weight-tip-toggle')?.addEventListener('click', () => {
+    const content = document.getElementById('increase-weight-tip-content');
+    const chevron = document.getElementById('increase-weight-tip-chevron');
     const open = content.style.display === 'none';
     content.style.display = open ? 'block' : 'none';
     chevron.setAttribute('data-lucide', open ? 'chevron-up' : 'chevron-down');
