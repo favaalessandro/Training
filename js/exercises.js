@@ -110,35 +110,35 @@ const exerciseDB = {
       {
         dayLabel: "Monday - Legs, Shoulders",
         exercises: [
-          { id: "week2-barbell-squats", name: "Barbell Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "8", defaultRest: 120, notes: "" },
-          { id: "week2-barbell-squats-pause", name: "Barbell Squats with Pause at the Bottom", muscleGroup: "legs", defaultSets: 2, defaultReps: "7", defaultRest: 120, notes: "Pausa in basso prima di risalire" },
-          { id: "week2-leg-press-wide", name: "Leg Press with Wide and High Stance", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "Stance largo e alto" },
-          { id: "week2-walking-lunges", name: "Walking Lunges with Dumbbells", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "10 reps per gamba" },
-          { id: "week2-seated-lateral-raises", name: "Seated Dumbbell Lateral Raises", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "" },
-          { id: "week2-standing-shoulder-press", name: "Standing Barbell Shoulder Press", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" }
+          { id: "week2-barbell-squats", name: "Barbell Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "8", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3733-3264-4463-b961-626537353962/video.gif" },
+          { id: "week2-barbell-squats-pause", name: "Barbell Squats with Pause at the Bottom", muscleGroup: "legs", defaultSets: 2, defaultReps: "7", defaultRest: 120, notes: "Pausa in basso prima di risalire", gifUrl: "https://static.tildacdn.net/tild6464-6635-4131-b138-303139383731/video_2.gif" },
+          { id: "week2-leg-press-wide", name: "Leg Press with Wide and High Stance", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "Stance largo e alto", gifUrl: "https://static.tildacdn.net/tild6163-6536-4036-b364-636365333334/video_3.gif" },
+          { id: "week2-walking-lunges", name: "Walking Lunges with Dumbbells", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "10 reps per gamba", gifUrl: "https://static.tildacdn.net/tild6662-3736-4732-b766-306361363730/video_4.gif" },
+          { id: "week2-seated-lateral-raises", name: "Seated Dumbbell Lateral Raises", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6661-3132-4333-b639-376133613436/video_5.gif" },
+          { id: "week2-standing-shoulder-press", name: "Standing Barbell Shoulder Press", muscleGroup: "shoulders", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3836-3938-4730-a232-643536336135/video_6.gif" }
         ]
       },
       {
         dayLabel: "Wednesday - Chest, Triceps",
         exercises: [
-          { id: "week2-incline-bench-press", name: "Incline Bench Press (30°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "Inclinazione 30°" },
-          { id: "week2-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week2-cable-crossovers", name: "Cable Crossovers", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "" },
-          { id: "week2-close-grip-bench", name: "Close-Grip Bench Press", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" },
-          { id: "week2-seated-db-triceps", name: "Seated Dumbbell Raises for Triceps", muscleGroup: "arms", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" },
-          { id: "week2-max-pushups", name: "Max Push-Ups", muscleGroup: "chest", defaultSets: 1, defaultReps: "max", defaultRest: 0, notes: "1 set al cedimento" }
+          { id: "week2-incline-bench-press", name: "Incline Bench Press (30°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "Inclinazione 30°", gifUrl: "https://static.tildacdn.net/tild3064-3164-4433-a563-353232363132/video.gif" },
+          { id: "week2-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3137-6162-4539-b835-666132306131/video_2.gif" },
+          { id: "week2-cable-crossovers", name: "Cable Crossovers", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3034-3961-4135-a364-343534323131/video_3.gif" },
+          { id: "week2-close-grip-bench", name: "Close-Grip Bench Press", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3436-6162-4563-b064-393130313739/video_4.gif" },
+          { id: "week2-seated-db-triceps", name: "Seated Dumbbell Raises for Triceps", muscleGroup: "arms", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3866-6165-4237-b935-343165363731/video_5.gif" },
+          { id: "week2-max-pushups", name: "Max Push-Ups", muscleGroup: "chest", defaultSets: 1, defaultReps: "max", defaultRest: 0, notes: "1 set al cedimento", gifUrl: "https://static.tildacdn.net/tild6234-3234-4634-a238-616665616538/video_6.gif" }
         ]
       },
       {
         dayLabel: "Friday - Back, Biceps",
         exercises: [
-          { id: "week2-box-deadlift", name: "Box Deadlift (3-5 cm height)", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Rialzo 3-5 cm" },
-          { id: "week2-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 2, defaultReps: "3", defaultRest: 150, notes: "" },
-          { id: "week2-pullups", name: "Pull-Ups (or Lat Pulldown)", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "Oppure lat pulldown" },
-          { id: "week2-db-rows-bent", name: "Dumbbell Rows in Bent-Over Position", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week2-seated-db-shrugs", name: "Seated Dumbbell Shrugs", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" },
-          { id: "week2-barbell-curls", name: "Straight Barbell Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "" },
-          { id: "week2-reverse-grip-curls", name: "Reverse Grip Barbell Curls", muscleGroup: "arms", defaultSets: 2, defaultReps: "15", defaultRest: 60, notes: "" }
+          { id: "week2-box-deadlift", name: "Box Deadlift (3-5 cm height)", muscleGroup: "back", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Rialzo 3-5 cm", gifUrl: "https://static.tildacdn.net/tild6532-3464-4663-a639-353537396235/video.gif" },
+          { id: "week2-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 2, defaultReps: "3", defaultRest: 150, notes: "", gifUrl: "https://static.tildacdn.net/tild3032-6633-4561-a664-653636346161/video_2.gif" },
+          { id: "week2-pullups", name: "Pull-Ups (or Lat Pulldown)", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "Oppure lat pulldown", gifUrl: "https://static.tildacdn.net/tild3234-3834-4766-b265-383864353662/video_3.gif" },
+          { id: "week2-db-rows-bent", name: "Dumbbell Rows in Bent-Over Position", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3265-3763-4439-a438-383064613631/video_4.gif" },
+          { id: "week2-seated-db-shrugs", name: "Seated Dumbbell Shrugs", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3231-3437-4330-a562-343334356239/video_5.gif" },
+          { id: "week2-barbell-curls", name: "Straight Barbell Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3364-3431-4664-b061-363038623866/video_6.gif" },
+          { id: "week2-reverse-grip-curls", name: "Reverse Grip Barbell Curls", muscleGroup: "arms", defaultSets: 2, defaultReps: "15", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild6535-6630-4962-b735-323231353266/video_7.gif" }
         ]
       },
       absAndCoreDay(2)
