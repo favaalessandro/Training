@@ -370,14 +370,23 @@ function createExerciseCard(ex, exIdx, unit) {
     </div>
   `;
 
+  const isTimeBased = ex.defaultReps && ex.defaultReps.toString().includes('sec');
+  const isMaxHold = ex.defaultReps && ex.defaultReps.toString().toLowerCase() === 'max';
+
   ex.sets.forEach((set, sIdx) => {
+    const repsCell = isTimeBased
+      ? `<span class="mono" style="font-size:0.8125rem;color:var(--gold-primary);text-align:center">${ex.defaultReps}</span>`
+      : isMaxHold
+        ? `<span class="mono" style="font-size:0.8125rem;color:var(--gold-primary);text-align:center">max</span>`
+        : `<input type="number" class="set-input" data-field="reps" value="${set.reps || ''}"
+            placeholder="0" min="0" inputmode="numeric">`;
+
     setsHTML += `
       <div class="set-row" data-ex="${exIdx}" data-set="${sIdx}">
         <span class="set-number">${sIdx + 1}</span>
         <input type="number" class="set-input" data-field="weight" value="${set.weight || ''}"
           placeholder="0" min="0" step="0.5" inputmode="decimal">
-        <input type="number" class="set-input" data-field="reps" value="${set.reps || ''}"
-          placeholder="0" min="0" inputmode="numeric">
+        ${repsCell}
         <input type="number" class="set-input" data-field="rpe" value="${set.rpe || ''}"
           placeholder="-" min="1" max="10" inputmode="numeric" style="width:52px">
         <button class="set-check ${set.completed ? 'completed' : ''}" data-action="toggle">
