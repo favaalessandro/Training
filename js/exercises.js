@@ -144,7 +144,51 @@ const exerciseDB = {
       absAndCoreDay(2)
     ]
   },
-  3: { days: [absAndCoreDay(3)] },
+  3: {
+    days: [
+      {
+        dayLabel: "Monday - Legs",
+        exercises: [
+          { id: "week3-barbell-squats", name: "Barbell Squats", muscleGroup: "legs", defaultSets: 4, defaultReps: "6", defaultRest: 150, notes: "" },
+          { id: "week3-front-squats", name: "Front Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "10", defaultRest: 120, notes: "" },
+          { id: "week3-deadlifts", name: "Deadlifts", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
+          { id: "week3-leg-press-pause", name: "Leg Press with Pause at the Bottom for 3 sec", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "Pausa di 3 secondi in basso" },
+          { id: "week3-jumping-jacks", name: "Jumping Jacks to Maximum Height", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday - Chest",
+        exercises: [
+          { id: "week3-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
+          { id: "week3-close-grip-bench", name: "Close-Grip Barbell Bench Press", muscleGroup: "chest", defaultSets: 2, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week3-parallel-dips", name: "Parallel Bar Dips (weighted if possible)", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "Con peso aggiuntivo se possibile" },
+          { id: "week3-flyes", name: "Flyes", muscleGroup: "chest", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" },
+          { id: "week3-plate-press", name: "Plate Press", muscleGroup: "chest", defaultSets: 2, defaultReps: "20", defaultRest: 60, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Friday - Back",
+        exercises: [
+          { id: "week3-deadlifts-fri", name: "Deadlifts", muscleGroup: "back", defaultSets: 3, defaultReps: "7", defaultRest: 150, notes: "" },
+          { id: "week3-rack-pulls", name: "Rack Pulls (bar 3-5 cm above the knee)", muscleGroup: "back", defaultSets: 2, defaultReps: "9", defaultRest: 120, notes: "Barra 3-5 cm sopra il ginocchio" },
+          { id: "week3-seated-cable-rows", name: "Seated Cable Rows", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week3-close-grip-pulldown", name: "Close Grip Pulldown", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week3-straight-arm-pulldowns", name: "Straight-Arm Pulldowns", muscleGroup: "back", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Saturday - Arms and Shoulders",
+        exercises: [
+          { id: "week3-hammer-curls", name: "Hammer Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
+          { id: "week3-wide-grip-curls", name: "Wide-Grip Barbell Curls", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
+          { id: "week3-skull-crushers", name: "Skull Crushers", muscleGroup: "arms", defaultSets: 3, defaultReps: "8", defaultRest: 60, notes: "" },
+          { id: "week3-incline-triceps-ext", name: "Incline Dumbbell Triceps Extensions", muscleGroup: "arms", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" },
+          { id: "week3-seated-lateral-raises", name: "Seated Dumbbell Lateral Raises", muscleGroup: "shoulders", defaultSets: 4, defaultReps: "15", defaultRest: 60, notes: "" }
+        ]
+      },
+      absAndCoreDay(3)
+    ]
+  },
   4: { days: [absAndCoreDay(4)] },
   5: { days: [absAndCoreDay(5)] },
   6: { days: [absAndCoreDay(6)] },
