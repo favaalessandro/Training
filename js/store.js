@@ -2,7 +2,8 @@ const KEYS = {
   exercises: 'gym-tracker-exercises',
   logs: 'gym-tracker-logs',
   prs: 'gym-tracker-prs',
-  settings: 'gym-tracker-settings'
+  settings: 'gym-tracker-settings',
+  savedWeights: 'gym-tracker-saved-weights'
 };
 
 function generateId() {
@@ -119,6 +120,23 @@ export function updatePR(exerciseId, record) {
   return record;
 }
 
+/* ── Saved Weights ── */
+
+export function getSavedWeights(exerciseId) {
+  const all = read(KEYS.savedWeights) || {};
+  return all[exerciseId] || null;
+}
+
+export function saveExerciseWeights(exerciseId, weights) {
+  const all = read(KEYS.savedWeights) || {};
+  all[exerciseId] = weights;
+  write(KEYS.savedWeights, all);
+}
+
+export function getAllSavedWeights() {
+  return read(KEYS.savedWeights) || {};
+}
+
 /* ── Export / Import ── */
 
 export function exportAllData() {
@@ -128,7 +146,8 @@ export function exportAllData() {
     exercises: getExerciseDB(),
     logs: getLogs(),
     prs: getPRs(),
-    settings: getSettings()
+    settings: getSettings(),
+    savedWeights: getAllSavedWeights()
   };
 }
 
@@ -140,6 +159,7 @@ export function importAllData(data) {
   if (data.logs) write(KEYS.logs, data.logs);
   if (data.prs) write(KEYS.prs, data.prs);
   if (data.settings) write(KEYS.settings, data.settings);
+  if (data.savedWeights) write(KEYS.savedWeights, data.savedWeights);
 }
 
 export function resetAllData() {

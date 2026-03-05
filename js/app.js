@@ -9,7 +9,7 @@ import {
   addSet, removeSet, updateExerciseNotes, updateWorkoutMood,
   updateWorkoutNotes, finishWorkout, discardWorkout,
   startTimer, stopTimer, isTimerRunning,
-  recoverWorkout, clearRecovery
+  recoverWorkout, clearRecovery, saveCurrentExerciseWeights
 } from './tracker.js';
 import { getAllPRsSorted, calcEstimated1RM } from './pr.js';
 import { renderCalendar } from './calendar.js';
@@ -485,6 +485,9 @@ function createExerciseCard(ex, exIdx, unit) {
       <button class="btn btn-sm btn-secondary add-set-btn" data-ex="${exIdx}">
         <i data-lucide="plus" style="width:14px;height:14px"></i> Serie
       </button>
+      <button class="btn btn-sm btn-secondary save-weights-btn" data-ex="${exIdx}">
+        <i data-lucide="save" style="width:14px;height:14px"></i> Salva carichi
+      </button>
     </div>
   `;
 
@@ -548,6 +551,18 @@ function createExerciseCard(ex, exIdx, unit) {
   card.querySelector('.add-set-btn')?.addEventListener('click', () => {
     addSet(exIdx);
     renderActiveWorkout(document.getElementById('view-workout'));
+  });
+
+  // Save weights button
+  card.querySelector('.save-weights-btn')?.addEventListener('click', (e) => {
+    const ok = saveCurrentExerciseWeights(exIdx);
+    if (ok) {
+      showToast(`Carichi salvati per ${ex.exerciseName}`);
+      const btn = e.currentTarget;
+      btn.style.borderColor = 'var(--success)';
+      btn.style.color = 'var(--success)';
+      setTimeout(() => { btn.style.borderColor = ''; btn.style.color = ''; }, 1500);
+    }
   });
 
   return card;

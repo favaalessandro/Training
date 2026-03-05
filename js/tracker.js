@@ -1,4 +1,4 @@
-import { getExerciseDB, getWeekData, saveLog, getLogs, getSettings, generateId } from './store.js';
+import { getExerciseDB, getWeekData, saveLog, getLogs, getSettings, generateId, getSavedWeights, saveExerciseWeights } from './store.js';
 import { checkAndUpdatePRs } from './pr.js';
 
 let activeWorkout = null;
@@ -55,17 +55,25 @@ function prefillFromHistory(workout, weekNumber, dayLabel) {
     .filter(l => l.weekNumber === weekNumber && l.dayLabel === dayLabel)
     .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
-  if (logs.length === 0) return;
-
-  const lastLog = logs[0];
   for (const ex of workout.exercises) {
-    const prevEx = (lastLog.exercises || []).find(e => e.exerciseId === ex.exerciseId);
-    if (!prevEx) continue;
+    // First: try saved weights (permanent)
+    const saved = getSavedWeights(ex.exerciseId);
+    if (saved) {
+      for (let i = 0; i < ex.sets.length && i < saved.length; i++) {
+        if (saved[i] > 0) ex.sets[i].weight = saved[i];
+      }
+    }
 
-    for (let i = 0; i < ex.sets.length && i < (prevEx.sets || []).length; i++) {
-      const prev = prevEx.sets[i];
-      if (prev.weight > 0) ex.sets[i].weight = prev.weight;
-      if (prev.reps > 0) ex.sets[i].reps = prev.reps;
+    // Then: override with last log data (more recent)
+    if (logs.length > 0) {
+      const prevEx = (logs[0].exercises || []).find(e => e.exerciseId === ex.exerciseId);
+      if (prevEx) {
+        for (let i = 0; i < ex.sets.length && i < (prevEx.sets || []).length; i++) {
+          const prev = prevEx.sets[i];
+          if (prev.weight > 0) ex.sets[i].weight = prev.weight;
+          if (prev.reps > 0) ex.sets[i].reps = prev.reps;
+        }
+      }
     }
   }
 }
@@ -145,10 +153,28 @@ export function updateWorkoutNotes(notes) {
 export function finishWorkout() {
   if (!activeWorkout) return null;
   activeWorkout.duration = Math.round((Date.now() - activeWorkout.startTime) / 60000);
+
+  // Auto-save weights for completed exercises
+  for (const ex of activeWorkout.exercises) {
+    const weights = ex.sets.filter(s => s.completed).length > 0
+      ? ex.sets.map(s => s.weight || 0)
+      : null;
+    if (weights) saveExerciseWeights(ex.exerciseId, weights);
+  }
+
   const saved = saveLog(activeWorkout);
   const result = { ...activeWorkout };
   activeWorkout = null;
   return result;
+}
+
+export function saveCurrentExerciseWeights(exerciseIndex) {
+  if (!activeWorkout) return false;
+  const ex = activeWorkout.exercises[exerciseIndex];
+  if (!ex) return false;
+  const weights = ex.sets.map(s => s.weight || 0);
+  saveExerciseWeights(ex.exerciseId, weights);
+  return true;
 }
 
 export function discardWorkout() {
