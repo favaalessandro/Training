@@ -72,11 +72,11 @@ const exerciseDB = {
       {
         dayLabel: "Monday - Legs",
         exercises: [
-          { id: "week1-barbell-squats", name: "Barbell Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "" },
-          { id: "week1-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 2, defaultReps: "15", defaultRest: 90, notes: "" },
-          { id: "week1-deadlift-db", name: "Deadlift with Dumbbells", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Pause for 1 sec at the bottom" },
-          { id: "week1-single-leg-squats", name: "Single-Leg Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "With or without support" },
-          { id: "week1-jumping-jacks", name: "Jumping Jacks to Max Height", muscleGroup: "legs", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "Jump as high as possible" }
+          { id: "week1-barbell-squats", name: "Barbell Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild6636-3736-4538-b466-376134306566/video.gif" },
+          { id: "week1-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 2, defaultReps: "15", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3566-6664-4061-a336-343838626130/video_2.gif" },
+          { id: "week1-deadlift-db", name: "Deadlift with Dumbbells", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Pause for 1 sec at the bottom", gifUrl: "https://static.tildacdn.net/tild6162-3331-4138-b135-623638386563/video_3.gif" },
+          { id: "week1-single-leg-squats", name: "Single-Leg Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "With or without support", gifUrl: "https://static.tildacdn.net/tild3937-6564-4666-b235-313966383661/video_4.gif" },
+          { id: "week1-jumping-jacks", name: "Jumping Jacks to Max Height", muscleGroup: "legs", defaultSets: 4, defaultReps: "10", defaultRest: 60, notes: "Jump as high as possible", gifUrl: "https://static.tildacdn.net/tild6137-6436-4561-b432-613737616631/video_5.gif" }
         ]
       },
       {
