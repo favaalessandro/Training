@@ -664,21 +664,21 @@ const homeExerciseDB = {
       {
         dayLabel: "Friday — Chest + Triceps",
         exercises: [
-          { id: "hw4-weighted-pushups", name: "Weighted Push-ups on the Back", muscleGroup: "chest", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "hw4-wide-grip-pushups", name: "Wide Grip Push-ups on Parallel Bars", muscleGroup: "chest", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "hw4-reverse-dips", name: "Reverse Dips with Straight Legs", muscleGroup: "arms", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "For triceps" },
-          { id: "hw4-french-press", name: "French Press", muscleGroup: "arms", defaultSets: 4, defaultReps: "8", defaultRest: 90, notes: "" },
-          { id: "hw4-flyes", name: "Flyes with Palms Facing Forward", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "Dumbbells, weights, or water bottles - anything that adds resistance" }
+          { id: "hw4-weighted-pushups", name: "Weighted Push-ups on the Back", muscleGroup: "chest", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3330-6630-4631-a437-373866653032/video.gif" },
+          { id: "hw4-wide-grip-pushups", name: "Wide Grip Push-ups on Parallel Bars", muscleGroup: "chest", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3739-6630-4364-b033-336261633637/video1.gif" },
+          { id: "hw4-reverse-dips", name: "Reverse Dips with Straight Legs", muscleGroup: "arms", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "For triceps", gifUrl: "https://static.tildacdn.net/tild3739-6232-4264-b735-373762303639/video2.gif" },
+          { id: "hw4-french-press", name: "French Press", muscleGroup: "arms", defaultSets: 4, defaultReps: "8", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3064-3436-4337-b961-623237616634/video3.gif" },
+          { id: "hw4-flyes", name: "Flyes with Palms Facing Forward", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "Dumbbells, weights, or water bottles - anything that adds resistance", gifUrl: "https://static.tildacdn.net/tild3833-3364-4966-b461-623164633930/video4.gif" }
         ]
       },
       {
         dayLabel: "Saturday — Abs + Static Holds",
         exercises: [
-          { id: "hw4-knee-raises", name: "Knee Raises on a Pull-up Bar", muscleGroup: "abs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" },
-          { id: "hw4-situps", name: "Sit-ups", muscleGroup: "abs", defaultSets: 3, defaultReps: "20", defaultRest: 60, notes: "" },
-          { id: "hw4-heel-touches", name: "Alternate Heel Touches", muscleGroup: "abs", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "" },
-          { id: "hw4-scissors", name: "Scissors while Lying Down", muscleGroup: "abs", defaultSets: 3, defaultReps: "25", defaultRest: 60, notes: "" },
-          { id: "hw4-plank", name: "Plank", muscleGroup: "abs", defaultSets: 2, defaultReps: "Max", defaultRest: 90, notes: "" }
+          { id: "hw4-knee-raises", name: "Knee Raises on a Pull-up Bar", muscleGroup: "abs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3238-3339-4761-a432-356266613962/video.gif" },
+          { id: "hw4-situps", name: "Sit-ups", muscleGroup: "abs", defaultSets: 3, defaultReps: "20", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3432-6136-4433-a265-383130353437/video1.gif" },
+          { id: "hw4-heel-touches", name: "Alternate Heel Touches", muscleGroup: "abs", defaultSets: 3, defaultReps: "15", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3236-6630-4534-a361-306563316139/video2.gif" },
+          { id: "hw4-scissors", name: "Scissors while Lying Down", muscleGroup: "abs", defaultSets: 3, defaultReps: "25", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3639-3566-4162-b463-346163346232/video3.gif" },
+          { id: "hw4-plank", name: "Plank", muscleGroup: "abs", defaultSets: 2, defaultReps: "Max", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6366-3336-4534-b930-303464376231/video4.gif" }
         ]
       }
     ]
