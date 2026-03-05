@@ -655,10 +655,10 @@ const homeExerciseDB = {
       {
         dayLabel: "Wednesday — Back + Biceps",
         exercises: [
-          { id: "hw4-chin-ups", name: "Chin-ups from Below", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 120, notes: "" },
-          { id: "hw4-bent-over-rows", name: "Bent-over Rows", muscleGroup: "back", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "Dumbbells, weights, or water bottles - anything that adds resistance" },
-          { id: "hw4-horizontal-pullups", name: "Horizontal Pull-ups", muscleGroup: "back", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
-          { id: "hw4-pullups-behind-head", name: "Pull-ups Behind the Head", muscleGroup: "back", defaultSets: 4, defaultReps: "6", defaultRest: 150, notes: "" }
+          { id: "hw4-chin-ups", name: "Chin-ups from Below", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3937-3163-4438-b133-316664326364/video.gif" },
+          { id: "hw4-bent-over-rows", name: "Bent-over Rows", muscleGroup: "back", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "Dumbbells, weights, or water bottles - anything that adds resistance", gifUrl: "https://static.tildacdn.net/tild6231-3439-4165-b931-326432323633/video1.gif" },
+          { id: "hw4-horizontal-pullups", name: "Horizontal Pull-ups", muscleGroup: "back", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6530-3965-4366-a438-323239383734/video2.gif" },
+          { id: "hw4-pullups-behind-head", name: "Pull-ups Behind the Head", muscleGroup: "back", defaultSets: 4, defaultReps: "6", defaultRest: 150, notes: "", gifUrl: "https://static.tildacdn.net/tild6666-6330-4765-a539-383136353330/video3.gif" }
         ]
       },
       {
