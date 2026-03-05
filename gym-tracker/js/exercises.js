@@ -163,6 +163,192 @@ const exerciseDB = {
       }
     ]
   },
+  4: {
+    days: [
+      {
+        dayLabel: "Day 1 - Legs (Monday)",
+        exercises: [
+          {
+            id: "week4-plie-squats",
+            name: "Plie Squats with Added Weight",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "15",
+            defaultRest: 90,
+            notes: "Wide stance, weight between legs"
+          },
+          {
+            id: "week4-pistol-squats",
+            name: "Pistol Squats with Weight",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 120,
+            notes: ""
+          },
+          {
+            id: "week4-bulgarian-split-squats",
+            name: "Bulgarian Split Squats",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "15",
+            defaultRest: 90,
+            notes: ""
+          },
+          {
+            id: "week4-deadlift",
+            name: "Deadlift with Added Weight",
+            muscleGroup: "legs",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 120,
+            notes: ""
+          }
+        ]
+      },
+      {
+        dayLabel: "Day 2 - Back + Biceps (Wednesday)",
+        exercises: [
+          {
+            id: "week4-chin-ups",
+            name: "Chin-ups from Below",
+            muscleGroup: "back",
+            defaultSets: 4,
+            defaultReps: "10",
+            defaultRest: 120,
+            notes: ""
+          },
+          {
+            id: "week4-bent-over-rows",
+            name: "Bent-over Rows",
+            muscleGroup: "back",
+            defaultSets: 4,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "Dumbbells, weights, or water bottles - anything that adds resistance"
+          },
+          {
+            id: "week4-horizontal-pullups",
+            name: "Horizontal Pull-ups",
+            muscleGroup: "back",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: ""
+          },
+          {
+            id: "week4-pullups-behind-head",
+            name: "Pull-ups Behind the Head",
+            muscleGroup: "back",
+            defaultSets: 4,
+            defaultReps: "6",
+            defaultRest: 150,
+            notes: ""
+          }
+        ]
+      },
+      {
+        dayLabel: "Day 3 - Chest + Triceps (Friday)",
+        exercises: [
+          {
+            id: "week4-weighted-pushups",
+            name: "Weighted Push-ups on the Back",
+            muscleGroup: "chest",
+            defaultSets: 4,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: ""
+          },
+          {
+            id: "week4-wide-grip-pushups",
+            name: "Wide Grip Push-ups on Parallel Bars",
+            muscleGroup: "chest",
+            defaultSets: 4,
+            defaultReps: "10",
+            defaultRest: 90,
+            notes: ""
+          },
+          {
+            id: "week4-reverse-dips",
+            name: "Reverse Dips with Straight Legs",
+            muscleGroup: "arms",
+            defaultSets: 4,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "For triceps"
+          },
+          {
+            id: "week4-french-press",
+            name: "French Press",
+            muscleGroup: "arms",
+            defaultSets: 4,
+            defaultReps: "8",
+            defaultRest: 90,
+            notes: ""
+          },
+          {
+            id: "week4-flyes",
+            name: "Flyes with Palms Facing Forward",
+            muscleGroup: "chest",
+            defaultSets: 3,
+            defaultReps: "12",
+            defaultRest: 90,
+            notes: "Dumbbells, weights, or water bottles - anything that adds resistance"
+          }
+        ]
+      },
+      {
+        dayLabel: "Day 4 - Abs + Static Holds (Saturday)",
+        exercises: [
+          {
+            id: "week4-knee-raises",
+            name: "Knee Raises on a Pull-up Bar",
+            muscleGroup: "abs",
+            defaultSets: 3,
+            defaultReps: "10",
+            defaultRest: 60,
+            notes: ""
+          },
+          {
+            id: "week4-situps",
+            name: "Sit-ups",
+            muscleGroup: "abs",
+            defaultSets: 3,
+            defaultReps: "20",
+            defaultRest: 60,
+            notes: ""
+          },
+          {
+            id: "week4-heel-touches",
+            name: "Alternate Heel Touches",
+            muscleGroup: "abs",
+            defaultSets: 3,
+            defaultReps: "15",
+            defaultRest: 60,
+            notes: ""
+          },
+          {
+            id: "week4-scissors",
+            name: "Scissors while Lying Down",
+            muscleGroup: "abs",
+            defaultSets: 3,
+            defaultReps: "25",
+            defaultRest: 60,
+            notes: ""
+          },
+          {
+            id: "week4-plank",
+            name: "Plank",
+            muscleGroup: "abs",
+            defaultSets: 2,
+            defaultReps: "Max",
+            defaultRest: 90,
+            notes: ""
+          }
+        ]
+      }
+    ]
+  },
   3: {
     days: [
       {
