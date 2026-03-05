@@ -73,7 +73,10 @@ function handleRoute() {
   const hash = location.hash.slice(1) || '/';
   const route = routes[hash];
 
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(v => {
+    v.classList.remove('active');
+    v.innerHTML = '';
+  });
 
   // Update nav
   document.querySelectorAll('.nav-item').forEach(item => {
@@ -625,9 +628,9 @@ function renderActiveWorkout(view) {
   `;
 
   // RPE info toggle
-  document.getElementById('rpe-info-toggle')?.addEventListener('click', () => {
-    const table = document.getElementById('rpe-table');
-    const chevron = document.getElementById('rpe-chevron');
+  view.querySelector('#rpe-info-toggle')?.addEventListener('click', () => {
+    const table = view.querySelector('#rpe-table');
+    const chevron = view.querySelector('#rpe-chevron');
     const open = table.style.display === 'none';
     table.style.display = open ? 'block' : 'none';
     chevron.setAttribute('data-lucide', open ? 'chevron-up' : 'chevron-down');
@@ -635,9 +638,9 @@ function renderActiveWorkout(view) {
   });
 
   // Weight tip toggle
-  document.getElementById('weight-tip-toggle')?.addEventListener('click', () => {
-    const content = document.getElementById('weight-tip-content');
-    const chevron = document.getElementById('weight-tip-chevron');
+  view.querySelector('#weight-tip-toggle')?.addEventListener('click', () => {
+    const content = view.querySelector('#weight-tip-content');
+    const chevron = view.querySelector('#weight-tip-chevron');
     const open = content.style.display === 'none';
     content.style.display = open ? 'block' : 'none';
     chevron.setAttribute('data-lucide', open ? 'chevron-up' : 'chevron-down');
@@ -645,9 +648,9 @@ function renderActiveWorkout(view) {
   });
 
   // Increase weight tip toggle
-  document.getElementById('increase-weight-tip-toggle')?.addEventListener('click', () => {
-    const content = document.getElementById('increase-weight-tip-content');
-    const chevron = document.getElementById('increase-weight-tip-chevron');
+  view.querySelector('#increase-weight-tip-toggle')?.addEventListener('click', () => {
+    const content = view.querySelector('#increase-weight-tip-content');
+    const chevron = view.querySelector('#increase-weight-tip-chevron');
     const open = content.style.display === 'none';
     content.style.display = open ? 'block' : 'none';
     chevron.setAttribute('data-lucide', open ? 'chevron-up' : 'chevron-down');
@@ -655,7 +658,7 @@ function renderActiveWorkout(view) {
   });
 
   // Render exercises
-  const list = document.getElementById('exercise-list');
+  const list = view.querySelector('#exercise-list');
   workout.exercises.forEach((ex, exIdx) => {
     list.appendChild(createExerciseCard(ex, exIdx, unit));
   });
@@ -670,17 +673,22 @@ function renderActiveWorkout(view) {
   });
 
   // Notes
-  document.getElementById('workout-notes')?.addEventListener('input', (e) => {
+  view.querySelector('#workout-notes')?.addEventListener('input', (e) => {
     updateWorkoutNotes(e.target.value);
   });
 
-  // Finish button
-  document.getElementById('btn-finish')?.addEventListener('click', () => {
+  // Finish button — navigate back to the correct tab
+  const isHomeWorkout = view.id === 'view-home-workout';
+  view.querySelector('#btn-finish')?.addEventListener('click', () => {
     const result = finishWorkout();
     clearRecovery();
     if (result) {
       showToast(`Allenamento completato — ${result.duration} min`, 'pr');
-      renderWorkout();
+      if (isHomeWorkout) {
+        renderHomeWorkout();
+      } else {
+        renderWorkout();
+      }
     }
   });
 
