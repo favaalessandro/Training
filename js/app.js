@@ -197,7 +197,7 @@ function renderHome() {
     </div>
 
     <div class="section-header" style="margin-top:var(--space-lg)">
-      <h3>Powerbuilding Gold</h3>
+      <h3>POWERBUILDING WARM-UP</h3>
     </div>
     <div class="card" style="padding:0;overflow:hidden">
       <div style="position:relative;padding-bottom:56.25%;height:0">
