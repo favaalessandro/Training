@@ -239,11 +239,11 @@ const exerciseDB = {
       {
         dayLabel: "Wednesday - Chest",
         exercises: [
-          { id: "week5-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "" },
-          { id: "week5-bench-press-pause", name: "Bench Press (4s pause at bottom)", muscleGroup: "chest", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "4 secondi di pausa in basso" },
-          { id: "week5-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
-          { id: "week5-pullover", name: "Pullover", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
-          { id: "week5-floor-presses", name: "Floor Presses", muscleGroup: "chest", defaultSets: 2, defaultReps: "max", defaultRest: 120, notes: "" }
+          { id: "week5-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3033-3237-4464-b334-333032353133/video.gif" },
+          { id: "week5-bench-press-pause", name: "Bench Press (4s pause at bottom)", muscleGroup: "chest", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "4 secondi di pausa in basso", gifUrl: "https://static.tildacdn.net/tild3030-6233-4463-b935-656463356131/video_2.gif" },
+          { id: "week5-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3161-3961-4362-b366-353066383061/video_3.gif" },
+          { id: "week5-pullover", name: "Pullover", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6162-3561-4165-b438-623161313361/video_4.gif" },
+          { id: "week5-floor-presses", name: "Floor Presses", muscleGroup: "chest", defaultSets: 2, defaultReps: "max", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3434-6561-4264-b630-613961363836/video_5.gif" }
         ]
       },
       {
