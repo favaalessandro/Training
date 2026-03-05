@@ -224,7 +224,40 @@ const exerciseDB = {
       absAndCoreDay(4)
     ]
   },
-  5: { days: [absAndCoreDay(5)] },
+  5: {
+    days: [
+      {
+        dayLabel: "Monday - Legs",
+        exercises: [
+          { id: "week5-squats", name: "Squats", muscleGroup: "legs", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "" },
+          { id: "week5-front-squats", name: "Front Squats", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 120, notes: "" },
+          { id: "week5-leg-press", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week5-high-jumps", name: "High Jumps", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" },
+          { id: "week5-single-leg-squats", name: "Single-Leg Squats", muscleGroup: "legs", defaultSets: 2, defaultReps: "10", defaultRest: 90, notes: "Si possono fare con supporto" }
+        ]
+      },
+      {
+        dayLabel: "Wednesday - Chest",
+        exercises: [
+          { id: "week5-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "" },
+          { id: "week5-bench-press-pause", name: "Bench Press (4s pause at bottom)", muscleGroup: "chest", defaultSets: 3, defaultReps: "3", defaultRest: 180, notes: "4 secondi di pausa in basso" },
+          { id: "week5-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "week5-pullover", name: "Pullover", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
+          { id: "week5-floor-presses", name: "Floor Presses", muscleGroup: "chest", defaultSets: 2, defaultReps: "max", defaultRest: 120, notes: "" }
+        ]
+      },
+      {
+        dayLabel: "Friday - Back and Legs",
+        exercises: [
+          { id: "week5-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 4, defaultReps: "4", defaultRest: 180, notes: "" },
+          { id: "week5-leg-press-fri", name: "Leg Press", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
+          { id: "week5-cable-rows-pause", name: "Cable Rows (2s pause at top)", muscleGroup: "back", defaultSets: 5, defaultReps: "8", defaultRest: 90, notes: "2 secondi di pausa in alto" },
+          { id: "week5-vertical-jumps", name: "Vertical Jumps", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" }
+        ]
+      },
+      absAndCoreDay(5)
+    ]
+  },
   6: { days: [absAndCoreDay(6)] },
   7: { days: [absAndCoreDay(7)] },
   8: { days: [absAndCoreDay(8)] }
