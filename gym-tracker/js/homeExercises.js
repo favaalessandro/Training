@@ -771,10 +771,10 @@ const homeExerciseDB = {
       {
         dayLabel: "Monday — Legs",
         exercises: [
-          { id: "hw7-reverse-lunges", name: "Reverse Lunges", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "On each leg" },
-          { id: "hw7-squat-jumps", name: "Squat Jumps with Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" },
-          { id: "hw7-front-squats", name: "Front Squats with Weight in Front", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 120, notes: "Emphasis on negative repetitions" },
-          { id: "hw7-lunges-shoulders", name: "Lunges with Weight on Shoulders", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "" }
+          { id: "hw7-reverse-lunges", name: "Reverse Lunges", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "On each leg", gifUrl: "https://static.tildacdn.net/tild3733-6231-4633-b063-323737623839/video.gif" },
+          { id: "hw7-squat-jumps", name: "Squat Jumps with Weight", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3264-3662-4631-a334-356330313665/video1.gif" },
+          { id: "hw7-front-squats", name: "Front Squats with Weight in Front", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 120, notes: "Emphasis on negative repetitions", gifUrl: "https://static.tildacdn.net/tild3130-6333-4534-a639-656232656561/video2.gif" },
+          { id: "hw7-lunges-shoulders", name: "Lunges with Weight on Shoulders", muscleGroup: "legs", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3363-3661-4661-b565-336234666133/video3.gif" }
         ]
       },
       {
