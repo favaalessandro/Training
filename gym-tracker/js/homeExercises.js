@@ -440,7 +440,7 @@ const homeExerciseDB = {
             defaultReps: "18",
             defaultRest: 90,
             notes: "Squat con salto",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6634-6661-4362-b634-643233333132/video.gif"
           },
           {
             id: "hw3-step-up-jumps",
@@ -450,7 +450,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6637-3536-4337-b861-366663633563/video2.gif"
           },
           {
             id: "hw3-each-leg-step-ups",
@@ -460,7 +460,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 90,
             notes: "Per ogni gamba, approccio combinato",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6636-3036-4531-b665-333630383339/video3.gif"
           },
           {
             id: "hw3-chair-pose-weight-front",
@@ -470,7 +470,7 @@ const homeExerciseDB = {
             defaultReps: "25",
             defaultRest: 60,
             notes: "Con peso davanti",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3962-6535-4666-a439-316661323632/video4.gif"
           }
         ]
       },
