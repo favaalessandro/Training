@@ -159,11 +159,11 @@ const exerciseDB = {
       {
         dayLabel: "Wednesday - Chest",
         exercises: [
-          { id: "week3-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "" },
-          { id: "week3-close-grip-bench", name: "Close-Grip Barbell Bench Press", muscleGroup: "chest", defaultSets: 2, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week3-parallel-dips", name: "Parallel Bar Dips (weighted if possible)", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "Con peso aggiuntivo se possibile" },
-          { id: "week3-flyes", name: "Flyes", muscleGroup: "chest", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" },
-          { id: "week3-plate-press", name: "Plate Press", muscleGroup: "chest", defaultSets: 2, defaultReps: "20", defaultRest: 60, notes: "" }
+          { id: "week3-db-bench-press", name: "Dumbbell Bench Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "", gifUrl: "https://static.tildacdn.net/tild3633-6532-4163-b134-613963383032/video.gif" },
+          { id: "week3-close-grip-bench", name: "Close-Grip Barbell Bench Press", muscleGroup: "chest", defaultSets: 2, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3734-6562-4436-b435-343562353961/video_2.gif" },
+          { id: "week3-parallel-dips", name: "Parallel Bar Dips (weighted if possible)", muscleGroup: "chest", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "Con peso aggiuntivo se possibile", gifUrl: "https://static.tildacdn.net/tild3332-6336-4664-b066-653733343464/video_3.gif" },
+          { id: "week3-flyes", name: "Flyes", muscleGroup: "chest", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3065-6639-4761-a231-633161653636/video_4.gif" },
+          { id: "week3-plate-press", name: "Plate Press", muscleGroup: "chest", defaultSets: 2, defaultReps: "20", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3832-3635-4034-b366-386661306632/video_5.gif" }
         ]
       },
       {
