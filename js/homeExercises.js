@@ -226,7 +226,7 @@ const homeExerciseDB = {
             defaultReps: "15",
             defaultRest: 90,
             notes: "Squat con peso e salto",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3238-3838-4338-a466-656630326264/video.gif"
           },
           {
             id: "hw2-pistol-squats",
@@ -236,7 +236,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3530-3134-4238-b635-363839303962/video2.gif"
           },
           {
             id: "hw2-weighted-lunges",
@@ -246,7 +246,7 @@ const homeExerciseDB = {
             defaultReps: "15",
             defaultRest: 90,
             notes: "Per ogni gamba",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3430-6631-4765-b137-316539393762/video3.gif"
           },
           {
             id: "hw2-chair-pose-weight",
@@ -256,7 +256,7 @@ const homeExerciseDB = {
             defaultReps: "max",
             defaultRest: 0,
             notes: "Tenere la posizione il più a lungo possibile con peso",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6466-6338-4038-a136-323162343162/video4.gif"
           },
           {
             id: "hw2-single-leg-calf-raises-weight",
@@ -266,7 +266,7 @@ const homeExerciseDB = {
             defaultReps: "25",
             defaultRest: 60,
             notes: "Per ogni gamba, con peso",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3936-3232-4336-b539-396636623464/video5.gif"
           }
         ]
       },
