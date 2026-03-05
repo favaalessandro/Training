@@ -194,11 +194,11 @@ const exerciseDB = {
       {
         dayLabel: "Monday - Legs",
         exercises: [
-          { id: "week4-squats", name: "Squats", muscleGroup: "legs", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "" },
-          { id: "week4-leg-press-pause", name: "Leg Press (pause for 3 seconds at the bottom)", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Pausa di 3 secondi in basso" },
-          { id: "week4-front-squats-db", name: "Front Squats with Dumbbell", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "" },
-          { id: "week4-long-jumps", name: "Long Jumps", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "" },
-          { id: "week4-weighted-hyperext", name: "Weighted Hyperextensions", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "" }
+          { id: "week4-squats", name: "Squats", muscleGroup: "legs", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3064-6431-4233-b933-376666646539/video.gif" },
+          { id: "week4-leg-press-pause", name: "Leg Press (pause for 3 seconds at the bottom)", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 120, notes: "Pausa di 3 secondi in basso", gifUrl: "https://static.tildacdn.net/tild3139-6631-4034-b334-666532616262/video_2.gif" },
+          { id: "week4-front-squats-db", name: "Front Squats with Dumbbell", muscleGroup: "legs", defaultSets: 4, defaultReps: "12", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3666-3764-4964-a631-656264663136/video_3.gif" },
+          { id: "week4-long-jumps", name: "Long Jumps", muscleGroup: "legs", defaultSets: 3, defaultReps: "8", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6664-3534-4434-a433-343864363662/video_4.gif" },
+          { id: "week4-weighted-hyperext", name: "Weighted Hyperextensions", muscleGroup: "legs", defaultSets: 3, defaultReps: "10", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3333-3934-4032-a537-353262653164/video_5.gif" }
         ]
       },
       {
