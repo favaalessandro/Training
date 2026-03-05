@@ -21,7 +21,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "12",
             defaultRest: 90,
-            notes: "Per ogni gamba, si possono fare con supporto"
+            notes: "Per ogni gamba, si possono fare con supporto",
+            gifUrl: "https://static.tildacdn.net/tild6238-3665-4233-a139-636439376530/video_1.gif"
           },
           {
             id: "hw1-box-jumps",
@@ -30,7 +31,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "10",
             defaultRest: 90,
-            notes: ""
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild3734-3961-4736-b164-323032346539/video_1_1.gif"
           },
           {
             id: "hw1-step-ups",
@@ -39,7 +41,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "14",
             defaultRest: 90,
-            notes: "Con peso aggiuntivo su un rialzo, per ogni gamba"
+            notes: "Con peso aggiuntivo su un rialzo, per ogni gamba",
+            gifUrl: "https://static.tildacdn.net/tild6162-6234-4632-a435-666136376463/video_2.gif"
           },
           {
             id: "hw1-standing-calf-raises",
@@ -48,7 +51,8 @@ const homeExerciseDB = {
             defaultSets: 4,
             defaultReps: "20",
             defaultRest: 60,
-            notes: "Con peso aggiuntivo su una gamba"
+            notes: "Con peso aggiuntivo su una gamba",
+            gifUrl: "https://static.tildacdn.net/tild3838-3538-4239-b666-363065373663/video_3.gif"
           },
           {
             id: "hw1-chair-pose",
@@ -57,7 +61,8 @@ const homeExerciseDB = {
             defaultSets: 1,
             defaultReps: "max",
             defaultRest: 0,
-            notes: "Tenere la posizione il più a lungo possibile"
+            notes: "Tenere la posizione il più a lungo possibile",
+            gifUrl: "https://static.tildacdn.net/tild6338-3962-4435-a463-363038303638/video_4.gif"
           }
         ]
       },
@@ -71,7 +76,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "10",
             defaultRest: 90,
-            notes: "Presa larga"
+            notes: "Presa larga",
+            gifUrl: "https://static.tildacdn.net/tild3633-3861-4036-b065-316237656366/video_1.gif"
           },
           {
             id: "hw1-reverse-grip-pullups",
@@ -80,7 +86,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "8",
             defaultRest: 90,
-            notes: "Presa inversa (supina)"
+            notes: "Presa inversa (supina)",
+            gifUrl: "https://static.tildacdn.net/tild3634-6637-4138-a262-356439336661/video_1_1.gif"
           },
           {
             id: "hw1-low-bar-pullups",
@@ -89,7 +96,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "8",
             defaultRest: 90,
-            notes: "Sbarra bassa"
+            notes: "Sbarra bassa",
+            gifUrl: "https://static.tildacdn.net/tild3232-6266-4330-b337-663133393430/video_2.gif"
           },
           {
             id: "hw1-reverse-narrow-low-bar-pullups",
@@ -98,7 +106,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "8",
             defaultRest: 90,
-            notes: "Presa inversa stretta, sbarra bassa"
+            notes: "Presa inversa stretta, sbarra bassa",
+            gifUrl: "https://static.tildacdn.net/tild3432-6430-4963-b338-623234363030/video_5.gif"
           }
         ]
       },
@@ -112,7 +121,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "10",
             defaultRest: 90,
-            notes: ""
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild3230-3561-4265-b235-303430623933/video_4.gif"
           },
           {
             id: "hw1-elevated-feet-pushups",
@@ -121,7 +131,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "12",
             defaultRest: 90,
-            notes: "Piedi rialzati"
+            notes: "Piedi rialzati",
+            gifUrl: "https://static.tildacdn.net/tild3534-6630-4665-b934-313539313332/video1.gif"
           },
           {
             id: "hw1-close-grip-pushups",
@@ -130,7 +141,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "12",
             defaultRest: 90,
-            notes: "Presa stretta"
+            notes: "Presa stretta",
+            gifUrl: "https://static.tildacdn.net/tild3735-3565-4461-a132-336139303531/video2_1.gif"
           },
           {
             id: "hw1-archer-pushups",
@@ -139,7 +151,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "10",
             defaultRest: 90,
-            notes: ""
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild6334-6234-4464-b061-653438313437/video3_1.gif"
           },
           {
             id: "hw1-french-press",
@@ -148,7 +161,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "8",
             defaultRest: 90,
-            notes: ""
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild3936-6633-4734-a532-353339636132/video4_1.gif"
           }
         ]
       },
@@ -162,7 +176,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "12",
             defaultRest: 60,
-            notes: ""
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild6263-6137-4438-b539-393661396232/video_1.gif"
           },
           {
             id: "hw1-leg-raises-parallel-bars",
@@ -171,7 +186,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "12",
             defaultRest: 60,
-            notes: "Alle parallele"
+            notes: "Alle parallele",
+            gifUrl: "https://static.tildacdn.net/tild3330-6538-4563-b734-326637376265/video1.gif"
           },
           {
             id: "hw1-crunches",
@@ -180,7 +196,8 @@ const homeExerciseDB = {
             defaultSets: 3,
             defaultReps: "20",
             defaultRest: 60,
-            notes: ""
+            notes: "",
+            gifUrl: "https://static.tildacdn.net/tild6235-6663-4232-b838-346339656331/video2.gif"
           },
           {
             id: "hw1-plank",
@@ -189,7 +206,8 @@ const homeExerciseDB = {
             defaultSets: 2,
             defaultReps: "max",
             defaultRest: 60,
-            notes: "Tenere la posizione il più a lungo possibile"
+            notes: "Tenere la posizione il più a lungo possibile",
+            gifUrl: "https://static.tildacdn.net/tild3135-3763-4430-a437-306161613333/video3.gif"
           }
         ]
       }
