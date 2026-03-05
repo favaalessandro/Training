@@ -204,21 +204,21 @@ const exerciseDB = {
       {
         dayLabel: "Wednesday - Chest",
         exercises: [
-          { id: "week4-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "" },
-          { id: "week4-narrow-db-press", name: "Narrow Dumbbell Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week4-incline-flyes", name: "Incline Flyes (30°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "Panca inclinata a 30 gradi" },
-          { id: "week4-cable-crossovers", name: "Cable Crossovers", muscleGroup: "chest", defaultSets: 4, defaultReps: "15", defaultRest: 60, notes: "" },
-          { id: "week4-triceps-pushdowns", name: "Triceps Pushdowns", muscleGroup: "arms", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "" },
-          { id: "week4-close-grip-bench-tempo", name: "Close Grip Bench Press (3s down, 1s up)", muscleGroup: "chest", defaultSets: 3, defaultReps: "5", defaultRest: 120, notes: "3 secondi in discesa, 1 secondo in salita. Importante farlo con uno spotter" }
+          { id: "week4-bench-press", name: "Bench Press", muscleGroup: "chest", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3731-6664-4965-b165-626138303037/video0.gif" },
+          { id: "week4-narrow-db-press", name: "Narrow Dumbbell Press", muscleGroup: "chest", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3662-3431-4831-b935-383166303031/video.gif" },
+          { id: "week4-incline-flyes", name: "Incline Flyes (30°)", muscleGroup: "chest", defaultSets: 3, defaultReps: "12", defaultRest: 90, notes: "Panca inclinata a 30 gradi", gifUrl: "https://static.tildacdn.net/tild3064-3734-4361-a262-366631303138/video_2.gif" },
+          { id: "week4-cable-crossovers", name: "Cable Crossovers", muscleGroup: "chest", defaultSets: 4, defaultReps: "15", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3931-3061-4266-b336-366635343530/video_3.gif" },
+          { id: "week4-triceps-pushdowns", name: "Triceps Pushdowns", muscleGroup: "arms", defaultSets: 3, defaultReps: "12", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3838-3463-4232-a237-316165323634/video_4.gif" },
+          { id: "week4-close-grip-bench-tempo", name: "Close Grip Bench Press (3s down, 1s up)", muscleGroup: "chest", defaultSets: 3, defaultReps: "5", defaultRest: 120, notes: "3 secondi in discesa, 1 secondo in salita. Importante farlo con uno spotter", gifUrl: "https://static.tildacdn.net/tild6131-6266-4434-a231-386232643061/video_5.gif" }
         ]
       },
       {
         dayLabel: "Friday - Back",
         exercises: [
-          { id: "week4-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "" },
-          { id: "week4-pullups", name: "Pull-ups (or Cable Pulldowns)", muscleGroup: "back", defaultSets: 4, defaultReps: "8", defaultRest: 90, notes: "O lat pulldown ai cavi" },
-          { id: "week4-horizontal-cable-rows", name: "Horizontal Cable Rows", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week4-good-morning", name: "Good Morning", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "Non usare troppo peso, concentrati sul sentire il movimento" }
+          { id: "week4-deadlift", name: "Deadlift", muscleGroup: "back", defaultSets: 5, defaultReps: "5", defaultRest: 180, notes: "", gifUrl: "https://static.tildacdn.net/tild3932-3731-4066-a130-313034646233/video.gif" },
+          { id: "week4-pullups", name: "Pull-ups (or Cable Pulldowns)", muscleGroup: "back", defaultSets: 4, defaultReps: "8", defaultRest: 90, notes: "O lat pulldown ai cavi", gifUrl: "https://static.tildacdn.net/tild3762-3731-4037-b739-623235396465/video_2.gif" },
+          { id: "week4-horizontal-cable-rows", name: "Horizontal Cable Rows", muscleGroup: "back", defaultSets: 4, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild6333-3962-4333-b662-396132373633/video_3.gif" },
+          { id: "week4-good-morning", name: "Good Morning", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "Non usare troppo peso, concentrati sul sentire il movimento", gifUrl: "https://static.tildacdn.net/tild3263-3363-4465-b234-616435336361/video_4.gif" }
         ]
       },
       absAndCoreDay(4)
