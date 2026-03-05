@@ -169,11 +169,11 @@ const exerciseDB = {
       {
         dayLabel: "Friday - Back",
         exercises: [
-          { id: "week3-deadlifts-fri", name: "Deadlifts", muscleGroup: "back", defaultSets: 3, defaultReps: "7", defaultRest: 150, notes: "" },
-          { id: "week3-rack-pulls", name: "Rack Pulls (bar 3-5 cm above the knee)", muscleGroup: "back", defaultSets: 2, defaultReps: "9", defaultRest: 120, notes: "Barra 3-5 cm sopra il ginocchio" },
-          { id: "week3-seated-cable-rows", name: "Seated Cable Rows", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week3-close-grip-pulldown", name: "Close Grip Pulldown", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "" },
-          { id: "week3-straight-arm-pulldowns", name: "Straight-Arm Pulldowns", muscleGroup: "back", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "" }
+          { id: "week3-deadlifts-fri", name: "Deadlifts", muscleGroup: "back", defaultSets: 3, defaultReps: "7", defaultRest: 150, notes: "", gifUrl: "https://static.tildacdn.net/tild3433-3133-4030-b034-313539326266/video.gif" },
+          { id: "week3-rack-pulls", name: "Rack Pulls (bar 3-5 cm above the knee)", muscleGroup: "back", defaultSets: 2, defaultReps: "9", defaultRest: 120, notes: "Barra 3-5 cm sopra il ginocchio", gifUrl: "https://static.tildacdn.net/tild6335-6233-4564-a364-376261326635/video_2.gif" },
+          { id: "week3-seated-cable-rows", name: "Seated Cable Rows", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3439-3236-4237-b234-386436353066/video_3.gif" },
+          { id: "week3-close-grip-pulldown", name: "Close Grip Pulldown", muscleGroup: "back", defaultSets: 3, defaultReps: "10", defaultRest: 90, notes: "", gifUrl: "https://static.tildacdn.net/tild3031-6532-4332-b939-643965353461/video_4.gif" },
+          { id: "week3-straight-arm-pulldowns", name: "Straight-Arm Pulldowns", muscleGroup: "back", defaultSets: 4, defaultReps: "12", defaultRest: 60, notes: "", gifUrl: "https://static.tildacdn.net/tild3738-6363-4631-a431-366639366337/video_5.gif" }
         ]
       },
       {
