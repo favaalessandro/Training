@@ -326,7 +326,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3837-6563-4236-a636-643333616564/video.gif"
           },
           {
             id: "hw2-one-leg-elevated-feet-pushups",
@@ -336,7 +336,7 @@ const homeExerciseDB = {
             defaultReps: "10",
             defaultRest: 90,
             notes: "Push-up con piedi rialzati su una gamba",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3363-6435-4437-b635-303930393039/video1.gif"
           },
           {
             id: "hw2-triceps-pushups",
@@ -346,7 +346,7 @@ const homeExerciseDB = {
             defaultReps: "12",
             defaultRest: 90,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild6539-3832-4665-a363-306537356637/video2.gif"
           },
           {
             id: "hw2-french-press",
@@ -356,7 +356,7 @@ const homeExerciseDB = {
             defaultReps: "8",
             defaultRest: 90,
             notes: "",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3965-6231-4666-b866-393262306330/video3.gif"
           },
           {
             id: "hw2-pushups-max",
@@ -366,7 +366,7 @@ const homeExerciseDB = {
             defaultReps: "max",
             defaultRest: 0,
             notes: "Massimo numero di ripetizioni",
-            gifUrl: ""
+            gifUrl: "https://static.tildacdn.net/tild3635-3838-4065-b838-613839383932/video4.gif"
           }
         ]
       },
