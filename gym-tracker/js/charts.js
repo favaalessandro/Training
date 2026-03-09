@@ -1,4 +1,4 @@
-import { getLogs, getExerciseDB, getSettings } from './store.js';
+import { getLogs, getExerciseDB, getHomeExerciseDB, getSchedeExerciseDB, getSettings } from './store.js';
 import { calcEstimated1RM } from './pr.js';
 
 let currentChart = null;
@@ -50,27 +50,62 @@ function destroyChart() {
 }
 
 /**
- * Get all unique exercise names/ids from logs
+ * Scan all 3 exercise databases (gym, home, schede) and return a Map of id→{name, muscleGroup}
  */
-export function getLoggedExercises() {
-  const logs = getLogs();
-  const exerciseMap = new Map();
-  const db = getExerciseDB();
+function buildFullExerciseMap() {
+  const map = new Map();
 
-  // Gather from DB
-  for (const [weekNum, weekData] of Object.entries(db)) {
+  // Gym DB
+  const gymDb = getExerciseDB();
+  for (const [, weekData] of Object.entries(gymDb)) {
     for (const day of (weekData.days || [])) {
       for (const ex of day.exercises) {
-        exerciseMap.set(ex.id, ex.name);
+        map.set(ex.id, { name: ex.name, muscleGroup: ex.muscleGroup });
       }
     }
   }
 
-  // Also from logs
+  // Home DB
+  const homeDb = getHomeExerciseDB();
+  for (const [, weekData] of Object.entries(homeDb)) {
+    for (const day of (weekData.days || [])) {
+      for (const ex of day.exercises) {
+        if (!map.has(ex.id)) map.set(ex.id, { name: ex.name, muscleGroup: ex.muscleGroup });
+      }
+    }
+  }
+
+  // Schede DB
+  const schedeDb = getSchedeExerciseDB();
+  for (const [, weekData] of Object.entries(schedeDb)) {
+    for (const day of (weekData.days || [])) {
+      for (const ex of day.exercises) {
+        if (!map.has(ex.id)) map.set(ex.id, { name: ex.name, muscleGroup: ex.muscleGroup });
+      }
+    }
+  }
+
+  return map;
+}
+
+/**
+ * Get all unique exercise names/ids from all databases + logs
+ */
+export function getLoggedExercises() {
+  const logs = getLogs();
+  const fullMap = buildFullExerciseMap();
+  const exerciseMap = new Map();
+
+  // Gather from all DBs
+  for (const [id, info] of fullMap) {
+    exerciseMap.set(id, info.name);
+  }
+
+  // Also from logs (fallback for exercises not in any DB)
   for (const log of logs) {
     for (const ex of (log.exercises || [])) {
       if (ex.exerciseId && !exerciseMap.has(ex.exerciseId)) {
-        exerciseMap.set(ex.exerciseId, ex.exerciseId);
+        exerciseMap.set(ex.exerciseId, ex.exerciseName || ex.exerciseId);
       }
     }
   }
@@ -174,17 +209,13 @@ export function renderExerciseChart(canvasId, exerciseId) {
  */
 function getWeeklyVolumeData(muscleGroup) {
   const logs = getLogs();
-  const db = getExerciseDB();
   const weekVolumes = {};
 
-  // Build exercise→muscleGroup map from db
+  // Build exercise→muscleGroup map from all databases
+  const fullMap = buildFullExerciseMap();
   const muscleMap = {};
-  for (const [, weekData] of Object.entries(db)) {
-    for (const day of (weekData.days || [])) {
-      for (const ex of day.exercises) {
-        muscleMap[ex.id] = ex.muscleGroup;
-      }
-    }
+  for (const [id, info] of fullMap) {
+    muscleMap[id] = info.muscleGroup;
   }
 
   for (const log of logs) {
