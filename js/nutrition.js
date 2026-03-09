@@ -3,6 +3,7 @@
    ═══════════════════════════════════════ */
 
 import { DIETS } from './diets.js';
+import { renderWeeklyMenuSection, initWeeklyMenuTabs } from './weekly-menu.js';
 
 function renderDietsSection() {
   const tabs = DIETS.map((d, i) =>
@@ -422,6 +423,8 @@ export function renderNutrition() {
     </div>
 
     ${renderDietsSection()}
+
+    ${renderWeeklyMenuSection()}
   `;
 
   // Init icons
@@ -451,4 +454,7 @@ export function renderNutrition() {
 
   // Diet tabs logic
   initDietTabs(view);
+
+  // Weekly menu tabs logic
+  initWeeklyMenuTabs(view);
 }
