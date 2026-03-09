@@ -103,6 +103,53 @@ function pianoMartedi() {
       nota: null,
       alimenti: [
         { nome: 'Mela', q: '150 g' },
+        { nome: 'Fette biscottate', q: '30 g' }
+      ]
+    },
+    {
+      nome: 'Pranzo',
+      nota: NOTA_PRANZO,
+      alimenti: [
+        { nome: 'Pasta di semola', q: '180 g' },
+        { nome: 'Prosciutto cotto', q: '70 g' },
+        { nome: 'Tonno', q: '90 g' },
+        { nome: 'Verdure fresche (media)', q: '150 g' },
+        { nome: 'Olio Extra Vergine di Oliva', q: '1 cucchiaio e mezzo (15 g)' }
+      ]
+    },
+    {
+      nome: 'Merenda',
+      nota: NOTA_MERENDA,
+      alimenti: [
+        { nome: 'Pane (media)', q: '50 g' },
+        { nome: 'Mela', q: '150 g' },
+        { nome: 'Yogurt greco 0% bianco', q: '150 g' }
+      ]
+    },
+    {
+      nome: 'Cena',
+      nota: null,
+      alimenti: [
+        { nome: 'Pane (media)', q: '100 g' },
+        { nome: 'Merluzzo o nasello', q: '210 g' },
+        { nome: 'Olio Extra Vergine di Oliva', q: '1 cucchiaio e mezzo (15 g)' },
+        { nome: 'Merluzzo o nasello', q: '210 g' },
+        { nome: 'Olio Extra Vergine di Oliva', q: '1 cucchiaio e mezzo (15 g)' },
+        { nome: 'Verdure fresche (media)', q: '150 g' }
+      ]
+    }
+  ];
+}
+
+// ─── MERCOLEDÌ ───
+function pianoMercoledi() {
+  return [
+    clone(COLAZIONE_BASE),
+    {
+      nome: 'Spuntino Mattina',
+      nota: null,
+      alimenti: [
+        { nome: 'Mela', q: '150 g' },
         { nome: 'Pane (media)', q: '50 g' }
       ]
     },
@@ -111,20 +158,25 @@ function pianoMartedi() {
       nota: NOTA_PRANZO,
       alimenti: [
         { nome: 'Pasta di semola', q: '180 g' },
-        { nome: 'Fagioli - Borlotti secchi', q: '30 g' },
-        { nome: 'Petto di pollo', q: '150 g' },
+        { nome: 'Ceci in scatola - scolati', q: '80 g' },
+        { nome: 'Salmone affumicato', q: '100 g' },
         { nome: 'Verdure fresche (media)', q: '150 g' },
         { nome: 'Olio Extra Vergine di Oliva', q: '1 cucchiaio e mezzo (15 g)' }
       ]
     },
     clone(MERENDA_BASE),
-    clone(CENA_BASE)
+    {
+      nome: 'Cena',
+      nota: null,
+      alimenti: [
+        { nome: 'Pane (media)', q: '100 g' },
+        { nome: 'Cavallo', q: '100 g' },
+        { nome: 'Cavallo', q: '100 g' },
+        { nome: 'Olio Extra Vergine di Oliva', q: '1 cucchiaio e mezzo (15 g)' },
+        { nome: 'Verdure fresche (media)', q: '150 g' }
+      ]
+    }
   ];
-}
-
-// ─── MERCOLEDÌ ───
-function pianoMercoledi() {
-  return pianoMartedi(); // identico al Martedì
 }
 
 // ─── GIOVEDÌ ───
@@ -243,7 +295,30 @@ function pianoSabato() {
 
 // ─── DOMENICA ───
 function pianoDomenica() {
-  return pianoMartedi(); // identico al Martedì
+  return [
+    clone(COLAZIONE_BASE),
+    {
+      nome: 'Spuntino Mattina',
+      nota: null,
+      alimenti: [
+        { nome: 'Mela', q: '150 g' },
+        { nome: 'Pane (media)', q: '50 g' }
+      ]
+    },
+    {
+      nome: 'Pranzo',
+      nota: NOTA_PRANZO,
+      alimenti: [
+        { nome: 'Pasta di semola', q: '180 g' },
+        { nome: 'Fagioli - Borlotti secchi', q: '30 g' },
+        { nome: 'Petto di pollo', q: '150 g' },
+        { nome: 'Verdure fresche (media)', q: '150 g' },
+        { nome: 'Olio Extra Vergine di Oliva', q: '1 cucchiaio e mezzo (15 g)' }
+      ]
+    },
+    clone(MERENDA_BASE),
+    clone(CENA_BASE)
+  ];
 }
 
 const PIANI_GIORNO = [
