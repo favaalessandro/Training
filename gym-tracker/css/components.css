@@ -773,6 +773,85 @@
   color: var(--gold-primary);
 }
 
+/* Muscle Mass Section */
+.nutrition-muscle-section {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(200, 168, 78, 0.2);
+}
+
+.nutrition-muscle-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.nutrition-muscle-desc {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.nutrition-muscle-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.pfc-ratio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.pfc-ratio-item {
+  text-align: center;
+}
+
+.pfc-ratio-item h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.pfc-ratio-value {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.nutrition-muscle-note {
+  background: rgba(200, 168, 78, 0.08);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+}
+
+.nutrition-muscle-note p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.nutrition-muscle-note strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
 /* PFC Yellow Card */
 .pfc-card {
   background: var(--gold-primary);

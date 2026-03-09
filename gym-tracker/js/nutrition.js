@@ -16,6 +16,33 @@ export function renderNutrition() {
       </p>
     </div>
 
+    <!-- Corollario: Aumentare massa muscolare -->
+    <div class="nutrition-muscle-section">
+      <h2 class="nutrition-muscle-title">Per aumentare la massa muscolare</h2>
+      <p class="nutrition-muscle-desc">Il rapporto tra proteine, grassi e carboidrati deve rispettare le seguenti proporzioni:</p>
+
+      <h3 class="nutrition-muscle-label">Per gli uomini</h3>
+
+      <div class="pfc-ratio-grid">
+        <div class="pfc-ratio-item">
+          <h4>Proteine</h4>
+          <span class="pfc-ratio-value">20%-30%</span>
+        </div>
+        <div class="pfc-ratio-item">
+          <h4>Grassi</h4>
+          <span class="pfc-ratio-value">10%-20%</span>
+        </div>
+        <div class="pfc-ratio-item">
+          <h4>Carboidrati</h4>
+          <span class="pfc-ratio-value">50%-60%</span>
+        </div>
+      </div>
+
+      <div class="nutrition-muscle-note">
+        <p>In parole semplici, l'apporto giornaliero raccomandato di grassi è di almeno <strong>0,8 grammi per chilogrammo di peso corporeo</strong>, mentre l'apporto giornaliero raccomandato di proteine è di <strong>2 grammi per chilogrammo di peso corporeo</strong>. Per i carboidrati, si consiglia di consumare il doppio dei grammi di carboidrati rispetto alle proteine.</p>
+      </div>
+    </div>
+
     <!-- Card gialla con le 3 categorie -->
     <div class="pfc-card">
       <div class="pfc-item">
