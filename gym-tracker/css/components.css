@@ -1093,6 +1093,143 @@
 }
 
 /* ═══════════════════════════════════════
+   CORRADINI DIET - DAILY PLAN
+   ═══════════════════════════════════════ */
+
+.cd-notes {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: rgba(139, 118, 53, 0.06);
+  border: 1px solid rgba(139, 118, 53, 0.12);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.cd-notes i {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--gold-primary);
+  margin-top: 1px;
+}
+
+.cd-day-tabs {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.cd-day-tab {
+  flex: 1;
+  padding: var(--space-sm) var(--space-xs);
+  background: var(--bg-secondary);
+  border: 1px solid rgba(139, 118, 53, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.cd-day-tab:active {
+  transform: scale(0.97);
+}
+
+.cd-day-tab.active {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+  border-color: var(--gold-primary);
+}
+
+.cd-day-panel {
+  display: none;
+}
+
+.cd-day-panel.active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+.cd-day-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-md);
+}
+
+.cd-meal {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border: 1px solid rgba(139, 118, 53, 0.15);
+  margin-bottom: var(--space-sm);
+}
+
+.cd-meal-header h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-xs);
+}
+
+.cd-meal-nota {
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(139, 118, 53, 0.04);
+  border-radius: var(--radius-sm);
+  border-left: 2px solid rgba(139, 118, 53, 0.25);
+}
+
+.cd-meal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cd-meal-table tr {
+  border-bottom: 1px solid rgba(139, 118, 53, 0.06);
+}
+
+.cd-meal-table tr:last-child {
+  border-bottom: none;
+}
+
+.cd-food-name {
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  padding: 5px 0;
+}
+
+.cd-food-qty {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gold-primary);
+  text-align: right;
+  padding: 5px 0;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════
    DIET TABS
    ═══════════════════════════════════════ */
 
