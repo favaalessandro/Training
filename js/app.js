@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const EXERCISE_DB_VERSION = 27; // Bump this when exercises.js changes
 const HOME_EXERCISE_DB_VERSION = 18; // Bump this when homeExercises.js changes
-const SCHEDE_DB_VERSION = 3; // Bump this when schedeExercises.js changes
+const SCHEDE_DB_VERSION = 4; // Bump this when schedeExercises.js changes
 
 function initExerciseDB() {
   const savedVersion = parseInt(localStorage.getItem('gym-tracker-db-version') || '0');
@@ -240,7 +240,7 @@ function renderHome() {
       <div class="card" id="goto-schede" style="cursor:pointer;text-align:center;border-color:${isSchede ? 'var(--gold-primary)' : 'var(--gold-dim)'};padding:var(--space-md) var(--space-xs);opacity:${isSchede ? '1' : '0.5'};transition:all 0.2s ease">
         <i data-lucide="clipboard-list" style="width:28px;height:28px;color:var(--gold-primary);margin-bottom:var(--space-xs)"></i>
         <div style="font-weight:600;font-size:0.8125rem;margin-bottom:2px">Schede</div>
-        <div style="font-size:0.6875rem;color:var(--text-secondary)">A / B / C / D</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary)">A–D / E / F</div>
       </div>
     </div>
 
