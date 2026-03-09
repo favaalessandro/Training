@@ -15,6 +15,7 @@ import {
 } from './tracker.js';
 import { getAllPRsSorted, calcEstimated1RM } from './pr.js';
 import { renderCalendar } from './calendar.js';
+import { renderNutrition } from './nutrition.js';
 import {
   renderExerciseChart, renderVolumeChart, getLoggedExercises,
   getStats, destroyCurrentChart
@@ -61,6 +62,7 @@ const routes = {
   '/progress': renderProgress,
   '/calendar': renderCalendarView,
   '/records': renderRecords,
+  '/nutrition': renderNutrition,
   '/settings': renderSettingsView
 };
 
