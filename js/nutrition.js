@@ -3,21 +3,66 @@
    ═══════════════════════════════════════ */
 
 import { DIETS } from './diets.js';
+import { CORRADINI_DIET } from './corradini-diet.js';
 import { renderWeeklyMenuSection, initWeeklyMenuTabs } from './weekly-menu.js';
 import { renderSeasonalCalendar, initSeasonalCalendarTabs } from './seasonal-calendar.js';
 import { renderLunchIdeas } from './lunch-ideas.js';
 import { renderRecipes, initRecipeTabs } from './recipes.js';
 
+function renderCorradiniPanel() {
+  const cd = CORRADINI_DIET;
+
+  const dayTabs = cd.giorni.map((g, i) =>
+    `<button class="cd-day-tab ${i === 0 ? 'active' : ''}" data-day="${i}">${g.abbr}</button>`
+  ).join('');
+
+  const dayPanels = cd.giorni.map((g, i) =>
+    `<div class="cd-day-panel ${i === 0 ? 'active' : ''}" id="cd-day-${i}">
+      <h3 class="cd-day-name">${g.nome}</h3>
+      ${g.pasti.map(pasto => `
+        <div class="cd-meal">
+          <div class="cd-meal-header"><h4>${pasto.nome}</h4></div>
+          ${pasto.nota ? `<p class="cd-meal-nota">${pasto.nota}</p>` : ''}
+          <table class="cd-meal-table">
+            ${pasto.alimenti.map(a =>
+              `<tr><td class="cd-food-name">${a.nome}</td><td class="cd-food-qty">${a.q}</td></tr>`
+            ).join('')}
+          </table>
+        </div>
+      `).join('')}
+    </div>`
+  ).join('');
+
+  const notes = cd.noteGenerali.map((n, i) => `${i + 1}. ${n}`).join(' ');
+
+  return `
+    <div class="diet-panel active" id="diet-corradini">
+      <div class="diet-header">
+        <p class="diet-description">${cd.description}</p>
+      </div>
+      <div class="cd-notes"><i data-lucide="info"></i> ${notes}</div>
+      <div class="cd-day-tabs">${dayTabs}</div>
+      <div class="cd-day-panels">${dayPanels}</div>
+    </div>
+  `;
+}
+
 function renderDietsSection() {
-  const tabs = DIETS.map((d, i) =>
-    `<button class="diet-tab ${i === 0 ? 'active' : ''}" data-diet="${d.id}">
+  // Corradini first, then all other diets
+  const corradiniTab = `<button class="diet-tab active" data-diet="corradini">
+    <i data-lucide="${CORRADINI_DIET.icon}"></i>
+    <span>${CORRADINI_DIET.name}</span>
+  </button>`;
+
+  const otherTabs = DIETS.map(d =>
+    `<button class="diet-tab" data-diet="${d.id}">
       <i data-lucide="${d.icon}"></i>
       <span>${d.name}</span>
     </button>`
   ).join('');
 
-  const panels = DIETS.map((d, i) =>
-    `<div class="diet-panel ${i === 0 ? 'active' : ''}" id="diet-${d.id}">
+  const otherPanels = DIETS.map(d =>
+    `<div class="diet-panel" id="diet-${d.id}">
       <div class="diet-header">
         <p class="diet-description">${d.description}</p>
         <span class="diet-kcal"><i data-lucide="flame"></i> ${d.kcal}</span>
@@ -41,8 +86,11 @@ function renderDietsSection() {
   return `
     <div class="nutrition-section">
       <h2 class="nutrition-section-title">Diete per Atleti</h2>
-      <div class="diet-tabs">${tabs}</div>
-      <div class="diet-panels">${panels}</div>
+      <div class="diet-tabs">${corradiniTab}${otherTabs}</div>
+      <div class="diet-panels">
+        ${renderCorradiniPanel()}
+        ${otherPanels}
+      </div>
     </div>
   `;
 }
@@ -52,13 +100,23 @@ function initDietTabs(view) {
     tab.addEventListener('click', () => {
       const dietId = tab.getAttribute('data-diet');
 
-      // Update tabs
       view.querySelectorAll('.diet-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      // Update panels
       view.querySelectorAll('.diet-panel').forEach(p => p.classList.remove('active'));
       const panel = document.getElementById('diet-' + dietId);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  // Day sub-tabs for Corradini
+  view.querySelectorAll('.cd-day-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const day = tab.getAttribute('data-day');
+      view.querySelectorAll('.cd-day-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      view.querySelectorAll('.cd-day-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById('cd-day-' + day);
       if (panel) panel.classList.add('active');
     });
   });
@@ -431,9 +489,9 @@ export function renderNutrition() {
 
     ${renderSeasonalCalendar()}
 
-    ${renderLunchIdeas()}
-
     ${renderRecipes()}
+
+    ${renderLunchIdeas()}
   `;
 
   // Init icons
