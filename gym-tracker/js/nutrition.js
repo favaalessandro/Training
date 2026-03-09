@@ -6,30 +6,33 @@ import { DIETS } from './diets.js';
 import { CORRADINI_DIET } from './corradini-diet.js';
 import { renderWeeklyMenuSection, initWeeklyMenuTabs } from './weekly-menu.js';
 import { renderSeasonalCalendar, initSeasonalCalendarTabs } from './seasonal-calendar.js';
-import { renderLunchIdeas } from './lunch-ideas.js';
+import { renderLunchIdeas, initLunchIdeasAccordions } from './lunch-ideas.js';
 import { renderRecipes, initRecipeTabs } from './recipes.js';
 
 function renderCorradiniPanel() {
   const cd = CORRADINI_DIET;
 
-  const dayTabs = cd.giorni.map((g, i) =>
-    `<button class="cd-day-tab ${i === 0 ? 'active' : ''}" data-day="${i}">${g.abbr}</button>`
-  ).join('');
-
-  const dayPanels = cd.giorni.map((g, i) =>
-    `<div class="cd-day-panel ${i === 0 ? 'active' : ''}" id="cd-day-${i}">
-      <h3 class="cd-day-name">${g.nome}</h3>
-      ${g.pasti.map(pasto => `
-        <div class="cd-meal">
-          <div class="cd-meal-header"><h4>${pasto.nome}</h4></div>
-          ${pasto.nota ? `<p class="cd-meal-nota">${pasto.nota}</p>` : ''}
-          <table class="cd-meal-table">
-            ${pasto.alimenti.map(a =>
-              `<tr><td class="cd-food-name">${a.nome}</td><td class="cd-food-qty">${a.q}</td></tr>`
-            ).join('')}
-          </table>
+  const dayAccordions = cd.giorni.map((g, i) =>
+    `<div class="cd-accordion">
+      <div class="cd-accordion-header" data-cd-day="${i}">
+        <span class="cd-accordion-label">${g.nome}</span>
+        <i data-lucide="chevron-down" class="cd-accordion-icon"></i>
+      </div>
+      <div class="cd-accordion-body" id="cd-day-${i}">
+        <div class="cd-accordion-content">
+          ${g.pasti.map(pasto => `
+            <div class="cd-meal">
+              <div class="cd-meal-header"><h4>${pasto.nome}</h4></div>
+              ${pasto.nota ? `<p class="cd-meal-nota">${pasto.nota}</p>` : ''}
+              <table class="cd-meal-table">
+                ${pasto.alimenti.map(a =>
+                  `<tr><td class="cd-food-name">${a.nome}</td><td class="cd-food-qty">${a.q}</td></tr>`
+                ).join('')}
+              </table>
+            </div>
+          `).join('')}
         </div>
-      `).join('')}
+      </div>
     </div>`
   ).join('');
 
@@ -41,8 +44,7 @@ function renderCorradiniPanel() {
         <p class="diet-description">${cd.description}</p>
       </div>
       <div class="cd-notes"><i data-lucide="info"></i> ${notes}</div>
-      <div class="cd-day-tabs">${dayTabs}</div>
-      <div class="cd-day-panels">${dayPanels}</div>
+      <div class="cd-accordions">${dayAccordions}</div>
     </div>
   `;
 }
@@ -109,15 +111,25 @@ function initDietTabs(view) {
     });
   });
 
-  // Day sub-tabs for Corradini
-  view.querySelectorAll('.cd-day-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const day = tab.getAttribute('data-day');
-      view.querySelectorAll('.cd-day-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      view.querySelectorAll('.cd-day-panel').forEach(p => p.classList.remove('active'));
-      const panel = document.getElementById('cd-day-' + day);
-      if (panel) panel.classList.add('active');
+  // Corradini day accordions
+  view.querySelectorAll('.cd-accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const day = header.getAttribute('data-cd-day');
+      const body = document.getElementById('cd-day-' + day);
+      const icon = header.querySelector('.cd-accordion-icon');
+      const isOpen = body.classList.contains('open');
+
+      // Close all
+      view.querySelectorAll('.cd-accordion-body').forEach(b => b.classList.remove('open'));
+      view.querySelectorAll('.cd-accordion-header').forEach(h => h.classList.remove('active'));
+      view.querySelectorAll('.cd-accordion-icon').forEach(i => i.classList.remove('rotated'));
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        body.classList.add('open');
+        header.classList.add('active');
+        icon.classList.add('rotated');
+      }
     });
   });
 }
@@ -530,4 +542,7 @@ export function renderNutrition() {
 
   // Recipe tabs and expandable cards
   initRecipeTabs(view);
+
+  // Lunch ideas accordions
+  initLunchIdeasAccordions(view);
 }

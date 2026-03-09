@@ -60,21 +60,57 @@ export function renderLunchIdeas() {
       <h2 class="nutrition-section-title">Idee per il Pranzo</h2>
       <p class="li-subtitle">Dott.ssa Dietista Giulia Corradini</p>
 
-      <div class="li-ideas-block">
-        <div class="li-block-header">
-          <i data-lucide="lightbulb"></i>
-          <span>Idee Rapide</span>
+      <div class="li-accordion">
+        <div class="li-accordion-header" data-li-target="li-idee">
+          <div class="li-accordion-label">
+            <i data-lucide="lightbulb"></i>
+            <span>Idee Rapide</span>
+          </div>
+          <i data-lucide="chevron-down" class="li-accordion-icon"></i>
         </div>
-        <div class="li-chips">${chips}</div>
+        <div class="li-accordion-body" id="li-idee">
+          <div class="li-accordion-content">
+            <div class="li-chips">${chips}</div>
+          </div>
+        </div>
       </div>
 
-      <div class="li-panini-block">
-        <div class="li-block-header">
-          <i data-lucide="sandwich"></i>
-          <span>Panini Speciali</span>
+      <div class="li-accordion">
+        <div class="li-accordion-header" data-li-target="li-panini">
+          <div class="li-accordion-label">
+            <i data-lucide="sandwich"></i>
+            <span>Panini Speciali</span>
+          </div>
+          <i data-lucide="chevron-down" class="li-accordion-icon"></i>
         </div>
-        <div class="li-panini-grid">${panini}</div>
+        <div class="li-accordion-body" id="li-panini">
+          <div class="li-accordion-content">
+            <div class="li-panini-grid">${panini}</div>
+          </div>
+        </div>
       </div>
     </div>
   `;
+}
+
+export function initLunchIdeasAccordions(view) {
+  view.querySelectorAll('.li-accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const targetId = header.getAttribute('data-li-target');
+      const body = document.getElementById(targetId);
+      const icon = header.querySelector('.li-accordion-icon');
+      const isOpen = body.classList.contains('open');
+
+      // Close all lunch idea accordions
+      view.querySelectorAll('.li-accordion-body').forEach(b => b.classList.remove('open'));
+      view.querySelectorAll('.li-accordion-header').forEach(h => h.classList.remove('active'));
+      view.querySelectorAll('.li-accordion-icon').forEach(i => i.classList.remove('rotated'));
+
+      if (!isOpen) {
+        body.classList.add('open');
+        header.classList.add('active');
+        icon.classList.add('rotated');
+      }
+    });
+  });
 }
