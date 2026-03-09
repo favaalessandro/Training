@@ -25,13 +25,109 @@ const MESI = [
   { mese: 'Dicembre', abbr: 'Dic', frutta: ['Arance', 'Castagne', 'Clementine', 'Kaki', 'Kiwi', 'Limoni', 'Mandarini', 'Mele', 'Pere', 'Pompelmi', 'Uva'], verdura: ['Bietole', 'Carote', 'Broccoli', 'Cavolfiori', 'Cavoli', 'Cicoria', 'Finocchi', 'Insalate', 'Patate', 'Radicchio', 'Rape', 'Spinaci', 'Zucche'] }
 ];
 
+const MESI_ABBR = ['G', 'F', 'M', 'A', 'M', 'G', 'L', 'A', 'S', 'O', 'N', 'D'];
+
+const ALIMENTI = [
+  { nome: 'Aglio', mesi: [0,0,0,1,1,1,1,1,1,1,1,0] },
+  { nome: 'Alchechengi', mesi: [0,0,0,0,0,0,1,1,1,0,0,0] },
+  { nome: 'Albicocca', mesi: [0,0,0,0,0,1,1,1,0,0,0,0] },
+  { nome: 'Ananas', mesi: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  { nome: 'Anguria', mesi: [0,0,0,0,0,1,1,1,0,0,0,0] },
+  { nome: 'Arancia', mesi: [1,1,1,1,0,0,0,0,0,0,1,1] },
+  { nome: 'Asparago', mesi: [0,0,1,1,1,1,0,0,0,0,0,0] },
+  { nome: 'Avocado', mesi: [1,1,1,1,0,0,0,0,0,0,1,1] },
+  { nome: 'Banana', mesi: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  { nome: 'Barbabietola', mesi: [1,1,0,0,0,0,0,1,1,1,1,1] },
+  { nome: 'Bietola/Costa', mesi: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  { nome: 'Caki', mesi: [0,0,0,0,0,0,0,0,0,1,1,1] },
+  { nome: 'Carciofo', mesi: [1,1,1,1,0,0,0,0,0,0,1,1] },
+  { nome: 'Carota', mesi: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  { nome: 'Castagna', mesi: [0,0,0,0,0,0,0,0,0,1,1,0] },
+  { nome: 'Cavoli', mesi: [1,1,1,1,0,0,0,0,0,1,1,1] },
+  { nome: 'Cetriolo', mesi: [0,0,0,0,0,1,1,1,1,0,0,0] },
+  { nome: 'Ciliegia', mesi: [0,0,0,0,1,1,1,0,0,0,0,0] },
+  { nome: 'Cima di rapa', mesi: [1,1,0,0,0,0,0,0,0,0,0,1] },
+  { nome: 'Clementine', mesi: [1,1,0,0,0,0,0,0,0,1,1,1] },
+  { nome: 'Cocco', mesi: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  { nome: 'Fagiolini', mesi: [0,0,0,0,1,1,1,1,1,0,0,0] },
+  { nome: 'Fava', mesi: [0,0,0,1,1,1,1,0,0,0,0,0] },
+  { nome: 'Fico', mesi: [0,0,0,0,0,1,1,1,1,0,0,0] },
+  { nome: 'Finocchio', mesi: [1,1,1,1,1,0,0,0,0,1,1,1] },
+  { nome: 'Fragole', mesi: [0,0,0,1,1,1,1,0,0,0,0,0] },
+  { nome: 'Insalata', mesi: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  { nome: 'Kiwi', mesi: [1,1,1,1,0,0,0,0,0,0,1,1] },
+  { nome: 'Lampone', mesi: [0,0,0,0,1,1,1,1,1,1,0,0] },
+  { nome: 'Lime', mesi: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  { nome: 'Limone', mesi: [1,1,1,1,0,0,0,0,0,1,1,1] },
+  { nome: 'Litchi', mesi: [1,1,0,0,0,0,0,0,0,0,1,1] },
+  { nome: 'Mandarino', mesi: [1,1,0,0,0,0,0,0,0,0,1,0] },
+  { nome: 'Mango', mesi: [0,0,0,0,0,0,0,1,1,1,0,0] },
+  { nome: 'Mela', mesi: [1,1,1,1,0,0,0,1,1,1,1,1] },
+  { nome: 'Melanzana', mesi: [0,0,0,0,0,1,1,1,1,1,0,0] },
+  { nome: 'Melograno', mesi: [0,0,0,0,0,0,0,0,0,1,1,0] },
+  { nome: 'Melone', mesi: [0,0,0,0,1,1,1,1,1,0,0,0] },
+  { nome: 'Mirtillo', mesi: [0,0,0,0,0,0,1,1,1,0,0,0] },
+  { nome: 'Mora', mesi: [0,0,0,0,0,0,1,1,1,0,0,0] },
+  { nome: 'Nespole', mesi: [0,0,0,1,1,0,0,0,0,0,0,0] },
+  { nome: 'Papaya', mesi: [0,0,0,0,0,0,1,1,1,1,1,1] },
+  { nome: 'Passion fruit', mesi: [0,0,0,0,0,1,1,1,1,1,1,1] },
+  { nome: 'Patata', mesi: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  { nome: 'Peperone', mesi: [0,0,0,0,1,1,1,1,1,1,0,0] },
+  { nome: 'Pera', mesi: [1,1,1,1,1,0,0,1,1,1,1,1] },
+  { nome: 'Pesca', mesi: [0,0,0,0,0,1,1,1,1,0,0,0] },
+  { nome: 'Piselli', mesi: [0,0,0,1,1,1,0,0,0,0,0,0] },
+  { nome: 'Pomodoro', mesi: [0,0,0,0,1,1,1,1,1,0,0,0] },
+  { nome: 'Pompelmo', mesi: [1,1,1,1,1,0,0,0,0,0,1,1] },
+  { nome: 'Porro', mesi: [1,1,0,0,0,0,0,0,0,1,1,1] },
+  { nome: 'Ravanello', mesi: [0,0,0,0,1,1,1,1,1,1,0,0] },
+  { nome: 'Sedano', mesi: [0,0,0,1,1,1,1,1,1,1,1,0] },
+  { nome: 'Spinacio', mesi: [1,1,1,1,1,0,0,0,1,1,1,1] },
+  { nome: 'Susina', mesi: [0,0,0,0,0,1,1,1,1,0,0,0] },
+  { nome: 'Uva', mesi: [0,0,0,0,0,0,0,1,1,1,1,1] },
+  { nome: 'Topinambur', mesi: [1,1,1,0,0,0,0,0,0,1,1,1] },
+  { nome: 'Zucca', mesi: [1,1,1,0,0,0,0,1,1,1,1,1] },
+  { nome: 'Zucchina', mesi: [0,0,0,0,1,1,1,1,1,0,0,0] }
+];
+
 function renderChips(items, type) {
   return items.map(item =>
     `<span class="sc-chip sc-chip--${type}">${item}</span>`
   ).join('');
 }
 
-export function renderSeasonalCalendar() {
+function renderMatrixView() {
+  const headerCells = MESI_ABBR.map(m => `<th class="sc-matrix-th">${m}</th>`).join('');
+
+  const rows = ALIMENTI.map(a => {
+    const totalMesi = a.mesi.reduce((s, v) => s + v, 0);
+    const isYearRound = totalMesi === 12;
+    const cells = a.mesi.map((v, i) =>
+      `<td class="sc-matrix-cell ${v ? 'sc-matrix-cell--active' : ''}" title="${a.nome} — ${MESI[i].mese}">${v ? '' : ''}</td>`
+    ).join('');
+    return `<tr class="${isYearRound ? 'sc-matrix-row--yearround' : ''}">
+      <td class="sc-matrix-name">${a.nome}</td>
+      ${cells}
+      <td class="sc-matrix-total">${totalMesi}</td>
+    </tr>`;
+  }).join('');
+
+  return `
+    <div class="sc-matrix-wrapper">
+      <table class="sc-matrix">
+        <thead>
+          <tr>
+            <th class="sc-matrix-th sc-matrix-th--name">Alimento</th>
+            ${headerCells}
+            <th class="sc-matrix-th sc-matrix-th--total">Mesi</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderMonthView() {
   const tabs = MESI.map((m, i) =>
     `<button class="sc-tab ${i === 0 ? 'active' : ''}" data-month="${i}">${m.abbr}</button>`
   ).join('');
@@ -60,39 +156,77 @@ export function renderSeasonalCalendar() {
     </div>`
   ).join('');
 
+  const yearRound = `
+    <div class="sc-year-round">
+      <div class="sc-year-round-title">
+        <i data-lucide="calendar-check"></i>
+        <span>Disponibile tutto l'anno</span>
+      </div>
+      <div class="sc-columns">
+        <div class="sc-column">
+          <div class="sc-column-header">
+            <i data-lucide="apple"></i>
+            <span>Frutta</span>
+          </div>
+          <div class="sc-chips">${renderChips(TUTTO_ANNO.frutta, 'frutta')}</div>
+        </div>
+        <div class="sc-column">
+          <div class="sc-column-header">
+            <i data-lucide="salad"></i>
+            <span>Verdura</span>
+          </div>
+          <div class="sc-chips">${renderChips(TUTTO_ANNO.verdura, 'verdura')}</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return `
+    <div class="sc-month-view">
+      <div class="sc-tabs">${tabs}</div>
+      <div class="sc-panels">${panels}</div>
+      ${yearRound}
+    </div>
+  `;
+}
+
+export function renderSeasonalCalendar() {
   return `
     <div class="nutrition-section">
       <h2 class="nutrition-section-title">Stagionalità Frutta & Verdura</h2>
-      <p class="sc-subtitle">Calendario mensile — Dott.ssa Dietista Giulia Corradini</p>
-      <div class="sc-tabs">${tabs}</div>
-      <div class="sc-panels">${panels}</div>
-      <div class="sc-year-round">
-        <div class="sc-year-round-title">
-          <i data-lucide="calendar-check"></i>
-          <span>Disponibile tutto l'anno</span>
-        </div>
-        <div class="sc-columns">
-          <div class="sc-column">
-            <div class="sc-column-header">
-              <i data-lucide="apple"></i>
-              <span>Frutta</span>
-            </div>
-            <div class="sc-chips">${renderChips(TUTTO_ANNO.frutta, 'frutta')}</div>
-          </div>
-          <div class="sc-column">
-            <div class="sc-column-header">
-              <i data-lucide="salad"></i>
-              <span>Verdura</span>
-            </div>
-            <div class="sc-chips">${renderChips(TUTTO_ANNO.verdura, 'verdura')}</div>
-          </div>
-        </div>
+      <p class="sc-subtitle">Dott.ssa Dietista Giulia Corradini</p>
+      <div class="sc-view-toggle">
+        <button class="sc-view-btn active" data-view="month">
+          <i data-lucide="calendar-days"></i> Per Mese
+        </button>
+        <button class="sc-view-btn" data-view="matrix">
+          <i data-lucide="table"></i> Per Alimento
+        </button>
+      </div>
+      <div class="sc-view" id="sc-view-month" style="display:block">
+        ${renderMonthView()}
+      </div>
+      <div class="sc-view" id="sc-view-matrix" style="display:none">
+        ${renderMatrixView()}
       </div>
     </div>
   `;
 }
 
 export function initSeasonalCalendarTabs(view) {
+  // View toggle
+  view.querySelectorAll('.sc-view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetView = btn.getAttribute('data-view');
+      view.querySelectorAll('.sc-view-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      view.querySelectorAll('.sc-view').forEach(v => v.style.display = 'none');
+      const target = document.getElementById('sc-view-' + targetView);
+      if (target) target.style.display = 'block';
+    });
+  });
+
+  // Month tabs
   view.querySelectorAll('.sc-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       const month = tab.getAttribute('data-month');
