@@ -513,6 +513,105 @@
 }
 
 /* ═══════════════════════════════════════
+   RECORDS TAB SWITCHER
+   ═══════════════════════════════════════ */
+
+.records-tabs {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 3px;
+}
+
+.records-tab {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.records-tab.active {
+  background: var(--bg-elevated);
+  color: var(--gold);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Small icon button for delete actions */
+.btn-icon-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-icon-sm:hover,
+.btn-icon-sm:active {
+  background: rgba(255, 59, 48, 0.12);
+  border-color: rgba(255, 59, 48, 0.3);
+  color: #FF3B30;
+}
+
+.btn-icon-sm svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Danger outline button */
+.btn-danger-outline {
+  border-color: rgba(255, 59, 48, 0.3) !important;
+  color: #FF3B30 !important;
+}
+
+.btn-danger-outline:hover,
+.btn-danger-outline:active {
+  background: rgba(255, 59, 48, 0.12) !important;
+}
+
+/* Source badges for sessions */
+.source-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: var(--space-xs);
+}
+
+.source-gym {
+  background: rgba(200, 168, 78, 0.15);
+  color: var(--gold);
+}
+
+.source-home {
+  background: rgba(52, 199, 89, 0.15);
+  color: #34C759;
+}
+
+.source-schede {
+  background: rgba(94, 92, 230, 0.15);
+  color: #5E5CE6;
+}
+
+/* ═══════════════════════════════════════
    MOOD SELECTOR
    ═══════════════════════════════════════ */
 
