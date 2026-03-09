@@ -431,9 +431,9 @@ export function renderNutrition() {
 
     ${renderSeasonalCalendar()}
 
-    ${renderLunchIdeas()}
-
     ${renderRecipes()}
+
+    ${renderLunchIdeas()}
   `;
 
   // Init icons
