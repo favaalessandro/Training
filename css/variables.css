@@ -5,6 +5,7 @@
   --bg-elevated: #1C1C1E;
 
   /* Gold */
+  --gold: #C8A84E;
   --gold-primary: #C8A84E;
   --gold-light: #E8D48B;
   --gold-dim: #8B7635;
@@ -13,6 +14,7 @@
   /* Text */
   --text-primary: #F5F5F5;
   --text-secondary: #8E8E93;
+  --text-tertiary: #636366;
 
   /* Status */
   --success: #34C759;
