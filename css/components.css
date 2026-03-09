@@ -1118,56 +1118,69 @@
   margin-top: 1px;
 }
 
-.cd-day-tabs {
+/* Corradini day accordions */
+.cd-accordions {
   display: flex;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-lg);
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
-.cd-day-tab {
-  flex: 1;
-  padding: var(--space-sm) var(--space-xs);
+.cd-accordion {
   background: var(--bg-secondary);
-  border: 1px solid rgba(139, 118, 53, 0.2);
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  text-align: center;
+  border: 1px solid rgba(139, 118, 53, 0.3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.cd-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background var(--transition-base);
+  min-height: 48px;
 }
 
-.cd-day-tab:active {
-  transform: scale(0.97);
+.cd-accordion-header:active,
+.cd-accordion-header.active {
+  background: rgba(200, 168, 78, 0.08);
 }
 
-.cd-day-tab.active {
-  background: var(--gold-primary);
-  color: var(--bg-primary);
-  border-color: var(--gold-primary);
-}
-
-.cd-day-panel {
-  display: none;
-}
-
-.cd-day-panel.active {
-  display: block;
-  animation: fadeIn 0.25s ease;
-}
-
-.cd-day-name {
+.cd-accordion-label {
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--gold-primary);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: var(--space-md);
+  letter-spacing: 0.05em;
+}
+
+.cd-accordion-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  transition: transform var(--transition-base);
+}
+
+.cd-accordion-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.cd-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.cd-accordion-body.open {
+  max-height: 3000px;
+}
+
+.cd-accordion-content {
+  padding: 0 var(--space-lg) var(--space-lg);
+  border-top: 1px solid rgba(139, 118, 53, 0.15);
+  padding-top: var(--space-md);
 }
 
 .cd-meal {
@@ -1428,55 +1441,69 @@
   margin-bottom: var(--space-lg);
 }
 
-.wm-tabs {
+/* Weekly menu accordions */
+.wm-accordions {
   display: flex;
-  flex-wrap: nowrap;
-  gap: var(--space-xs);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  margin-bottom: var(--space-lg);
-  padding-bottom: var(--space-xs);
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
-.wm-tabs::-webkit-scrollbar {
-  display: none;
-}
-
-.wm-tab {
-  flex: 0 0 auto;
-  padding: var(--space-sm) var(--space-md);
+.wm-accordion {
   background: var(--bg-secondary);
-  border: 1px solid rgba(139, 118, 53, 0.25);
+  border: 1px solid rgba(139, 118, 53, 0.3);
   border-radius: var(--radius-md);
-  color: var(--text-secondary);
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+  overflow: hidden;
+}
+
+.wm-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background var(--transition-base);
+  min-height: 48px;
 }
 
-.wm-tab:active {
-  transform: scale(0.97);
+.wm-accordion-header:active,
+.wm-accordion-header.active {
+  background: rgba(200, 168, 78, 0.08);
 }
 
-.wm-tab.active {
-  background: var(--gold-primary);
-  color: var(--bg-primary);
-  border-color: var(--gold-primary);
+.wm-accordion-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.wm-panel {
-  display: none;
+.wm-accordion-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  transition: transform var(--transition-base);
 }
 
-.wm-panel.active {
-  display: block;
-  animation: fadeIn 0.25s ease;
+.wm-accordion-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.wm-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.wm-accordion-body.open {
+  max-height: 3000px;
+}
+
+.wm-accordion-content {
+  padding: 0 var(--space-lg) var(--space-lg);
+  border-top: 1px solid rgba(139, 118, 53, 0.15);
+  padding-top: var(--space-md);
 }
 
 .wm-grid {
@@ -1883,29 +1910,72 @@
   line-height: 1.5;
 }
 
-.li-ideas-block,
-.li-panini-block {
-  margin-bottom: var(--space-lg);
+/* Lunch ideas accordions */
+.li-accordion {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(139, 118, 53, 0.3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
 }
 
-.li-block-header {
+.li-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+  transition: background var(--transition-base);
+  min-height: 48px;
+}
+
+.li-accordion-header:active,
+.li-accordion-header.active {
+  background: rgba(200, 168, 78, 0.08);
+}
+
+.li-accordion-label {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
   font-family: 'Oswald', sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
   color: var(--gold-primary);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-xs);
-  border-bottom: 1px solid rgba(139, 118, 53, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.li-block-header i {
-  width: 16px;
-  height: 16px;
+.li-accordion-label i {
+  width: 18px;
+  height: 18px;
+}
+
+.li-accordion-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  transition: transform var(--transition-base);
+}
+
+.li-accordion-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.li-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.li-accordion-body.open {
+  max-height: 3000px;
+}
+
+.li-accordion-content {
+  padding: 0 var(--space-lg) var(--space-lg);
+  border-top: 1px solid rgba(139, 118, 53, 0.15);
+  padding-top: var(--space-md);
 }
 
 .li-chips {

@@ -86,30 +86,32 @@ function renderMealBadge(cat, legenda) {
 export function renderWeeklyMenuSection() {
   const { settimane, legenda, autore } = WEEKLY_MENU;
 
-  const weekTabs = settimane.map((s, i) =>
-    `<button class="wm-tab ${i === 0 ? 'active' : ''}" data-week="${s.numero}">
-      Sett. ${s.numero}
-    </button>`
-  ).join('');
-
-  const weekPanels = settimane.map((s, i) =>
-    `<div class="wm-panel ${i === 0 ? 'active' : ''}" id="wm-week-${s.numero}">
-      <div class="wm-grid">
-        ${s.giorni.map(g => `
-          <div class="wm-day ${g.cena.piatto === 'PASTO LIBERO' ? 'wm-day--free' : ''}">
-            <div class="wm-day-name">${g.giorno}</div>
-            <div class="wm-meal">
-              <span class="wm-meal-label">Pranzo</span>
-              ${renderMealBadge(g.pranzo.cat, legenda)}
-              <p class="wm-meal-text">${g.pranzo.piatto}</p>
-            </div>
-            <div class="wm-meal">
-              <span class="wm-meal-label">Cena</span>
-              ${renderMealBadge(g.cena.cat, legenda)}
-              <p class="wm-meal-text">${g.cena.piatto === 'PASTO LIBERO' ? '<strong>Pasto Libero</strong>' : g.cena.piatto}</p>
-            </div>
+  const weekAccordions = settimane.map((s) =>
+    `<div class="wm-accordion">
+      <div class="wm-accordion-header" data-wm-week="${s.numero}">
+        <span class="wm-accordion-label">Settimana ${s.numero}</span>
+        <i data-lucide="chevron-down" class="wm-accordion-icon"></i>
+      </div>
+      <div class="wm-accordion-body" id="wm-week-${s.numero}">
+        <div class="wm-accordion-content">
+          <div class="wm-grid">
+            ${s.giorni.map(g => `
+              <div class="wm-day ${g.cena.piatto === 'PASTO LIBERO' ? 'wm-day--free' : ''}">
+                <div class="wm-day-name">${g.giorno}</div>
+                <div class="wm-meal">
+                  <span class="wm-meal-label">Pranzo</span>
+                  ${renderMealBadge(g.pranzo.cat, legenda)}
+                  <p class="wm-meal-text">${g.pranzo.piatto}</p>
+                </div>
+                <div class="wm-meal">
+                  <span class="wm-meal-label">Cena</span>
+                  ${renderMealBadge(g.cena.cat, legenda)}
+                  <p class="wm-meal-text">${g.cena.piatto === 'PASTO LIBERO' ? '<strong>Pasto Libero</strong>' : g.cena.piatto}</p>
+                </div>
+              </div>
+            `).join('')}
           </div>
-        `).join('')}
+        </div>
       </div>
     </div>`
   ).join('');
@@ -131,21 +133,30 @@ export function renderWeeklyMenuSection() {
       <h2 class="nutrition-section-title">Menù Settimanale</h2>
       <p class="wm-subtitle">Primavera-Estate — ${autore}</p>
       <div class="wm-legenda">${legendaHtml}</div>
-      <div class="wm-tabs">${weekTabs}</div>
-      <div class="wm-panels">${weekPanels}</div>
+      <div class="wm-accordions">${weekAccordions}</div>
     </div>
   `;
 }
 
 export function initWeeklyMenuTabs(view) {
-  view.querySelectorAll('.wm-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const week = tab.getAttribute('data-week');
-      view.querySelectorAll('.wm-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      view.querySelectorAll('.wm-panel').forEach(p => p.classList.remove('active'));
-      const panel = document.getElementById('wm-week-' + week);
-      if (panel) panel.classList.add('active');
+  view.querySelectorAll('.wm-accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const week = header.getAttribute('data-wm-week');
+      const body = document.getElementById('wm-week-' + week);
+      const icon = header.querySelector('.wm-accordion-icon');
+      const isOpen = body.classList.contains('open');
+
+      // Close all
+      view.querySelectorAll('.wm-accordion-body').forEach(b => b.classList.remove('open'));
+      view.querySelectorAll('.wm-accordion-header').forEach(h => h.classList.remove('active'));
+      view.querySelectorAll('.wm-accordion-icon').forEach(i => i.classList.remove('rotated'));
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        body.classList.add('open');
+        header.classList.add('active');
+        icon.classList.add('rotated');
+      }
     });
   });
 }
