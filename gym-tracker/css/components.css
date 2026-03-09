@@ -857,7 +857,7 @@
   background: var(--gold-primary);
   border-radius: var(--radius-md);
   display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
   padding: var(--space-lg);
   margin-bottom: var(--space-xl);
 }

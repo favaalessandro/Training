@@ -59,6 +59,11 @@ export function renderNutrition() {
         <h3>Carboidrati</h3>
         <p>forniscono energia e forza</p>
       </div>
+      <div class="pfc-divider"></div>
+      <div class="pfc-item">
+        <h3>Collagene</h3>
+        <p>mantiene la pelle sana e aiuta la guarigione di ferite e cicatrici</p>
+      </div>
     </div>
 
     <!-- Sezione fabbisogno giornaliero -->
@@ -237,6 +242,120 @@ export function renderNutrition() {
                 <li>Frutta secca e semi</li>
                 <li>Cereali, farina integrale</li>
                 <li>Crusca</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Collagene -->
+      <div class="nutrition-accordion">
+        <div class="nutrition-accordion-header" data-target="acc-collagene">
+          <div class="nutrition-accordion-label">
+            <i data-lucide="shield"></i>
+            <span>Collagene</span>
+          </div>
+          <i data-lucide="chevron-down" class="nutrition-accordion-icon"></i>
+        </div>
+        <div class="nutrition-accordion-body" id="acc-collagene">
+          <div class="nutrition-accordion-content">
+            <p>Uno dei principi fondamentali della nutrizione che consiglio di seguire è la dieta del collagene.</p>
+            <p>Il collagene è un termine generico per le principali proteine strutturali presenti nella pelle e nei tessuti connettivi di esseri umani e animali e costituisce circa il 30% delle proteine nel corpo umano. La funzione principale del collagene è mantenere la pelle sana e aiutare la guarigione di ferite e cicatrici. Viene scomposto nel corpo in aminoacidi, che vengono poi utilizzati per la costruzione e la rigenerazione cellulare.</p>
+            <p>Il collagene è composto da 19 aminoacidi (ad esempio, glicina, prolina, idrossiprolina, lisina e arginina). Esistono almeno 29 tipi di collagene. Gli esseri umani hanno principalmente i Tipi I-III:</p>
+            <ul>
+              <li>Il Tipo I si trova principalmente nella pelle, nei tendini, nella vascolarizzazione, negli organi e nelle ossa</li>
+              <li>Il Tipo II si trova nella cartilagine</li>
+              <li>Il Tipo III si trova nelle fibre reticolari (sottili fibre ramificate nel tessuto connettivo)</li>
+            </ul>
+
+            <div class="nutrition-sub-section">
+              <h4>Cos'è il collagene e perché è importante?</h4>
+              <p>Il collagene è la proteina strutturale più abbondante nel corpo umano. Fornisce:</p>
+              <ul>
+                <li>Fermezza ed elasticità alla pelle</li>
+                <li>Forza e flessibilità alle articolazioni e ai legamenti</li>
+                <li>Integrità a ossa, vasi sanguigni e parete intestinale</li>
+              </ul>
+              <p class="nutrition-note">A partire dai 25 anni, la sintesi naturale di collagene inizia a diminuire. Questo porta a cambiamenti visibili e interni: riduzione della densità cutanea, rigidità articolare, recupero più lento e aumento del rischio di lesioni o infiammazioni.</p>
+            </div>
+
+            <div class="nutrition-sub-section">
+              <h4>Quali sono le fonti alimentari di collagene?</h4>
+              <ul>
+                <li>Pesce</li>
+                <li>Pollo</li>
+                <li>Albume d'uovo</li>
+                <li>Agrumi</li>
+                <li>Frutti di bosco</li>
+                <li>Verdure rosse e gialle</li>
+                <li>Aglio</li>
+                <li>Tè bianco</li>
+                <li>Verdure a foglia verde</li>
+                <li>Anacardi</li>
+                <li>Pomodori</li>
+                <li>Peperoni</li>
+                <li>Fagioli</li>
+                <li>Avocado</li>
+                <li>Soia</li>
+                <li>Erbe ricche di collagene (poligono cinese, equiseto, gynostemma)</li>
+                <li>Erbe che aiutano a produrre collagene (gotukola, bala, ashwagandha)</li>
+              </ul>
+            </div>
+
+            <div class="nutrition-sub-section">
+              <h4>Principi nutrizionali chiave</h4>
+              <ul>
+                <li>Enfasi sugli aminoacidi che formano il collagene: glicina, prolina, lisina</li>
+                <li>Assunzione giornaliera di vitamina C, zinco e rame, che agiscono come cofattori nella sintesi del collagene</li>
+                <li>Riduzione di zucchero e alcol, che distruggono il collagene tramite glicazione</li>
+                <li>Apporto proteico giornaliero sufficiente (almeno 1,5 g per kg di peso corporeo)</li>
+                <li>Uso di peptidi di collagene idrolizzato in forma di integratore per la massima biodisponibilità</li>
+              </ul>
+            </div>
+
+            <div class="nutrition-sub-section">
+              <h4>Integratori consigliati</h4>
+              <p>Per potenziare l'effetto della dieta del collagene, si raccomanda un'integrazione mirata:</p>
+              <ul>
+                <li>Peptidi di collagene idrolizzato — da 5 a 10 grammi al giorno</li>
+                <li>Vitamina C — da 500 a 1000 mg al giorno per supportare assorbimento e sintesi</li>
+                <li>Glicina — 3 grammi prima di dormire per migliorare la riparazione dei tessuti, il rivestimento intestinale e la qualità del sonno</li>
+                <li>Zinco e rame — come parte di un complesso minerale per l'attivazione degli enzimi del collagene</li>
+                <li>Collagene di tipo II non denaturato (UC-II) — per la salute articolare e la riduzione dell'infiammazione</li>
+              </ul>
+            </div>
+
+            <div class="nutrition-sub-section">
+              <h4>7 possibili benefici per la salute della dieta del collagene</h4>
+              <p>Il collagene svolge un ruolo importante in molte funzioni del corpo, e seguire una dieta a base di collagene può avere i seguenti benefici:</p>
+              <p><strong>1. Migliora la salute della pelle</strong><br>Il collagene migliora l'elasticità e l'idratazione della pelle. Con l'avanzare dell'età, il corpo smette di produrre tanto collagene, il che può portare a pelle secca e rughe.</p>
+              <p><strong>2. Previene la perdita di densità ossea</strong><br>Il collagene è una componente importante della massa ossea. Poiché il corpo produce meno collagene con l'età, è importante consumare alimenti che promuovono la produzione di collagene.</p>
+              <p><strong>3. Allevia i dolori articolari</strong><br>L'avanzare dell'età aumenta il rischio di osteoporosi (ossa deboli), che può avere un impatto anche sulle articolazioni. Il collagene mantiene l'equilibrio della cartilagine nel corpo, svolgendo un ruolo cruciale nel mantenimento della salute articolare e nella protezione delle ossa dai danni.</p>
+              <p><strong>4. Promuove la salute del cuore</strong><br>Senza abbastanza collagene, le arterie possono indebolirsi, restringersi e trasportare il sangue in modo meno efficace. La mancanza di collagene può portare all'aterosclerosi, una condizione in cui la placca si accumula nelle arterie causando indurimento o restringimento.</p>
+              <p><strong>5. Promuove la crescita di capelli e unghie</strong><br>Il collagene ti aiuta a mantenere capelli e unghie sani, favorendo lucentezza e forza.</p>
+              <p><strong>6. Promuove la salute intestinale</strong><br>Il collagene è benefico per la salute intestinale, aiutando la digestione, riparando il rivestimento dell'intestino e promuovendo la crescita di batteri intestinali sani.</p>
+              <p><strong>7. Stimola il metabolismo</strong><br>Il collagene può stimolare il metabolismo, migliorando la capacità di bruciare grassi e gestire il peso.</p>
+              <p class="nutrition-note">Sebbene molte di queste affermazioni non siano state scientificamente provate, le raccomandazioni dietetiche complessive della dieta del collagene (esclusi gli integratori) contengono spesso molti alimenti consigliati per una dieta sana.</p>
+            </div>
+
+            <div class="nutrition-sub-section">
+              <h4>Chi dovrebbe seguire la dieta del collagene?</h4>
+              <ul>
+                <li>Persone oltre i 25 anni per la prevenzione dell'invecchiamento cutaneo e della degradazione dei tessuti</li>
+                <li>Atleti e persone fisicamente attive</li>
+                <li>Persone in recupero da interventi chirurgici, infortuni o dolori articolari</li>
+                <li>Chi presenta segni di diminuzione della fermezza cutanea, problemi digestivi o rigidità articolare</li>
+              </ul>
+            </div>
+
+            <div class="nutrition-sub-section">
+              <h4>Quando aspettarsi i risultati</h4>
+              <p><strong>Miglioramenti visibili e tangibili appaiono generalmente entro 4-6 settimane di aderenza costante. Questi includono:</strong></p>
+              <ul>
+                <li>Aumento della fermezza e luminosità della pelle</li>
+                <li>Miglioramento del comfort e della mobilità articolare</li>
+                <li>Recupero più rapido dopo lo sforzo fisico</li>
+                <li>Miglioramento del sonno e della funzione intestinale</li>
               </ul>
             </div>
           </div>
