@@ -191,7 +191,7 @@ const schedeDB = {
             defaultReps: '20',
             defaultRest: 90,
             notes: 'ogni 5 rep, 5" iso chiuso',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif'
           },
           {
             id: 'scheda-b-panca-inclinata',
@@ -201,7 +201,7 @@ const schedeDB = {
             defaultReps: '8-10',
             defaultRest: 90,
             notes: '3 serie normali + 1 stripping 6+6',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Smith-Machine-Incline-Bench-Press.gif'
           },
           {
             id: 'scheda-b-chest-press',
@@ -211,7 +211,7 @@ const schedeDB = {
             defaultReps: '10-12',
             defaultRest: 90,
             notes: 'negativa 2" iso a metà',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Chest-Press-Machine.gif'
           },
           {
             id: 'scheda-b-croci-cavi-alti',
@@ -221,7 +221,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Crossover.gif'
           },
           {
             id: 'scheda-b-alzate-90',
@@ -231,7 +231,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 0,
             notes: '',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Rear-Lateral-Raise.gif',
             tag: 'SS',
             groupId: 'ss-b1'
           },
@@ -243,7 +243,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 0,
             notes: '',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Front-Raise.gif',
             tag: 'SS',
             groupId: 'ss-b1'
           },
@@ -255,7 +255,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: '',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif',
             tag: 'SS',
             groupId: 'ss-b1'
           },
@@ -267,7 +267,7 @@ const schedeDB = {
             defaultReps: '8+6+4',
             defaultRest: 90,
             notes: 'Rest pause 10"-5"',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Curl.gif'
           },
           {
             id: 'scheda-b-curl-cavi-alti',
@@ -277,7 +277,7 @@ const schedeDB = {
             defaultReps: '10+10',
             defaultRest: 90,
             notes: 'Settimana 1. stripping',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Overhead-Cable-Curl.gif',
             tag: 'ALT',
             groupId: 'alt-b1'
           },
@@ -289,7 +289,7 @@ const schedeDB = {
             defaultReps: '10+10',
             defaultRest: 90,
             notes: 'Settimana 2. stripping',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Preacher-Curl.gif',
             tag: 'ALT',
             groupId: 'alt-b1'
           },
@@ -301,7 +301,7 @@ const schedeDB = {
             defaultReps: '15-20',
             defaultRest: 90,
             notes: 'Settimana 1',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Hammer-Curl.gif',
             tag: 'ALT',
             groupId: 'alt-b2'
           },
@@ -313,7 +313,7 @@ const schedeDB = {
             defaultReps: '15-20',
             defaultRest: 90,
             notes: 'Settimana 2',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Reverse-Curl.gif',
             tag: 'ALT',
             groupId: 'alt-b2'
           },
@@ -325,7 +325,7 @@ const schedeDB = {
             defaultReps: '45"',
             defaultRest: 0,
             notes: 'a circuito. no recupero',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Front-Plank.gif',
             tag: 'SS',
             groupId: 'ss-b2'
           },
@@ -337,7 +337,7 @@ const schedeDB = {
             defaultReps: '20-30',
             defaultRest: 60,
             notes: 'a circuito. no recupero',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Crunch.gif',
             tag: 'SS',
             groupId: 'ss-b2'
           }
@@ -494,7 +494,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: 'Settimana 1',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Romanian-Deadlift.gif',
             tag: 'ALT',
             groupId: 'alt-c2'
           },
@@ -506,7 +506,7 @@ const schedeDB = {
             defaultReps: '12-10',
             defaultRest: 90,
             notes: 'Settimana 2',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/06/Barbell-Walking-Lunge.gif',
             tag: 'ALT',
             groupId: 'alt-c2'
           },
@@ -518,7 +518,7 @@ const schedeDB = {
             defaultReps: '45"',
             defaultRest: 0,
             notes: 'a circuito. no recupero',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Front-Plank.gif',
             tag: 'SS',
             groupId: 'ss-c1'
           },
@@ -530,7 +530,7 @@ const schedeDB = {
             defaultReps: '20-30',
             defaultRest: 60,
             notes: 'a circuito. no recupero',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Crunch.gif',
             tag: 'SS',
             groupId: 'ss-c1'
           }
@@ -549,7 +549,7 @@ const schedeDB = {
             defaultReps: '20-30',
             defaultRest: 0,
             notes: 'preattivazione',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/09/Rear-Delt-Machine-Fly.gif',
             tag: 'VAR',
             groupId: 'var-d1'
           },
@@ -561,7 +561,7 @@ const schedeDB = {
             defaultReps: '12',
             defaultRest: 90,
             notes: 'tenuta in iso',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/09/Rear-Delt-Machine-Fly.gif',
             tag: 'VAR',
             groupId: 'var-d1'
           },
@@ -573,7 +573,7 @@ const schedeDB = {
             defaultReps: 'max',
             defaultRest: 90,
             notes: 'esplosive',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/09/Rear-Delt-Machine-Fly.gif',
             tag: 'VAR',
             groupId: 'var-d1'
           },
@@ -585,7 +585,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: '3 serie normali + 1 stripping 10+10+10',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Lateral-Raise-Machine.gif'
           },
           {
             id: 'scheda-d-military-press',
@@ -595,7 +595,7 @@ const schedeDB = {
             defaultReps: '8-10',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Smith-Machine-Shoulder-Press.gif'
           },
           {
             id: 'scheda-d-tirate-larghe',
@@ -605,7 +605,7 @@ const schedeDB = {
             defaultReps: '12-10',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Wide-Grip-Upright-Row.gif'
           },
           {
             id: 'scheda-d-delt-lat-cavo',
@@ -615,7 +615,7 @@ const schedeDB = {
             defaultReps: '15-20',
             defaultRest: 90,
             notes: 'maniglia dietro busto',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Lateral-Raise.gif'
           },
           {
             id: 'scheda-d-panca-stretta',
@@ -625,7 +625,7 @@ const schedeDB = {
             defaultReps: '10-8',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Close-Grip-Barbell-Bench-Press.gif'
           },
           {
             id: 'scheda-d-french-press',
@@ -635,7 +635,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lying-Triceps-Extension.gif'
           },
           {
             id: 'scheda-d-push-down',
@@ -645,7 +645,7 @@ const schedeDB = {
             defaultReps: '20-30',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Pushdown.gif'
           },
           {
             id: 'scheda-d-plank',
@@ -655,7 +655,7 @@ const schedeDB = {
             defaultReps: '45"',
             defaultRest: 0,
             notes: 'a circuito. no recupero',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Front-Plank.gif',
             tag: 'SS',
             groupId: 'ss-d1'
           },
@@ -667,7 +667,7 @@ const schedeDB = {
             defaultReps: '20-30',
             defaultRest: 60,
             notes: 'a circuito. no recupero',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Hanging-Knee-Raise.gif',
             tag: 'SS',
             groupId: 'ss-d1'
           }
