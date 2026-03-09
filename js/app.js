@@ -3,7 +3,7 @@ import {
   getHomeExerciseDB, saveHomeExerciseDB, getAvailableHomeWeeks, getHomeWeekData,
   getSchedeExerciseDB, saveSchedeExerciseDB, getSchedeData,
   getSettings, saveSettings, getLogs, getLogByDate, deleteLog,
-  exportAllData, importAllData, resetAllData, getPRs
+  exportAllData, importAllData, resetAllData, getPRs, deletePR, savePRs
 } from './store.js';
 import exerciseDB from './exercises.js';
 import homeExerciseDB from './homeExercises.js';
@@ -1124,6 +1124,7 @@ function renderRecords() {
   view.classList.add('active');
 
   const prs = getAllPRsSorted();
+  const logs = getLogs().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   const unit = getSettings().unit || 'kg';
 
   view.innerHTML = `
@@ -1131,38 +1132,166 @@ function renderRecords() {
       <h2 class="page-title">Personal Records</h2>
     </div>
 
-    ${prs.length === 0 ? `
-      <div class="empty-state">
-        <i data-lucide="trophy"></i>
-        <h3>Nessun PR ancora</h3>
-        <p>Completa i tuoi allenamenti e i record appariranno qui.</p>
-      </div>
-    ` : prs.map(pr => `
-      <div class="card">
-        <div class="card-header">
-          <span class="card-title">${pr.exerciseName}</span>
-          ${isRecent(pr.best1RMDate) ? '<span class="pr-badge">New</span>' : ''}
+    <!-- Tab switcher -->
+    <div class="records-tabs">
+      <button class="records-tab active" data-records-tab="prs">PR</button>
+      <button class="records-tab" data-records-tab="sessions">Sessioni (${logs.length})</button>
+    </div>
+
+    <!-- PR Section -->
+    <div id="records-prs-section">
+      ${prs.length === 0 ? `
+        <div class="empty-state">
+          <i data-lucide="trophy"></i>
+          <h3>Nessun PR ancora</h3>
+          <p>Completa i tuoi allenamenti e i record appariranno qui.</p>
         </div>
-        <div class="stats-row" style="margin-bottom:0">
-          <div class="stat-box">
-            <div class="stat-value">${pr.best1RM}</div>
-            <div class="stat-label">1RM (${unit})</div>
+      ` : prs.map(pr => `
+        <div class="card" id="pr-card-${pr.exerciseId}">
+          <div class="card-header">
+            <span class="card-title">${pr.exerciseName}</span>
+            <div style="display:flex;gap:var(--space-xs);align-items:center">
+              ${isRecent(pr.best1RMDate) ? '<span class="pr-badge">New</span>' : ''}
+              <button class="btn-icon-sm btn-delete-pr" data-exercise-id="${pr.exerciseId}" data-exercise-name="${pr.exerciseName}" title="Elimina PR">
+                <i data-lucide="trash-2"></i>
+              </button>
+            </div>
           </div>
-          <div class="stat-box">
-            <div class="stat-value">${pr.bestWeight}</div>
-            <div class="stat-label">Max ${unit}</div>
+          <div class="stats-row" style="margin-bottom:0">
+            <div class="stat-box">
+              <div class="stat-value">${pr.best1RM}</div>
+              <div class="stat-label">1RM (${unit})</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">${pr.bestWeight}</div>
+              <div class="stat-label">Max ${unit}</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">${(pr.history || []).length}</div>
+              <div class="stat-label">Sessioni</div>
+            </div>
           </div>
-          <div class="stat-box">
-            <div class="stat-value">${(pr.history || []).length}</div>
-            <div class="stat-label">Sessioni</div>
-          </div>
+          ${pr.best1RMDate ? `<p style="font-size:0.6875rem;color:var(--text-secondary);margin-top:var(--space-sm);text-align:right">${formatDate(pr.best1RMDate.split('T')[0])}</p>` : ''}
         </div>
-        ${pr.best1RMDate ? `<p style="font-size:0.6875rem;color:var(--text-secondary);margin-top:var(--space-sm);text-align:right">${formatDate(pr.best1RMDate.split('T')[0])}</p>` : ''}
-      </div>
-    `).join('')}
+      `).join('')}
+
+      ${prs.length > 0 ? `
+        <button class="btn btn-outline btn-danger-outline" id="btn-clear-all-prs" style="width:100%;margin-top:var(--space-md)">
+          <i data-lucide="trash"></i> Elimina tutti i PR
+        </button>
+      ` : ''}
+    </div>
+
+    <!-- Sessions Section -->
+    <div id="records-sessions-section" style="display:none">
+      ${logs.length === 0 ? `
+        <div class="empty-state">
+          <i data-lucide="calendar-x"></i>
+          <h3>Nessuna sessione</h3>
+          <p>Le sessioni completate appariranno qui.</p>
+        </div>
+      ` : logs.map(log => {
+        const d = log.date ? new Date(log.date) : null;
+        const dateLabel = d ? d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }) : '—';
+        const exerciseCount = (log.exercises || []).length;
+        const completedSets = (log.exercises || []).reduce((sum, ex) => sum + (ex.sets || []).filter(s => s.completed).length, 0);
+        const sourceLabel = log.source === 'home' ? 'Casa' : log.source === 'schede' ? 'Scheda' : 'Palestra';
+        return `
+          <div class="card session-card" id="session-card-${log.id}">
+            <div class="card-header">
+              <div>
+                <span class="card-title" style="font-size:0.8125rem">${log.dayLabel || 'Workout'}</span>
+                <span class="source-badge source-${log.source || 'gym'}">${sourceLabel}</span>
+              </div>
+              <button class="btn-icon-sm btn-delete-session" data-log-id="${log.id}" data-log-label="${log.dayLabel || 'Workout'}" title="Elimina sessione">
+                <i data-lucide="trash-2"></i>
+              </button>
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-secondary);margin-bottom:var(--space-xs)">
+              ${dateLabel} ${log.duration ? `· ${log.duration} min` : ''}
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-tertiary)">
+              ${exerciseCount} esercizi · ${completedSets} serie completate
+              ${log.weekNumber ? ` · Sett. ${log.weekNumber}` : ''}
+            </div>
+          </div>
+        `;
+      }).join('')}
+
+      ${logs.length > 0 ? `
+        <button class="btn btn-outline btn-danger-outline" id="btn-clear-all-sessions" style="width:100%;margin-top:var(--space-md)">
+          <i data-lucide="trash"></i> Elimina tutte le sessioni
+        </button>
+      ` : ''}
+    </div>
   `;
 
   if (window.lucide) lucide.createIcons();
+  bindRecordsEvents(view);
+}
+
+function bindRecordsEvents(view) {
+  // Tab switching
+  view.querySelectorAll('.records-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      view.querySelectorAll('.records-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.dataset.recordsTab;
+      document.getElementById('records-prs-section').style.display = target === 'prs' ? '' : 'none';
+      document.getElementById('records-sessions-section').style.display = target === 'sessions' ? '' : 'none';
+    });
+  });
+
+  // Delete single PR
+  view.querySelectorAll('.btn-delete-pr').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.exerciseId;
+      const name = btn.dataset.exerciseName;
+      if (confirm(`Eliminare il PR di "${name}"?`)) {
+        deletePR(id);
+        renderRecords();
+        showToast(`PR "${name}" eliminato`);
+      }
+    });
+  });
+
+  // Delete all PRs
+  const clearAllPrs = view.querySelector('#btn-clear-all-prs');
+  if (clearAllPrs) {
+    clearAllPrs.addEventListener('click', () => {
+      if (confirm('Eliminare TUTTI i Personal Records? Questa azione è irreversibile.')) {
+        savePRs({});
+        renderRecords();
+        showToast('Tutti i PR eliminati');
+      }
+    });
+  }
+
+  // Delete single session
+  view.querySelectorAll('.btn-delete-session').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.logId;
+      const label = btn.dataset.logLabel;
+      if (confirm(`Eliminare la sessione "${label}"?`)) {
+        deleteLog(id);
+        renderRecords();
+        showToast(`Sessione "${label}" eliminata`);
+      }
+    });
+  });
+
+  // Delete all sessions
+  const clearAllSessions = view.querySelector('#btn-clear-all-sessions');
+  if (clearAllSessions) {
+    clearAllSessions.addEventListener('click', () => {
+      if (confirm('Eliminare TUTTE le sessioni? Questa azione è irreversibile.')) {
+        const logs = getLogs();
+        logs.forEach(l => deleteLog(l.id));
+        renderRecords();
+        showToast('Tutte le sessioni eliminate');
+      }
+    });
+  }
 }
 
 function isRecent(dateStr) {

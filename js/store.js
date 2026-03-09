@@ -157,6 +157,12 @@ export function updatePR(exerciseId, record) {
   return record;
 }
 
+export function deletePR(exerciseId) {
+  const prs = getPRs();
+  delete prs[exerciseId];
+  write(KEYS.prs, prs);
+}
+
 /* ── Saved Weights ── */
 
 export function getSavedWeights(exerciseId) {
