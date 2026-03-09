@@ -1421,6 +1421,320 @@
   }
 }
 
+/* ═══════════════════════════════════════
+   SEASONAL CALENDAR
+   ═══════════════════════════════════════ */
+
+.sc-subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.sc-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-xs);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-xs);
+}
+
+.sc-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.sc-tab {
+  flex: 0 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid rgba(139, 118, 53, 0.25);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.sc-tab:active {
+  transform: scale(0.97);
+}
+
+.sc-tab.active {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+  border-color: var(--gold-primary);
+}
+
+.sc-panel {
+  display: none;
+}
+
+.sc-panel.active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+.sc-month-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-md);
+}
+
+.sc-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.sc-column-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(139, 118, 53, 0.15);
+}
+
+.sc-column-header i {
+  width: 16px;
+  height: 16px;
+}
+
+.sc-count {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  background: rgba(139, 118, 53, 0.15);
+  color: var(--gold-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.sc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sc-chip {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.sc-chip--frutta {
+  background: rgba(232, 120, 77, 0.12);
+  color: #e8874d;
+  border: 1px solid rgba(232, 120, 77, 0.25);
+}
+
+.sc-chip--verdura {
+  background: rgba(77, 184, 108, 0.12);
+  color: #4db86c;
+  border: 1px solid rgba(77, 184, 108, 0.25);
+}
+
+/* Year-round section */
+.sc-year-round {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px dashed rgba(139, 118, 53, 0.25);
+}
+
+.sc-year-round-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-md);
+}
+
+.sc-year-round-title i {
+  width: 18px;
+  height: 18px;
+}
+
+/* View Toggle */
+.sc-view-toggle {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.sc-view-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid rgba(139, 118, 53, 0.25);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.sc-view-btn i {
+  width: 14px;
+  height: 14px;
+}
+
+.sc-view-btn:active {
+  transform: scale(0.97);
+}
+
+.sc-view-btn.active {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+  border-color: var(--gold-primary);
+}
+
+/* Matrix View */
+.sc-matrix-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 118, 53, 0.3) transparent;
+  border-radius: var(--radius-md);
+}
+
+.sc-matrix-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.sc-matrix-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(139, 118, 53, 0.3);
+  border-radius: 3px;
+}
+
+.sc-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  min-width: 520px;
+}
+
+.sc-matrix thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.sc-matrix-th {
+  padding: 6px 4px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  text-align: center;
+  background: var(--bg-primary);
+  border-bottom: 2px solid rgba(139, 118, 53, 0.25);
+  white-space: nowrap;
+}
+
+.sc-matrix-th--name {
+  text-align: left;
+  padding-left: var(--space-sm);
+  min-width: 120px;
+}
+
+.sc-matrix-th--total {
+  color: var(--gold-primary);
+  min-width: 40px;
+}
+
+.sc-matrix tbody tr {
+  transition: background 0.15s ease;
+}
+
+.sc-matrix tbody tr:hover {
+  background: rgba(139, 118, 53, 0.06);
+}
+
+.sc-matrix-row--yearround {
+  background: rgba(200, 168, 78, 0.04);
+}
+
+.sc-matrix-name {
+  padding: 6px var(--space-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  border-right: 1px solid rgba(139, 118, 53, 0.1);
+}
+
+.sc-matrix-cell {
+  padding: 5px 2px;
+  text-align: center;
+  border-bottom: 1px solid rgba(139, 118, 53, 0.06);
+  min-width: 28px;
+}
+
+.sc-matrix-cell--active {
+  position: relative;
+}
+
+.sc-matrix-cell--active::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  box-shadow: 0 0 6px rgba(200, 168, 78, 0.4);
+}
+
+.sc-matrix-total {
+  padding: 6px var(--space-sm);
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  border-left: 1px solid rgba(139, 118, 53, 0.1);
+  border-bottom: 1px solid rgba(139, 118, 53, 0.06);
+}
+
+@media (max-width: 480px) {
+  .sc-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Sub-sections inside accordion */
 .nutrition-sub-section {
   background: var(--bg-elevated);

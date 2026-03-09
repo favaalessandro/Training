@@ -4,6 +4,7 @@
 
 import { DIETS } from './diets.js';
 import { renderWeeklyMenuSection, initWeeklyMenuTabs } from './weekly-menu.js';
+import { renderSeasonalCalendar, initSeasonalCalendarTabs } from './seasonal-calendar.js';
 
 function renderDietsSection() {
   const tabs = DIETS.map((d, i) =>
@@ -425,6 +426,8 @@ export function renderNutrition() {
     ${renderDietsSection()}
 
     ${renderWeeklyMenuSection()}
+
+    ${renderSeasonalCalendar()}
   `;
 
   // Init icons
@@ -457,4 +460,7 @@ export function renderNutrition() {
 
   // Weekly menu tabs logic
   initWeeklyMenuTabs(view);
+
+  // Seasonal calendar tabs logic
+  initSeasonalCalendarTabs(view);
 }
