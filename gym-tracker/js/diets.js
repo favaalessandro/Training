@@ -283,5 +283,194 @@ export const DIETS = [
         ]
       }
     ]
+  },
+  {
+    id: 'anatoly-1',
+    name: 'Anatoly Menu 1',
+    description: 'Menu da ~3000 kcal di Anatoly. Bilanciato con cereali, pollo, pesce e verdure per una crescita muscolare pulita',
+    icon: 'crown',
+    kcal: '~3000 kcal',
+    meals: [
+      {
+        name: 'Colazione',
+        time: '07:00',
+        items: [
+          '100g fiocchi d\'avena con 200ml latte 1.5%',
+          '3 uova sode (2 albumi + 1 intero)',
+          '1 fetta di pane integrale tostato'
+        ]
+      },
+      {
+        name: 'Seconda Colazione',
+        time: '10:00',
+        items: [
+          '1 banana',
+          '1 panino ai semi di papavero'
+        ]
+      },
+      {
+        name: 'Pranzo',
+        time: '13:00',
+        items: [
+          '100g riso bianco (peso a secco)',
+          '1/2 petto di pollo',
+          '100g verdure',
+          '1 fetta di pane integrale'
+        ]
+      },
+      {
+        name: 'Spuntino Pomeriggio',
+        time: '16:00',
+        items: [
+          '100g riso cotto',
+          '1/2 petto di pollo',
+          '100g insalata di verdure'
+        ]
+      },
+      {
+        name: 'Cena',
+        time: '19:30',
+        items: [
+          '200g merluzzo nordico',
+          '150g patate',
+          '150g insalata di verdure con panna acida'
+        ]
+      },
+      {
+        name: 'Pre-Nanna',
+        time: '22:00',
+        items: [
+          '150g yogurt greco magro',
+          '150g kefir (1%)'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'anatoly-2',
+    name: 'Anatoly Menu 2',
+    description: 'Menu da ~3000 kcal di Anatoly. Variante con grano saraceno, tacchino e frutta secca per diversificare i nutrienti',
+    icon: 'crown',
+    kcal: '~3000 kcal',
+    meals: [
+      {
+        name: 'Colazione',
+        time: '07:00',
+        items: [
+          '100g grano saraceno (peso a secco)',
+          'Omelette con 1 uovo intero e 2 albumi',
+          '1 fetta di pane integrale tostato',
+          '30g hummus'
+        ]
+      },
+      {
+        name: 'Seconda Colazione',
+        time: '10:00',
+        items: [
+          '1 mela',
+          '100g frutta secca (albicocche, uvetta o mix)'
+        ]
+      },
+      {
+        name: 'Pranzo',
+        time: '13:00',
+        items: [
+          '100g semola di grano (peso a secco)',
+          '200g filetto/bistecca di tacchino',
+          '100g vinaigrette',
+          '1 fetta di pane ai cereali'
+        ]
+      },
+      {
+        name: 'Spuntino Pomeriggio',
+        time: '16:00',
+        items: [
+          '100g semola di grano cotta',
+          '200g filetto di tacchino',
+          '100g vinaigrette'
+        ]
+      },
+      {
+        name: 'Cena',
+        time: '19:30',
+        items: [
+          '200g nasello',
+          '100g fagiolini/verdure stufate',
+          '150g insalata di verdure con panna acida'
+        ]
+      },
+      {
+        name: 'Pre-Nanna',
+        time: '22:00',
+        items: [
+          '150g yogurt greco',
+          '1 banana'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'anatoly-3',
+    name: 'Anatoly Menu 3',
+    description: 'Menu da ~3000 kcal di Anatoly. Variante con polenta di mais, manzo e orzo perlato per massima varietà',
+    icon: 'crown',
+    kcal: '~3000 kcal',
+    meals: [
+      {
+        name: 'Colazione',
+        time: '07:00',
+        items: [
+          '100g polenta di mais con 200ml latte 1.5%',
+          '1 uovo al tegamino + 2 albumi',
+          '1 fetta di pane di mais',
+          '1 cucchiaino di burro'
+        ]
+      },
+      {
+        name: 'Seconda Colazione',
+        time: '10:00',
+        items: [
+          '1 pera',
+          '30g frutta secca (noci, arachidi, mandorle)',
+          '100g marshmallow/marmellata'
+        ]
+      },
+      {
+        name: 'Pranzo',
+        time: '13:00',
+        items: [
+          '100g orzo perlato (peso a secco)',
+          '200g gulasch di manzo/bistecca',
+          '150g insalata di verdure',
+          '1 fetta di pane di segale'
+        ]
+      },
+      {
+        name: 'Spuntino Pomeriggio',
+        time: '16:00',
+        items: [
+          '100g orzo perlato cotto',
+          '200g gulasch di manzo/carne rossa',
+          '150g insalata di verdure'
+        ]
+      },
+      {
+        name: 'Cena',
+        time: '19:30',
+        items: [
+          '1/2 petto di pollo',
+          '150g verdure fresche/in scatola',
+          '100g riso (peso a secco)'
+        ]
+      },
+      {
+        name: 'Pre-Nanna',
+        time: '22:00',
+        items: [
+          '150g yogurt greco magro',
+          '1 tazza di ryazhenka'
+        ]
+      }
+    ]
   }
 ];
