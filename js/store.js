@@ -1,6 +1,7 @@
 const KEYS = {
   exercises: 'gym-tracker-exercises',
   homeExercises: 'gym-tracker-home-exercises',
+  schedeExercises: 'gym-tracker-schede-exercises',
   logs: 'gym-tracker-logs',
   prs: 'gym-tracker-prs',
   settings: 'gym-tracker-settings',
@@ -85,6 +86,21 @@ export function getAvailableHomeWeeks() {
 export function getHomeWeekData(weekNum) {
   const db = getHomeExerciseDB();
   return db[weekNum] || null;
+}
+
+/* ── Schede Exercise DB ── */
+
+export function getSchedeExerciseDB() {
+  return read(KEYS.schedeExercises) || {};
+}
+
+export function saveSchedeExerciseDB(db) {
+  write(KEYS.schedeExercises, db);
+}
+
+export function getSchedeData() {
+  const db = getSchedeExerciseDB();
+  return db[1] || null;
 }
 
 /* ── Workout Logs ── */

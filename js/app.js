@@ -1,11 +1,13 @@
 import {
   getExerciseDB, saveExerciseDB, getAvailableWeeks, getWeekData,
   getHomeExerciseDB, saveHomeExerciseDB, getAvailableHomeWeeks, getHomeWeekData,
+  getSchedeExerciseDB, saveSchedeExerciseDB, getSchedeData,
   getSettings, saveSettings, getLogs, getLogByDate, deleteLog,
   exportAllData, importAllData, resetAllData, getPRs
 } from './store.js';
 import exerciseDB from './exercises.js';
 import homeExerciseDB from './homeExercises.js';
+import schedeDB from './schedeExercises.js';
 import {
   startWorkout, getActiveWorkout, updateSet, toggleSetComplete,
   addSet, removeSet, updateExerciseNotes, updateWorkoutMood,
@@ -28,6 +30,7 @@ import {
 document.addEventListener('DOMContentLoaded', () => {
   initExerciseDB();
   initHomeExerciseDB();
+  initSchedeDB();
   initRouter();
   initNavigation();
   if (window.lucide) lucide.createIcons();
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const EXERCISE_DB_VERSION = 27; // Bump this when exercises.js changes
 const HOME_EXERCISE_DB_VERSION = 18; // Bump this when homeExercises.js changes
+const SCHEDE_DB_VERSION = 1; // Bump this when schedeExercises.js changes
 
 function initExerciseDB() {
   const savedVersion = parseInt(localStorage.getItem('gym-tracker-db-version') || '0');
@@ -49,6 +53,14 @@ function initHomeExerciseDB() {
   saveHomeExerciseDB(homeExerciseDB);
   localStorage.setItem('gym-tracker-home-db-version', String(HOME_EXERCISE_DB_VERSION));
   localStorage.removeItem('gym-tracker-active-workout');
+}
+
+function initSchedeDB() {
+  const savedVersion = parseInt(localStorage.getItem('gym-tracker-schede-db-version') || '0');
+  if (savedVersion < SCHEDE_DB_VERSION) {
+    saveSchedeExerciseDB(schedeDB);
+    localStorage.setItem('gym-tracker-schede-db-version', String(SCHEDE_DB_VERSION));
+  }
 }
 
 /* ═══════════════════════════════════════
@@ -122,7 +134,7 @@ function showToast(message, type = 'default', duration = 3000) {
    HOME VIEW
    ═══════════════════════════════════════ */
 
-let homeActiveProgram = getSettings().activeProgram || 'gym'; // 'gym' or 'home'
+let homeActiveProgram = getSettings().activeProgram || 'gym'; // 'gym', 'home', or 'schede'
 
 function renderHome() {
   const view = document.getElementById('view-home');
@@ -132,10 +144,11 @@ function renderHome() {
   const stats = getStats();
 
   const isHome = homeActiveProgram === 'home';
-  const weeks = isHome ? getAvailableHomeWeeks() : getAvailableWeeks();
+  const isSchede = homeActiveProgram === 'schede';
+  const weeks = isSchede ? [] : (isHome ? getAvailableHomeWeeks() : getAvailableWeeks());
   const weekSettingKey = isHome ? 'currentHomeWeek' : 'currentWeek';
-  const currentWeek = settings[weekSettingKey] || (weeks.length > 0 ? weeks[0] : 1);
-  const weekData = isHome ? getHomeWeekData(currentWeek) : getWeekData(currentWeek);
+  const currentWeek = isSchede ? 1 : (settings[weekSettingKey] || (weeks.length > 0 ? weeks[0] : 1));
+  const weekData = isSchede ? getSchedeData() : (isHome ? getHomeWeekData(currentWeek) : getWeekData(currentWeek));
 
   const hour = new Date().getHours();
   let greeting = 'Buongiorno';
@@ -152,10 +165,11 @@ function renderHome() {
     return l.date && l.date.startsWith(today);
   });
   if (weekData && weekData.days && weekData.days.length > 0) {
+    const sourceAttr = isSchede ? 'schede' : (isHome ? 'home' : 'gym');
     nextWorkoutHTML = weekData.days.map((day, idx) => {
       const done = completedToday.some(l => l.dayLabel === day.dayLabel);
       return `
-        <div class="day-card ${done ? 'completed' : ''}" data-week="${currentWeek}" data-day="${idx}" data-source="${isHome ? 'home' : 'gym'}">
+        <div class="day-card ${done ? 'completed' : ''}" data-week="${currentWeek}" data-day="${idx}" data-source="${sourceAttr}">
           <div class="day-card-info">
             <h4>${day.dayLabel}</h4>
             <p>${day.exercises.length} esercizi</p>
@@ -168,19 +182,19 @@ function renderHome() {
     }).join('');
   }
 
-  const programLabel = isHome ? 'Home Workout' : 'Workout';
+  const programLabel = isSchede ? 'Schede' : (isHome ? 'Home Workout' : 'Workout');
 
   view.innerHTML = `
     <div style="margin-bottom: var(--space-lg)">
       <p style="color: var(--text-secondary); font-size: 0.875rem">${greeting}</p>
-      <h1 class="page-title">Settimana ${currentWeek}</h1>
+      <h1 class="page-title">${isSchede ? 'Schede Personalizzate' : `Settimana ${currentWeek}`}</h1>
     </div>
 
-    <div class="week-selector" id="home-week-selector">
+    ${!isSchede ? `<div class="week-selector" id="home-week-selector">
       ${weeks.map(w => `
         <button class="week-btn ${w === currentWeek ? 'active' : ''}" data-week="${w}">W${w}</button>
       `).join('')}
-    </div>
+    </div>` : ''}
 
     <div class="stats-row">
       <div class="stat-box">
@@ -212,16 +226,21 @@ function renderHome() {
     <div class="section-header">
       <h3>Scegli il Programma</h3>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-bottom:var(--space-lg)">
-      <div class="card" id="goto-workout" style="cursor:pointer;text-align:center;border-color:${!isHome ? 'var(--gold-primary)' : 'var(--gold-dim)'};padding:var(--space-lg) var(--space-md);opacity:${!isHome ? '1' : '0.5'};transition:all 0.2s ease">
-        <i data-lucide="dumbbell" style="width:32px;height:32px;color:var(--gold-primary);margin-bottom:var(--space-sm)"></i>
-        <div style="font-weight:600;font-size:0.9375rem;margin-bottom:var(--space-xs)">Workout</div>
-        <div style="font-size:0.75rem;color:var(--text-secondary)">Palestra — 8 settimane</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-sm);margin-bottom:var(--space-lg)">
+      <div class="card" id="goto-workout" style="cursor:pointer;text-align:center;border-color:${homeActiveProgram === 'gym' ? 'var(--gold-primary)' : 'var(--gold-dim)'};padding:var(--space-md) var(--space-xs);opacity:${homeActiveProgram === 'gym' ? '1' : '0.5'};transition:all 0.2s ease">
+        <i data-lucide="dumbbell" style="width:28px;height:28px;color:var(--gold-primary);margin-bottom:var(--space-xs)"></i>
+        <div style="font-weight:600;font-size:0.8125rem;margin-bottom:2px">Workout</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary)">Palestra — 8 sett.</div>
       </div>
-      <div class="card" id="goto-home-workout" style="cursor:pointer;text-align:center;border-color:${isHome ? 'var(--gold-primary)' : 'var(--gold-dim)'};padding:var(--space-lg) var(--space-md);opacity:${isHome ? '1' : '0.5'};transition:all 0.2s ease">
-        <i data-lucide="house" style="width:32px;height:32px;color:var(--gold-primary);margin-bottom:var(--space-sm)"></i>
-        <div style="font-weight:600;font-size:0.9375rem;margin-bottom:var(--space-xs)">Home Workout</div>
-        <div style="font-size:0.75rem;color:var(--text-secondary)">Casa — 7 settimane</div>
+      <div class="card" id="goto-home-workout" style="cursor:pointer;text-align:center;border-color:${homeActiveProgram === 'home' ? 'var(--gold-primary)' : 'var(--gold-dim)'};padding:var(--space-md) var(--space-xs);opacity:${homeActiveProgram === 'home' ? '1' : '0.5'};transition:all 0.2s ease">
+        <i data-lucide="house" style="width:28px;height:28px;color:var(--gold-primary);margin-bottom:var(--space-xs)"></i>
+        <div style="font-weight:600;font-size:0.8125rem;margin-bottom:2px">Home</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary)">Casa — 7 sett.</div>
+      </div>
+      <div class="card" id="goto-schede" style="cursor:pointer;text-align:center;border-color:${isSchede ? 'var(--gold-primary)' : 'var(--gold-dim)'};padding:var(--space-md) var(--space-xs);opacity:${isSchede ? '1' : '0.5'};transition:all 0.2s ease">
+        <i data-lucide="clipboard-list" style="width:28px;height:28px;color:var(--gold-primary);margin-bottom:var(--space-xs)"></i>
+        <div style="font-weight:600;font-size:0.8125rem;margin-bottom:2px">Schede</div>
+        <div style="font-size:0.6875rem;color:var(--text-secondary)">A / B / C / D</div>
       </div>
     </div>
 
@@ -258,6 +277,12 @@ function renderHome() {
     saveSettings({ activeProgram: 'home' });
     renderHome();
   });
+  document.getElementById('goto-schede')?.addEventListener('click', () => {
+    if (homeActiveProgram === 'schede') return;
+    homeActiveProgram = 'schede';
+    saveSettings({ activeProgram: 'schede' });
+    renderHome();
+  });
 
   // Week selector — switch week and save setting
   view.querySelectorAll('#home-week-selector .week-btn').forEach(btn => {
@@ -274,7 +299,10 @@ function renderHome() {
       const week = parseInt(card.dataset.week);
       const day = parseInt(card.dataset.day);
       const source = card.dataset.source;
-      if (source === 'home') {
+      if (source === 'schede') {
+        navigate('/workout');
+        setTimeout(() => startSchedeSession(day), 50);
+      } else if (source === 'home') {
         navigate('/home-workout');
         setTimeout(() => startHomeWorkoutSession(week, day), 50);
       } else {
@@ -510,6 +538,15 @@ function renderHomeWeekDays(weekNum) {
   if (window.lucide) lucide.createIcons();
 }
 
+function startSchedeSession(dayIdx) {
+  const workout = startWorkout(1, dayIdx, 'schede');
+  if (!workout) {
+    showToast('Impossibile avviare la scheda', 'error');
+    return;
+  }
+  renderActiveWorkout(document.getElementById('view-workout'));
+}
+
 function startHomeWorkoutSession(weekNum, dayIdx) {
   const workout = startWorkout(weekNum, dayIdx, 'home');
   if (!workout) {
@@ -528,7 +565,7 @@ function renderActiveWorkout(view) {
   view.innerHTML = `
     <div class="section-header">
       <div>
-        <p style="color:var(--text-secondary);font-size:0.75rem">Settimana ${workout.weekNumber}</p>
+        <p style="color:var(--text-secondary);font-size:0.75rem">${workout.source === 'schede' ? 'Schede Personalizzate' : `Settimana ${workout.weekNumber}`}</p>
         <h2 class="page-title" style="font-size:1.25rem">${workout.dayLabel}</h2>
       </div>
       <button class="btn btn-sm btn-danger" id="btn-finish">Termina</button>
@@ -739,10 +776,24 @@ function createExerciseCard(ex, exIdx, unit) {
     </div>
   ` : '';
 
+  // Build tag badges for SS/ALT/VAR
+  let tagBadge = '';
+  if (ex.tag) {
+    if (ex.tag.includes('SS') && ex.tag.includes('ALT')) {
+      tagBadge = '<span class="ex-tag ex-tag-ss">SS</span><span class="ex-tag ex-tag-alt">ALT</span>';
+    } else if (ex.tag === 'SS') {
+      tagBadge = '<span class="ex-tag ex-tag-ss">SS</span>';
+    } else if (ex.tag === 'ALT') {
+      tagBadge = '<span class="ex-tag ex-tag-alt">ALT</span>';
+    } else if (ex.tag === 'VAR') {
+      tagBadge = '<span class="ex-tag ex-tag-var">VAR</span>';
+    }
+  }
+
   card.innerHTML = `
     <div class="exercise-header" data-has-gif="${ex.gifUrl ? 'true' : 'false'}">
       <div>
-        <div class="exercise-name">${ex.exerciseName}</div>
+        <div class="exercise-name">${tagBadge}${ex.exerciseName}</div>
         <span class="muscle-tag">${ex.muscleGroup}</span>
       </div>
       <div style="display:flex;gap:var(--space-xs);align-items:center">
@@ -1265,6 +1316,7 @@ function renderSettingsView() {
     document.getElementById('reset-confirm').classList.add('hidden');
     showToast('Tutti i dati sono stati eliminati');
     initExerciseDB();
+    initSchedeDB();
     renderSettingsView();
   });
 

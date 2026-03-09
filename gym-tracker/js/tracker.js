@@ -1,4 +1,4 @@
-import { getExerciseDB, getWeekData, getHomeWeekData, saveLog, getLogs, getSettings, generateId, getSavedWeights, saveExerciseWeights } from './store.js';
+import { getExerciseDB, getWeekData, getHomeWeekData, getSchedeData, saveLog, getLogs, getSettings, generateId, getSavedWeights, saveExerciseWeights } from './store.js';
 import { checkAndUpdatePRs } from './pr.js';
 
 let activeWorkout = null;
@@ -12,7 +12,14 @@ let timerCallback = null;
    ═══════════════════════════════════════ */
 
 export function startWorkout(weekNumber, dayIndex, source = 'gym') {
-  const weekData = source === 'home' ? getHomeWeekData(weekNumber) : getWeekData(weekNumber);
+  let weekData;
+  if (source === 'schede') {
+    weekData = getSchedeData();
+  } else if (source === 'home') {
+    weekData = getHomeWeekData(weekNumber);
+  } else {
+    weekData = getWeekData(weekNumber);
+  }
   if (!weekData || !weekData.days[dayIndex]) return null;
 
   const day = weekData.days[dayIndex];
@@ -31,6 +38,8 @@ export function startWorkout(weekNumber, dayIndex, source = 'gym') {
       muscleGroup: ex.muscleGroup,
       gifUrl: ex.gifUrl || null,
       defaultReps: ex.defaultReps || '',
+      tag: ex.tag || null,
+      groupId: ex.groupId || null,
       sets: Array.from({ length: ex.defaultSets }, () => ({
         reps: parseInt(ex.defaultReps) || 0,
         weight: 0,
