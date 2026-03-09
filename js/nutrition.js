@@ -2,6 +2,64 @@
    NUTRITION PAGE
    ═══════════════════════════════════════ */
 
+import { DIETS } from './diets.js';
+
+function renderDietsSection() {
+  const tabs = DIETS.map((d, i) =>
+    `<button class="diet-tab ${i === 0 ? 'active' : ''}" data-diet="${d.id}">
+      <i data-lucide="${d.icon}"></i>
+      <span>${d.name}</span>
+    </button>`
+  ).join('');
+
+  const panels = DIETS.map((d, i) =>
+    `<div class="diet-panel ${i === 0 ? 'active' : ''}" id="diet-${d.id}">
+      <div class="diet-header">
+        <p class="diet-description">${d.description}</p>
+        <span class="diet-kcal"><i data-lucide="flame"></i> ${d.kcal}</span>
+      </div>
+      <div class="diet-meals">
+        ${d.meals.map(meal =>
+          `<div class="diet-meal">
+            <div class="diet-meal-header">
+              <h4>${meal.name}</h4>
+              <span class="diet-meal-time">${meal.time}</span>
+            </div>
+            <ul>
+              ${meal.items.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          </div>`
+        ).join('')}
+      </div>
+    </div>`
+  ).join('');
+
+  return `
+    <div class="nutrition-section">
+      <h2 class="nutrition-section-title">Diete per Atleti</h2>
+      <div class="diet-tabs">${tabs}</div>
+      <div class="diet-panels">${panels}</div>
+    </div>
+  `;
+}
+
+function initDietTabs(view) {
+  view.querySelectorAll('.diet-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const dietId = tab.getAttribute('data-diet');
+
+      // Update tabs
+      view.querySelectorAll('.diet-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Update panels
+      view.querySelectorAll('.diet-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById('diet-' + dietId);
+      if (panel) panel.classList.add('active');
+    });
+  });
+}
+
 export function renderNutrition() {
   const view = document.getElementById('view-nutrition');
   view.classList.add('active');
@@ -362,6 +420,8 @@ export function renderNutrition() {
         </div>
       </div>
     </div>
+
+    ${renderDietsSection()}
   `;
 
   // Init icons
@@ -388,4 +448,7 @@ export function renderNutrition() {
       }
     });
   });
+
+  // Diet tabs logic
+  initDietTabs(view);
 }
