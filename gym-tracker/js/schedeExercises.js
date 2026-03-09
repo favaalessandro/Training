@@ -26,7 +26,7 @@ const schedeDB = {
             defaultReps: '50',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/05/Leg-Press-Calf-Raise.gif'
           },
           {
             id: 'scheda-a-adductor-machine',
@@ -36,7 +36,7 @@ const schedeDB = {
             defaultReps: '20-30',
             defaultRest: 0,
             notes: '',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/HIP-ADDUCTION-MACHINE.gif',
             tag: 'SS',
             groupId: 'ss-a1'
           },
@@ -48,7 +48,7 @@ const schedeDB = {
             defaultReps: '20-30',
             defaultRest: 90,
             notes: 'a circuito. no recupero',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/HiP-ABDUCTION-MACHINE.gif',
             tag: 'SS',
             groupId: 'ss-a1'
           },
@@ -60,7 +60,7 @@ const schedeDB = {
             defaultReps: '12-10',
             defaultRest: 90,
             notes: 'negativa 2" iso a metà',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Leg-Curl.gif'
           },
           {
             id: 'scheda-a-stacchi-semitese',
@@ -70,7 +70,7 @@ const schedeDB = {
             defaultReps: '12-10',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Romanian-Deadlift.gif'
           },
           {
             id: 'scheda-a-pulldown-sbarra',
@@ -80,7 +80,7 @@ const schedeDB = {
             defaultReps: '20-15',
             defaultRest: 0,
             notes: 'sbarra dritta',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/05/Cable-Straight-Arm-Pulldown.gif',
             tag: 'SS',
             groupId: 'ss-a2'
           },
@@ -92,7 +92,7 @@ const schedeDB = {
             defaultReps: '15',
             defaultRest: 90,
             notes: '',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/hyperextension.gif',
             tag: 'SS',
             groupId: 'ss-a2'
           },
@@ -104,7 +104,7 @@ const schedeDB = {
             defaultReps: 'max',
             defaultRest: 90,
             notes: 'Settimana 1',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif',
             tag: 'ALT',
             groupId: 'alt-a1'
           },
@@ -116,7 +116,7 @@ const schedeDB = {
             defaultReps: '10-8',
             defaultRest: 90,
             notes: 'Settimana 2',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif',
             tag: 'ALT',
             groupId: 'alt-a1'
           },
@@ -128,7 +128,7 @@ const schedeDB = {
             defaultReps: '10-8',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/04/t-bar-rows.gif'
           },
           {
             id: 'scheda-a-lat-presa-inversa',
@@ -138,7 +138,7 @@ const schedeDB = {
             defaultReps: '12-10',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/04/Reverse-Lat-Pulldown.gif'
           },
           {
             id: 'scheda-a-pulldown-corda',
@@ -148,7 +148,7 @@ const schedeDB = {
             defaultReps: '15-20',
             defaultRest: 0,
             notes: 'Settimana 1',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/06/Rope-Straight-Arm-Pulldown.gif',
             tag: 'SS+ALT',
             groupId: 'ssalt-a1'
           },
@@ -160,7 +160,7 @@ const schedeDB = {
             defaultReps: '10',
             defaultRest: 0,
             notes: 'Settimana 2',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Deadlift.gif',
             tag: 'SS+ALT',
             groupId: 'ssalt-a1'
           },
@@ -172,7 +172,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: '',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/08/Cable-Rear-Pulldown.gif',
             tag: 'SS+ALT',
             groupId: 'ssalt-a1'
           }
