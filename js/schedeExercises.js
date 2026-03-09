@@ -356,7 +356,7 @@ const schedeDB = {
             defaultReps: '10+10',
             defaultRest: 90,
             notes: 'stripping',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/09/Bench-Press-Machine-Standing-Calf-Raise.gif'
           },
           {
             id: 'scheda-c-leg-ext-preatt',
@@ -366,7 +366,7 @@ const schedeDB = {
             defaultReps: '20-30',
             defaultRest: 0,
             notes: 'preattivazione',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/LEG-EXTENSION.gif',
             tag: 'VAR',
             groupId: 'var-c1'
           },
@@ -378,7 +378,7 @@ const schedeDB = {
             defaultReps: '12',
             defaultRest: 90,
             notes: 'tenuta in iso',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/LEG-EXTENSION.gif',
             tag: 'VAR',
             groupId: 'var-c1'
           },
@@ -390,7 +390,7 @@ const schedeDB = {
             defaultReps: 'max',
             defaultRest: 90,
             notes: 'esplosive',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/LEG-EXTENSION.gif',
             tag: 'VAR',
             groupId: 'var-c1'
           },
@@ -402,7 +402,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: '',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2022/04/Single-Leg-Press.gif'
           },
           {
             id: 'scheda-c-pressa-45',
@@ -412,7 +412,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: 'Settimana 1',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2015/11/Leg-Press.gif',
             tag: 'ALT',
             groupId: 'alt-c1'
           },
@@ -424,7 +424,7 @@ const schedeDB = {
             defaultReps: '12-15',
             defaultRest: 90,
             notes: 'Settimana 2',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Sled-Hack-Squat.gif',
             tag: 'ALT',
             groupId: 'alt-c1'
           },
@@ -436,7 +436,7 @@ const schedeDB = {
             defaultReps: '8-10',
             defaultRest: 0,
             notes: '3" iso',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2022/07/Single-Leg-Extension.gif',
             tag: 'VAR',
             groupId: 'var-c2'
           },
@@ -448,7 +448,7 @@ const schedeDB = {
             defaultReps: 'max',
             defaultRest: 90,
             notes: 'esplosive',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2022/07/Single-Leg-Extension.gif',
             tag: 'VAR',
             groupId: 'var-c2'
           },
@@ -460,7 +460,7 @@ const schedeDB = {
             defaultReps: '20',
             defaultRest: 0,
             notes: 'preattivazione',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/05/Dumbbell-Bulgarian-Split-Squat.gif',
             tag: 'VAR',
             groupId: 'var-c3'
           },
@@ -472,7 +472,7 @@ const schedeDB = {
             defaultReps: '10-12',
             defaultRest: 90,
             notes: 'negativa 2" iso a metà',
-            gifUrl: null,
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/05/Dumbbell-Bulgarian-Split-Squat.gif',
             tag: 'VAR',
             groupId: 'var-c3'
           },
@@ -484,7 +484,7 @@ const schedeDB = {
             defaultReps: '20',
             defaultRest: 90,
             notes: 'max peso',
-            gifUrl: null
+            gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/HiP-ABDUCTION-MACHINE.gif'
           },
           {
             id: 'scheda-c-rdl',
