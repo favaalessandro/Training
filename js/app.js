@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) lucide.createIcons();
 });
 
-const EXERCISE_DB_VERSION = 27; // Bump this when exercises.js changes
+const EXERCISE_DB_VERSION = 28; // Bump this when exercises.js changes
 const HOME_EXERCISE_DB_VERSION = 18; // Bump this when homeExercises.js changes
 const SCHEDE_DB_VERSION = 4; // Bump this when schedeExercises.js changes
 
@@ -243,6 +243,19 @@ function renderHome() {
         <div style="font-size:0.6875rem;color:var(--text-secondary)">A–D / E / F</div>
       </div>
     </div>
+
+    ${(!isHome && !isSchede) ? `
+    <div class="card microdose-card">
+      <div class="card-header" style="margin-bottom:var(--space-xs)">
+        <span class="card-title" style="font-size:0.8125rem">🦵 Micro-dose ginocchia · 5 min al giorno</span>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-secondary);line-height:1.6;margin:0">
+        <strong>1.</strong> Quad set isometrico 10×5" &nbsp;·&nbsp; <strong>2.</strong> Terminal knee extension 15/gamba &nbsp;·&nbsp; <strong>3.</strong> Calf raise ×20 &nbsp;·&nbsp; <strong>4.</strong> Knee-to-wall 10/lato
+      </p>
+      <p style="font-size:0.6875rem;color:var(--text-tertiary);margin:var(--space-xs) 0 0;font-style:italic">
+        La cartilagine si nutre per carico ciclico moderato. Vale anche nei giorni di riposo.
+      </p>
+    </div>` : ''}
 
     <div class="section-header">
       <h3>Prossimo Allenamento — ${programLabel}</h3>
@@ -776,7 +789,7 @@ function createExerciseCard(ex, exIdx, unit) {
     </div>
   ` : '';
 
-  // Build tag badges for SS/ALT/VAR
+  // Build tag badges for SS/ALT/VAR/ROM/KNEE
   let tagBadge = '';
   if (ex.tag) {
     if (ex.tag.includes('SS') && ex.tag.includes('ALT')) {
@@ -787,14 +800,23 @@ function createExerciseCard(ex, exIdx, unit) {
       tagBadge = '<span class="ex-tag ex-tag-alt">ALT</span>';
     } else if (ex.tag === 'VAR') {
       tagBadge = '<span class="ex-tag ex-tag-var">VAR</span>';
+    } else if (ex.tag === 'ROM') {
+      tagBadge = '<span class="ex-tag ex-tag-rom">⚠ ROM</span>';
+    } else if (ex.tag === 'KNEE') {
+      tagBadge = '<span class="ex-tag ex-tag-knee">🦵</span>';
     }
   }
+
+  const noteHTML = ex.defaultNotes
+    ? `<p class="exercise-note">${ex.defaultNotes}</p>`
+    : '';
 
   card.innerHTML = `
     <div class="exercise-header" data-has-gif="${ex.gifUrl ? 'true' : 'false'}">
       <div>
         <div class="exercise-name">${tagBadge}${ex.exerciseName}</div>
         <span class="muscle-tag">${ex.muscleGroup}</span>
+        ${noteHTML}
       </div>
       <div style="display:flex;gap:var(--space-xs);align-items:center">
         ${ex.gifUrl ? `<button class="btn-icon gif-toggle-btn" data-ex="${exIdx}" title="Mostra esercizio">

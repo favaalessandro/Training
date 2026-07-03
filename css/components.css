@@ -296,6 +296,32 @@
   color: #4da6e8;
 }
 
+.ex-tag-rom {
+  background: rgba(180, 83, 9, 0.18);
+  color: #e8963f;
+}
+
+.ex-tag-knee {
+  background: rgba(14, 124, 102, 0.18);
+  color: #35b899;
+}
+
+/* Technique note from exercise DB, shown under the muscle tag */
+.exercise-note {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  border-left: 2px solid var(--gold-dim);
+  padding-left: 8px;
+}
+
+/* Micro-dose knee card on Home */
+.microdose-card {
+  border-color: rgba(14, 124, 102, 0.4);
+  margin-bottom: var(--space-md);
+}
+
 .exercise-meta {
   font-size: 0.75rem;
   color: var(--text-secondary);

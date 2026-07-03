@@ -38,6 +38,7 @@ export function startWorkout(weekNumber, dayIndex, source = 'gym') {
       muscleGroup: ex.muscleGroup,
       gifUrl: ex.gifUrl || null,
       defaultReps: ex.defaultReps || '',
+      defaultNotes: ex.notes || null,
       tag: ex.tag || null,
       groupId: ex.groupId || null,
       sets: Array.from({ length: ex.defaultSets }, () => ({
