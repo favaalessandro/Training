@@ -245,17 +245,36 @@ function renderHome() {
     </div>
 
     ${(!isHome && !isSchede) ? `
-    <div class="card microdose-card">
-      <div class="card-header" style="margin-bottom:var(--space-xs)">
+    <details class="card microdose-card">
+      <summary class="md-summary">
         <span class="card-title" style="font-size:0.8125rem">🦵 Micro-dose ginocchia · 5 min al giorno</span>
+        <i data-lucide="chevron-down" class="md-chevron"></i>
+      </summary>
+      <div class="md-body">
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">1 · Quad set isometrico</span><span class="md-ex-dose">10×5" /gamba</span></div>
+          <p class="md-ex-desc">Seduto o sdraiato con la gamba tesa: contrai il quadricipite spingendo il retro del ginocchio verso il basso — la rotula scivola verso l'anca. Tieni 5", rilassa e ripeti. Nessun movimento visibile: è tutto isometrico.</p>
+          <a class="md-video" href="https://us.physitrack.com/home-exercise-video/isometric-quads-in-sitting" target="_blank" rel="noopener">▶ Video esecuzione</a>
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">2 · Terminal knee extension</span><span class="md-ex-dose">15 /gamba</span></div>
+          <p class="md-ex-desc">In piedi, banda elastica dietro il ginocchio ancorata davanti a te: parti con il ginocchio leggermente flesso ed estendilo completamente contro la resistenza. Movimento corto, lento e controllato — attiva il vasto mediale.</p>
+          <img class="md-gif" src="https://fitnessprogramer.com/wp-content/uploads/2022/05/Standing-leg-extension.gif" alt="Terminal knee extension" loading="lazy">
+          <a class="md-video" href="https://www.youtube.com/watch?v=7xG3MeoLjC0" target="_blank" rel="noopener">▶ TKE con banda (video)</a>
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">3 · Calf raise</span><span class="md-ex-dose">×20</span></div>
+          <p class="md-ex-desc">In piedi, meglio su un gradino: sali sulle punte, pausa 1" in alto, discesa lenta sotto il livello del gradino con pausa in allungamento. Polpacci forti assorbono carico prima del ginocchio.</p>
+          <img class="md-gif" src="https://fitnessprogramer.com/wp-content/uploads/2021/09/Bench-Press-Machine-Standing-Calf-Raise.gif" alt="Calf raise" loading="lazy">
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">4 · Knee-to-wall</span><span class="md-ex-dose">10 /lato</span></div>
+          <p class="md-ex-desc">Piede a ~10 cm dal muro: porta il ginocchio a toccare il muro senza sollevare il tallone da terra. Se tocchi facilmente, allontana il piede di 1-2 cm. Caviglia rigida = ginocchio sovraccaricato in squat e discese.</p>
+          <img class="md-gif" src="https://media.giphy.com/media/3iCs4KMfIJiNvjxCHs/giphy.gif" alt="Knee to wall" loading="lazy">
+        </div>
+        <p class="md-footer">La cartilagine si nutre per carico ciclico moderato. Vale anche nei giorni di riposo.</p>
       </div>
-      <p style="font-size:0.75rem;color:var(--text-secondary);line-height:1.6;margin:0">
-        <strong>1.</strong> Quad set isometrico 10×5" &nbsp;·&nbsp; <strong>2.</strong> Terminal knee extension 15/gamba &nbsp;·&nbsp; <strong>3.</strong> Calf raise ×20 &nbsp;·&nbsp; <strong>4.</strong> Knee-to-wall 10/lato
-      </p>
-      <p style="font-size:0.6875rem;color:var(--text-tertiary);margin:var(--space-xs) 0 0;font-style:italic">
-        La cartilagine si nutre per carico ciclico moderato. Vale anche nei giorni di riposo.
-      </p>
-    </div>` : ''}
+    </details>` : ''}
 
     <div class="section-header">
       <h3>Prossimo Allenamento — ${programLabel}</h3>
