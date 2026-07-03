@@ -316,10 +316,114 @@
   padding-left: 8px;
 }
 
-/* Micro-dose knee card on Home */
+/* Micro-dose knee card on Home (expandable) */
 .microdose-card {
   border-color: rgba(14, 124, 102, 0.4);
   margin-bottom: var(--space-md);
+}
+
+.md-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.md-summary::-webkit-details-marker {
+  display: none;
+}
+
+.md-chevron {
+  width: 18px;
+  height: 18px;
+  color: var(--text-secondary);
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+}
+
+details[open] > .md-summary .md-chevron {
+  transform: rotate(180deg);
+}
+
+.md-body {
+  margin-top: var(--space-md);
+  border-top: 1px solid rgba(14, 124, 102, 0.25);
+  padding-top: var(--space-xs);
+}
+
+.md-ex {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.md-ex:last-of-type {
+  border-bottom: none;
+}
+
+.md-ex-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.md-ex-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.md-ex-dose {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--gold-primary);
+  white-space: nowrap;
+}
+
+.md-ex-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 4px 0 0;
+}
+
+.md-gif {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  border-radius: var(--radius-sm);
+  margin: var(--space-sm) auto 0;
+  background: #fff;
+}
+
+.md-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  text-decoration: none;
+  border: 1px solid rgba(200, 168, 78, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  min-height: 34px;
+}
+
+.md-video:active {
+  background: rgba(200, 168, 78, 0.12);
+}
+
+.md-footer {
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin: var(--space-sm) 0 0;
 }
 
 .exercise-meta {
