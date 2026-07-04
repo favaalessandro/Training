@@ -276,6 +276,76 @@ function renderHome() {
       </div>
     </details>` : ''}
 
+    <details class="card pillar-card pillar-zona2">
+      <summary class="md-summary">
+        <span class="card-title" style="font-size:0.8125rem">❤️ Cardio Zona 2 · 150 min / settimana</span>
+        <i data-lucide="chevron-down" class="md-chevron"></i>
+      </summary>
+      <div class="md-body" style="border-color: rgba(220, 60, 60, 0.25)">
+        <p class="md-ex-desc" style="margin-bottom:var(--space-sm)">Allenamento a intensita conversazionale (Talk Test: riesci a parlare senza affanno). Fondamentale per salute mitocondriale, bruciare grassi e salute metabolica.</p>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">Obiettivo settimanale</span><span class="md-ex-dose">150 min</span></div>
+          <p class="md-ex-desc">Distribuire in 5-7 sessioni. Es: 30 min × 5 giorni oppure 25 min × 6 giorni.</p>
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">1 · Camminata veloce</span><span class="md-ex-dose">30 min</span></div>
+          <p class="md-ex-desc">Il modo piu semplice. Passo sostenuto ma senza fiatone. Ideale dopo i pasti: una camminata di 10 min post-pasto riduce drasticamente la risposta glicemica.</p>
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">2 · Ciclismo leggero</span><span class="md-ex-dose">30-45 min</span></div>
+          <p class="md-ex-desc">Bike da sala o bici all'aperto a ritmo costante e tranquillo. Ottimo per le ginocchia: zero impatto, carico ciclico moderato che nutre la cartilagine.</p>
+          <img class="md-gif" src="https://fitnessprogramer.com/wp-content/uploads/2022/02/Stationary-Bike-Run.gif" alt="Ciclismo leggero" loading="lazy">
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">3 · Nuoto</span><span class="md-ex-dose">30 min</span></div>
+          <p class="md-ex-desc">Vasche a ritmo costante, qualsiasi stile. Impatto zero sulle articolazioni, ottimo per il recupero attivo.</p>
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">Come controllare la Zona 2</span></div>
+          <p class="md-ex-desc"><strong>Talk Test:</strong> devi riuscire a parlare frasi complete senza affanno. Se devi fermarti per respirare, stai andando troppo forte.<br><strong>FC indicativa:</strong> 60-70% della FC max (es. se hai FC max ~190, rimani tra 114-133 bpm).</p>
+        </div>
+        <p class="md-footer">VO2max e il Re dei parametri di longevita. Ogni unita di miglioramento estende l'aspettativa di vita di circa 45 giorni.</p>
+      </div>
+    </details>
+
+    <details class="card pillar-card pillar-mobility">
+      <summary class="md-summary">
+        <span class="card-title" style="font-size:0.8125rem">🧘 Mobilita quotidiana · 5-10 min al giorno</span>
+        <i data-lucide="chevron-down" class="md-chevron"></i>
+      </summary>
+      <div class="md-body" style="border-color: rgba(168, 85, 247, 0.25)">
+        <p class="md-ex-desc" style="margin-bottom:var(--space-sm)">I tessuti si irrigidiscono con l'eta. La mobilita determina la funzionalita per i movimenti quotidiani, previene infortuni e mantiene il range di movimento. Concentrati su: anche, colonna vertebrale, caviglie, spalle, bicipiti femorali.</p>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">1 · 90/90 hip switch</span><span class="md-ex-dose">10 /lato</span></div>
+          <p class="md-ex-desc">Seduto a terra con entrambe le ginocchia a 90°: ruota da un lato all'altro mantenendo il busto eretto. Apre le anche in rotazione interna ed esterna — fondamentale per squat e vita quotidiana.</p>
+          <img class="md-gif" src="https://fitnessprogramer.com/wp-content/uploads/2022/08/90-90-Hip-Stretch.gif" alt="90/90 hip switch" loading="lazy">
+          <a class="md-video" href="https://www.youtube.com/watch?v=pMb0aSrtTXg" target="_blank" rel="noopener">▶ Video tecnica</a>
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">2 · Cat-cow</span><span class="md-ex-dose">10 cicli</span></div>
+          <p class="md-ex-desc">A quattro zampe: inspira inarcando la schiena (cow), espira arrotondandola (cat). Mobilizza l'intera colonna vertebrale segmento per segmento. Lento e fluido.</p>
+          <img class="md-gif" src="https://fitnessprogramer.com/wp-content/uploads/2021/02/cat-cow.gif" alt="Cat-cow" loading="lazy">
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">3 · World's greatest stretch</span><span class="md-ex-dose">5 /lato</span></div>
+          <p class="md-ex-desc">Affondo profondo con la mano a terra, poi rotazione toracica con il braccio al cielo. Apre anche, torace, flessori dell'anca e caviglie in un unico movimento.</p>
+          <img class="md-gif" src="https://gymvisual.com/img/p/2/4/5/0/1/24501.gif" alt="World greatest stretch" loading="lazy">
+          <a class="md-video" href="https://www.youtube.com/watch?v=0kLhMSLLcTg" target="_blank" rel="noopener">▶ Video tecnica</a>
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">4 · Shoulder dislocates</span><span class="md-ex-dose">15</span></div>
+          <p class="md-ex-desc">Con un bastone o elastico, presa larga: porta le braccia da davanti a dietro e ritorno in un arco completo. Spalle mobili = overhead press sicuro e postura migliore.</p>
+          <img class="md-gif" src="https://gymvisual.com/img/p/3/4/3/7/2/34372.gif" alt="Shoulder dislocates" loading="lazy">
+        </div>
+        <div class="md-ex">
+          <div class="md-ex-head"><span class="md-ex-name">5 · Hamstring sweep</span><span class="md-ex-dose">30" /lato</span></div>
+          <p class="md-ex-desc">In piedi, tallone su un rialzo basso: busto in avanti con schiena piatta fino a sentire la tensione dietro la coscia. Tieni 30", respira. Bicipiti femorali accorciati = rischio strappi e mal di schiena.</p>
+          <img class="md-gif" src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Standing-Hamstring-Stretch.gif" alt="Hamstring stretch" loading="lazy">
+        </div>
+        <p class="md-footer">Fai questa routine ogni giorno, anche nei giorni di riposo. Consistenza batte intensita.</p>
+      </div>
+    </details>
+
     <div class="section-header">
       <h3>Prossimo Allenamento — ${programLabel}</h3>
       ${completedToday.length > 0 ? `<button class="btn btn-sm btn-secondary" id="btn-reset-today">
