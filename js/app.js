@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) lucide.createIcons();
 });
 
-const EXERCISE_DB_VERSION = 29; // Bump this when exercises.js changes
+const EXERCISE_DB_VERSION = 30; // Bump this when exercises.js changes
 const HOME_EXERCISE_DB_VERSION = 18; // Bump this when homeExercises.js changes
 const SCHEDE_DB_VERSION = 4; // Bump this when schedeExercises.js changes
 
@@ -443,7 +443,7 @@ function renderHome() {
           <div class="md-ex-head"><span class="md-ex-name">1 · 90/90 hip switch</span><span class="md-ex-dose">10 /lato</span></div>
           <p class="md-ex-desc">Seduto a terra con entrambe le ginocchia a 90°: ruota da un lato all'altro mantenendo il busto eretto. Apre le anche in rotazione interna ed esterna — fondamentale per squat e vita quotidiana.</p>
           <img class="md-gif" src="https://fitnessprogramer.com/wp-content/uploads/2022/08/90-90-Hip-Stretch.gif" alt="90/90 hip switch" loading="lazy">
-          <a class="md-video" href="https://www.youtube.com/watch?v=pMb0aSrtTXg" target="_blank" rel="noopener">▶ Video tecnica</a>
+          <a class="md-video" href="https://www.youtube.com/watch?v=t4Zz6-aG8Iw" target="_blank" rel="noopener">▶ Video tecnica</a>
         </div>
         <div class="md-ex">
           <div class="md-ex-head"><span class="md-ex-name">2 · Cat-cow</span><span class="md-ex-dose">10 cicli</span></div>
@@ -454,7 +454,7 @@ function renderHome() {
           <div class="md-ex-head"><span class="md-ex-name">3 · World's greatest stretch</span><span class="md-ex-dose">5 /lato</span></div>
           <p class="md-ex-desc">Affondo profondo con la mano a terra, poi rotazione toracica con il braccio al cielo. Apre anche, torace, flessori dell'anca e caviglie in un unico movimento.</p>
           <img class="md-gif" src="https://gymvisual.com/img/p/2/4/5/0/1/24501.gif" alt="World greatest stretch" loading="lazy">
-          <a class="md-video" href="https://www.youtube.com/watch?v=0kLhMSLLcTg" target="_blank" rel="noopener">▶ Video tecnica</a>
+          <a class="md-video" href="https://www.youtube.com/watch?v=-CiWQ2IvY34" target="_blank" rel="noopener">▶ Video tecnica</a>
         </div>
         <div class="md-ex">
           <div class="md-ex-head"><span class="md-ex-name">4 · Shoulder dislocates</span><span class="md-ex-dose">15</span></div>
