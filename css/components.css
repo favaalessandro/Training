@@ -426,6 +426,26 @@ details[open] > .md-summary .md-chevron {
   margin: var(--space-sm) 0 0;
 }
 
+.pillar-card {
+  margin-bottom: var(--space-md);
+}
+
+.pillar-zona2 {
+  border-color: rgba(220, 60, 60, 0.4);
+}
+
+.pillar-zona2 .md-body {
+  border-color: rgba(220, 60, 60, 0.25);
+}
+
+.pillar-mobility {
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.pillar-mobility .md-body {
+  border-color: rgba(168, 85, 247, 0.25);
+}
+
 .exercise-meta {
   font-size: 0.75rem;
   color: var(--text-secondary);
