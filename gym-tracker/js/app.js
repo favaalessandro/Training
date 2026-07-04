@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) lucide.createIcons();
 });
 
-const EXERCISE_DB_VERSION = 28; // Bump this when exercises.js changes
+const EXERCISE_DB_VERSION = 29; // Bump this when exercises.js changes
 const HOME_EXERCISE_DB_VERSION = 18; // Bump this when homeExercises.js changes
 const SCHEDE_DB_VERSION = 4; // Bump this when schedeExercises.js changes
 

@@ -36,6 +36,9 @@ const GIF = {
   sidePlank: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Side-Plank.gif',
   sidePlankAbd: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Side-Plank-Leg-Raises.gif',
   slr: 'https://gymvisual.com/img/p/5/8/7/5/5875.gif',
+  kbSwing: 'https://fitnessprogramer.com/wp-content/uploads/2021/09/Kettlebell-Swings.gif',
+  turkishGetUp: 'https://fitnessprogramer.com/wp-content/uploads/2021/08/Turkish-Get-Up.gif',
+  farmerCarry: 'https://fitnessprogramer.com/wp-content/uploads/2022/02/Farmers-walk_Cardio.gif',
   kneeToWall: 'https://media.giphy.com/media/3iCs4KMfIJiNvjxCHs/giphy.gif',
   legExtension: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/LEG-EXTENSION.gif',
   deadBug: 'https://fitnessprogramer.com/wp-content/uploads/2021/05/Dead-Bug.gif',
@@ -225,8 +228,52 @@ function conditioningDay(weekNum, phase2 = false) {
         defaultSets: 8,
         defaultReps: "30 sec",
         defaultRest: 90,
-        notes: "Opzione A (preferita): bike sprint massimale · B: rower · C (solo se asintomatico): sprint in leggera salita. Unico HIIT della settimana. In settimana di scarico: cardio blando 30-40 min",
+        notes: "VARIANTE BASE · Opzione A (preferita): bike sprint massimale · B: rower · C (solo se asintomatico): sprint in leggera salita. Unico HIIT della settimana. In settimana di scarico: cardio blando 30-40 min. In alternativa a bike + circuito core: variante KB/EMOM qui sotto",
         gifUrl: GIF.bike
+      },
+      {
+        id: `week${weekNum}-cond-kb-swing`,
+        name: "Kettlebell Swing (EMOM min 1)",
+        muscleGroup: "legs",
+        defaultSets: 4,
+        defaultReps: "15",
+        defaultRest: 0,
+        notes: "🔁 VARIANTE KB/EMOM 16' (alternativa a bike + core): 4 round, ogni esercizio parte allo scatto del minuto. Hip hinge esplosivo come lo stacco: le ginocchia restano quasi ferme, spinge l'anca. Knee-safe",
+        gifUrl: GIF.kbSwing,
+        tag: "VAR"
+      },
+      {
+        id: `week${weekNum}-cond-kb-tgu`,
+        name: "Turkish Get-Up (EMOM min 2)",
+        muscleGroup: "core",
+        defaultSets: 4,
+        defaultReps: "1+1",
+        defaultRest: 0,
+        notes: "🔁 Variante KB/EMOM · 1 per lato al minuto, lento e controllato. Se il passaggio in ginocchio dà fastidio: cuscino sotto il ginocchio o fermati alla posizione seduta (half get-up)",
+        gifUrl: GIF.turkishGetUp,
+        tag: "VAR"
+      },
+      {
+        id: `week${weekNum}-cond-kb-bike`,
+        name: "Bike Sprint (EMOM min 3)",
+        muscleGroup: "legs",
+        defaultSets: 4,
+        defaultReps: "40 sec",
+        defaultRest: 0,
+        notes: "🔁 Variante KB/EMOM · sprint 40\", recupero nei 20\" restanti",
+        gifUrl: GIF.bike,
+        tag: "VAR"
+      },
+      {
+        id: `week${weekNum}-cond-kb-farmer`,
+        name: "Farmer Carry (EMOM min 4)",
+        muscleGroup: "core",
+        defaultSets: 4,
+        defaultReps: "40 sec",
+        defaultRest: 0,
+        notes: "🔁 Variante KB/EMOM · camminata pesante 40\", presa salda e busto eretto. Chiude il round: il minuto successivo si riparte dallo swing",
+        gifUrl: GIF.farmerCarry,
+        tag: "VAR"
       },
       {
         id: `week${weekNum}-cond-deadbug`,
@@ -235,7 +282,7 @@ function conditioningDay(weekNum, phase2 = false) {
         defaultSets: 4,
         defaultReps: "10",
         defaultRest: 45,
-        notes: "Circuito core · lombare aderente al pavimento. Conta anche come lavoro ginocchia (controllo del tronco)",
+        notes: "VARIANTE BASE · Circuito core · lombare aderente al pavimento. Conta anche come lavoro ginocchia (controllo del tronco). Se fai la variante KB/EMOM il core è già coperto da get-up e farmer carry",
         gifUrl: GIF.deadBug
       },
       {
