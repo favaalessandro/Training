@@ -64,6 +64,130 @@ function initSchedeDB() {
 }
 
 /* ═══════════════════════════════════════
+   WARMUP & STRETCHING PER SESSIONE
+   ═══════════════════════════════════════ */
+
+const WARMUP_STRETCH = {
+  legs_shoulders: {
+    warmup: [
+      { name: "Hip Circles", dose: "10 /lato", desc: "Cerchi ampi con l'anca, sblocca l'articolazione coxo-femorale prima di qualsiasi carico sulle gambe", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/01/hip-circles.gif" },
+      { name: "Leg Swing avanti-dietro", dose: "10 /gamba", desc: "Oscillazioni controllate della gamba tesa: attiva flessori ed estensori dell'anca, scalda il tendine del ginocchio", gif: "https://fitnessprogramer.com/wp-content/uploads/2025/07/Leg-Swings-Front-to-Back.gif" },
+      { name: "Glute Bridge", dose: "15", desc: "Attivazione del gluteo: schiena a terra, spingi i talloni, contrai in alto 1-2\". Il gluteo 'dorme' se non lo svegli prima dello squat", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Glute-Bridge-.gif" },
+      { name: "Bodyweight Squat", dose: "10", desc: "Squat a corpo libero lento e profondo (o al parallelo se ginocchia). Scalda ginocchia, anche e caviglie nel pattern esatto che userai sotto carico", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/05/bodyweight-squat-full-version.gif" },
+      { name: "Arm Circles", dose: "10 avanti + 10 indietro", desc: "Cerchi ampi con le braccia: sblocca la cuffia dei rotatori prima del lavoro spalle", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/07/Arm-Circles_Shoulders.gif" },
+      { name: "Band Pull-Apart", dose: "15", desc: "Elastico a braccia tese, apri orizzontalmente: attiva deltoide posteriore e romboidi, stabilizza la scapola per il press overhead", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Band-pull-apart.gif" }
+    ],
+    stretching: [
+      { name: "Standing Quad Stretch", dose: "30\" /gamba", desc: "In piedi, tallone al gluteo: allunga il quadricipite contratto dallo squat. Se perdi l'equilibrio, appoggiati al muro", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/08/Standing-Quadriceps-Stretch.gif" },
+      { name: "Hip Flexor Stretch", dose: "30\" /lato", desc: "Affondo in ginocchio, spingi il bacino avanti: apre i flessori dell'anca accorciati dalla posizione seduta e dal lavoro gambe", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/08/Kneeling-Hip-Flexor-Stretch.gif" },
+      { name: "Piriformis Stretch", dose: "30\" /lato", desc: "Sdraiato, caviglia sulla coscia opposta, tira verso il petto: rilascia il piriforme e il gluteo profondo, previene sciatalgia", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Piriformis-Stretch.gif" },
+      { name: "Trap Stretch", dose: "20\" /lato", desc: "Orecchio verso la spalla, mano opposta dietro la schiena: rilascia il trapezio superiore contratto dal lavoro spalle", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Side-Neck-Stretch.gif" }
+    ]
+  },
+  chest_triceps: {
+    warmup: [
+      { name: "Arm Circles", dose: "10 avanti + 10 indietro", desc: "Scalda la cuffia dei rotatori e il deltoide prima della panca: spalle fredde sotto carico = infortunio", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/07/Arm-Circles_Shoulders.gif" },
+      { name: "Scapular Push-Up", dose: "10", desc: "Push-up con braccia tese: muovi solo le scapole (protrazione/retrazione). Attiva il dentato anteriore, fondamentale per la stabilita in panca", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Push-Up-Plus.gif" },
+      { name: "Band Pull-Apart", dose: "15", desc: "Equilibra il lavoro di spinta attivando il deltoide posteriore. Pre-affaticarlo leggermente migliora la stabilita scapolare in panca", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Band-pull-apart.gif" },
+      { name: "Inchworm", dose: "5", desc: "In piedi, mani a terra, cammina avanti fino a plank e ritorna: scalda petto, spalle, core e polsi in un movimento", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/01/Inchworm.gif" }
+    ],
+    stretching: [
+      { name: "Doorway Chest Stretch", dose: "30\" /lato", desc: "Avambraccio sullo stipite, ruota il busto: apre il pettorale accorciato dalla panca. Previene la postura a spalle chiuse", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/01/Doorway-chest-and-sshoulder-stretch.gif" },
+      { name: "Tricep Stretch", dose: "20\" /braccio", desc: "Braccio dietro la testa, gomito al cielo, spingi con l'altra mano: allunga il capo lungo del tricipite dopo il lavoro di estensione", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Triceps-Stretch.gif" },
+      { name: "Cobra Stretch", dose: "30\"", desc: "Prono, spingi con le mani estendendo la colonna: decomprime i dischi dopo il lavoro in posizione supina/panca e allunga gli addominali", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/abdominal-stretch.gif" }
+    ]
+  },
+  back_biceps: {
+    warmup: [
+      { name: "Band Pull-Apart", dose: "15", desc: "Attiva romboidi e deltoide posteriore: prepara la retrazione scapolare necessaria per row e pull-up", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Band-pull-apart.gif" },
+      { name: "Thoracic Rotation", dose: "8 /lato", desc: "Sdraiato, ginocchia piegate: ruota il busto aprendo il braccio al lato opposto. Mobilizza il tratto toracico prima dello stacco e dei row", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/12/Supine-Spinal-Twist.gif" },
+      { name: "Hip Circles", dose: "10 /lato", desc: "Prepara l'anca per la posizione di hinge dello stacco: mobilita l'articolazione prima del carico assiale", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/01/hip-circles.gif" },
+      { name: "Inchworm", dose: "5", desc: "Scalda tutta la catena posteriore: hamstring, schiena, spalle. Il pattern di flessione prepara allo stacco", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/01/Inchworm.gif" }
+    ],
+    stretching: [
+      { name: "Lat Stretch al muro", dose: "20\" /lato", desc: "Braccio teso al muro sopra la testa, inclina il busto: allunga il gran dorsale contratto da pull-up e row", gif: "https://fitnessprogramer.com/wp-content/uploads/2026/01/Unilateral-Lat-Stretch-on-the-Wall.gif" },
+      { name: "Child Pose", dose: "30\"", desc: "In ginocchio, braccia avanti, fronte a terra: decomprime l'intera colonna e allunga dorsali e spalle dopo il lavoro di trazione", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/05/Balasana-Child-Pose.gif" },
+      { name: "Cobra Stretch", dose: "30\"", desc: "Prono, spingi con le mani: estende la colonna nella direzione opposta allo stacco e ai row (flessione). Bilancia il lavoro", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/abdominal-stretch.gif" },
+      { name: "Doorway Chest Stretch", dose: "20\" /lato", desc: "Anche dopo il lavoro di schiena: riequilibra la muscolatura pettorale che tende ad accorciarsi con il volume di trazione", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/01/Doorway-chest-and-sshoulder-stretch.gif" }
+    ]
+  },
+  abs_core: {
+    warmup: [
+      { name: "Hip Circles", dose: "10 /lato", desc: "Mobilizza le anche prima del lavoro core: bacino libero = attivazione addominale migliore", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/01/hip-circles.gif" },
+      { name: "Glute Bridge", dose: "10", desc: "Attiva gluteo e stabilizzatori del bacino: la base da cui parte tutto il lavoro core", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Glute-Bridge-.gif" },
+      { name: "Thoracic Rotation", dose: "8 /lato", desc: "Ruota il busto: sblocca il tratto toracico, così il lavoro core non viene limitato da rigidità dorsale", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/12/Supine-Spinal-Twist.gif" }
+    ],
+    stretching: [
+      { name: "Cobra Stretch", dose: "30\"", desc: "Estende la colonna nella direzione opposta ai crunch e leg raise: decomprime e bilancia il lavoro in flessione", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/abdominal-stretch.gif" },
+      { name: "Child Pose", dose: "30\"", desc: "Allungamento globale: dorsali, spalle, anche. Rilassa il sistema nervoso dopo il lavoro core intenso", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/05/Balasana-Child-Pose.gif" },
+      { name: "Hip Flexor Stretch", dose: "30\" /lato", desc: "I flessori dell'anca lavorano molto negli esercizi core (leg raise, scissors): allungali per evitare che tirino sulla lombare", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/08/Kneeling-Hip-Flexor-Stretch.gif" }
+    ]
+  },
+  deadlift: {
+    warmup: [
+      { name: "Hip Circles", dose: "10 /lato", desc: "Mobilizza le anche prima dell'hinge: lo stacco richiede ROM completo in flessione d'anca", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/01/hip-circles.gif" },
+      { name: "Inchworm", dose: "5", desc: "Scalda hamstring e catena posteriore nel pattern esatto dello stacco. Se non arrivi a terra con le mani, piega leggermente le ginocchia", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/01/Inchworm.gif" },
+      { name: "Glute Bridge", dose: "15", desc: "Attiva il gluteo nel lockout: il pattern di estensione d'anca è identico alla fase finale dello stacco", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Glute-Bridge-.gif" },
+      { name: "Band Pull-Apart", dose: "15", desc: "Attiva romboidi e trapezio medio: la retrazione scapolare tiene la barra vicina al corpo durante lo stacco", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Band-pull-apart.gif" }
+    ],
+    stretching: [
+      { name: "Child Pose", dose: "30\"", desc: "Decomprime l'intera colonna dopo il carico assiale dello stacco: dorsali, erettori spinali, spalle", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/05/Balasana-Child-Pose.gif" },
+      { name: "Piriformis Stretch", dose: "30\" /lato", desc: "Il piriforme lavora molto nello stacco per stabilizzare l'anca: allungalo per prevenire sindrome piriforme", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Piriformis-Stretch.gif" },
+      { name: "Hip Flexor Stretch", dose: "30\" /lato", desc: "I flessori dell'anca si accorciano nella posizione di partenza dello stacco: riaprili dopo il lavoro pesante", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/08/Kneeling-Hip-Flexor-Stretch.gif" },
+      { name: "Cobra Stretch", dose: "30\"", desc: "Estende la colonna dopo la flessione prolungata dello stacco: controbilancia e decomprime i dischi lombari", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/abdominal-stretch.gif" }
+    ]
+  },
+  chest_biceps: {
+    warmup: [
+      { name: "Arm Circles", dose: "10 avanti + 10 indietro", desc: "Scalda la cuffia dei rotatori prima del lavoro di panca e curl", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/07/Arm-Circles_Shoulders.gif" },
+      { name: "Scapular Push-Up", dose: "10", desc: "Attiva il dentato anteriore per la stabilita scapolare in panca: protrazione e retrazione a braccia tese", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Push-Up-Plus.gif" },
+      { name: "Band Pull-Apart", dose: "15", desc: "Equilibra il lavoro di spinta con l'attivazione del deltoide posteriore e dei romboidi", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Band-pull-apart.gif" },
+      { name: "Inchworm", dose: "5", desc: "Scalda petto, spalle e polsi: prepara il pattern di spinta per la panca", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/01/Inchworm.gif" }
+    ],
+    stretching: [
+      { name: "Doorway Chest Stretch", dose: "30\" /lato", desc: "Apre il pettorale contratto dalla panca: avambraccio sullo stipite, ruota il busto fino a sentire la tensione", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/01/Doorway-chest-and-sshoulder-stretch.gif" },
+      { name: "Cobra Stretch", dose: "30\"", desc: "Estende la colonna e apre il petto dopo il lavoro supino", gif: "https://fitnessprogramer.com/wp-content/uploads/2021/06/abdominal-stretch.gif" },
+      { name: "Tricep Stretch", dose: "20\" /braccio", desc: "Braccio dietro la testa: allunga anche il bicipite nella posizione opposta al curl", gif: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Triceps-Stretch.gif" }
+    ]
+  }
+};
+
+function getWarmupStretchKey(dayLabel) {
+  const dl = dayLabel.toLowerCase();
+  if (dl.includes('conditioning')) return null;
+  if (dl.includes('deadlift')) return 'deadlift';
+  if (dl.includes('legs') || dl.includes('leg')) return 'legs_shoulders';
+  if (dl.includes('chest') && dl.includes('tricep')) return 'chest_triceps';
+  if (dl.includes('chest') && dl.includes('bicep')) return 'chest_biceps';
+  if (dl.includes('chest')) return 'chest_triceps';
+  if (dl.includes('back') && dl.includes('leg')) return 'legs_shoulders';
+  if (dl.includes('back')) return 'back_biceps';
+  if (dl.includes('abs') || dl.includes('core')) return 'abs_core';
+  if (dl.includes('arms') && dl.includes('shoulder')) return 'chest_biceps';
+  return null;
+}
+
+function buildRoutineCard(title, emoji, exercises, cssClass) {
+  const items = exercises.map(ex => `
+    <div class="md-ex">
+      <div class="md-ex-head"><span class="md-ex-name">${ex.name}</span><span class="md-ex-dose">${ex.dose}</span></div>
+      <p class="md-ex-desc">${ex.desc}</p>
+      ${ex.gif ? `<img class="md-gif" src="${ex.gif}" alt="${ex.name}" loading="lazy">` : ''}
+    </div>
+  `).join('');
+
+  return `
+    <details class="card pillar-card ${cssClass}">
+      <summary class="md-summary">
+        <span class="card-title" style="font-size:0.8125rem">${emoji} ${title}</span>
+        <i data-lucide="chevron-down" class="md-chevron"></i>
+      </summary>
+      <div class="md-body" style="border-color:var(--${cssClass === 'warmup-card' ? 'warmup-border' : 'stretch-border'})">${items}</div>
+    </details>
+  `;
+}
+
+/* ═══════════════════════════════════════
    ROUTER
    ═══════════════════════════════════════ */
 
@@ -753,7 +877,19 @@ function renderActiveWorkout(view) {
       </div>
     </div>
 
+    ${(() => {
+      const wsKey = getWarmupStretchKey(workout.dayLabel);
+      const ws = wsKey ? WARMUP_STRETCH[wsKey] : null;
+      return ws ? buildRoutineCard('Attivazione muscolare · Pre-workout', '🔥', ws.warmup, 'warmup-card') : '';
+    })()}
+
     <div id="exercise-list"></div>
+
+    ${(() => {
+      const wsKey = getWarmupStretchKey(workout.dayLabel);
+      const ws = wsKey ? WARMUP_STRETCH[wsKey] : null;
+      return ws ? buildRoutineCard('Stretching · Post-workout', '🧊', ws.stretching, 'stretch-card') : '';
+    })()}
 
     <div class="card" style="margin-top:var(--space-md)">
       <h4 class="card-title" style="margin-bottom:var(--space-sm)">Come ti senti?</h4>

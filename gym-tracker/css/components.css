@@ -446,6 +446,25 @@ details[open] > .md-summary .md-chevron {
   border-color: rgba(168, 85, 247, 0.25);
 }
 
+.warmup-card {
+  border-color: rgba(255, 140, 0, 0.5);
+  margin-bottom: var(--space-md);
+}
+
+.warmup-card .md-body {
+  border-color: rgba(255, 140, 0, 0.25);
+}
+
+.stretch-card {
+  border-color: rgba(0, 180, 220, 0.5);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.stretch-card .md-body {
+  border-color: rgba(0, 180, 220, 0.25);
+}
+
 .exercise-meta {
   font-size: 0.75rem;
   color: var(--text-secondary);
